@@ -1,3 +1,5 @@
+using CaloriProject.UI.Forms;
+
 namespace CaloriProject.UI
 {
     internal static class Program
