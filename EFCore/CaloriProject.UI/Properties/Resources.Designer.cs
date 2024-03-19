@@ -59,5 +59,75 @@ namespace CaloriProject.UI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _14592830fa704327888c0c50fe3a8f31 {
+            get {
+                object obj = ResourceManager.GetObject("14592830fa704327888c0c50fe3a8f31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2253308 {
+            get {
+                object obj = ResourceManager.GetObject("2253308", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2253310 {
+            get {
+                object obj = ResourceManager.GetObject("2253310", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap küçüldü {
+            get {
+                object obj = ResourceManager.GetObject("küçüldü", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tangerine_newt_RgT22Ixcq4Y_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("tangerine-newt-RgT22Ixcq4Y-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tangerine_newt_RgT22Ixcq4Y_unsplash1 {
+            get {
+                object obj = ResourceManager.GetObject("tangerine-newt-RgT22Ixcq4Y-unsplash1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thought_catalog_fnztlIb52gU_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("thought-catalog-fnztlIb52gU-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

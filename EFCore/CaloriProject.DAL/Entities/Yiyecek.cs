@@ -16,15 +16,12 @@ namespace CaloriProject.DAL.Entities
         public string? Fotograf { get; set; }
 
 
-
-        public int KullaniciID { get; set; } //ForeignKey  "kullanici-yiyecek >> 1-n"
-        public Kullanici Kullanici { get; set; } //Navigation Prop.
-
+       
         public int KategoriID { get; set; } //ForeignKey "kategori-yiyecek >> 1-n"
         public Kategori Kategori { get; set; } //Navigation Prop.
 
 
-        public List<Ogun> Ogunler { get; set; } //navigation prop.  "ogün-yiyecek >> n-n"
+     
 
 
 
