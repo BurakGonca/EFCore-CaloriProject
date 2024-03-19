@@ -19,7 +19,7 @@ namespace CaloriProject.UI.Forms
             InitializeComponent();
         }
 
-
+        
 
         private void UyelikOlusturma_Load(object sender, EventArgs e)
         {
