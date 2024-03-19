@@ -13,23 +13,25 @@ namespace CaloriProject.UI.Forms
 {
     public partial class AnaSayfa : Form
     {
-        public AnaSayfa()
+        private OgunGir ogunGir;
+        public AnaSayfa(OgunGir ogun = null)
         {
+            ogunGir = ogun ?? new OgunGir(this);
             InitializeComponent();
-            Kullanici kullanici = new Kullanici();
+
+
         }
 
         private void AnaSayfa_Load(object sender, EventArgs e)
         {
-            //kullanici_Isım_Lbl.Text = Kullanici.Ad
+
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ogunGir.Show();
+            this.Hide();
 
-
-
-
-
-
-
+        }
     }
 }

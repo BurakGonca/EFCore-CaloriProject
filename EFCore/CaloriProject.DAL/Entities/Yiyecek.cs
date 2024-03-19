@@ -9,6 +9,7 @@ namespace CaloriProject.DAL.Entities
 {
     public class Yiyecek : Entity
     {
+        
         public int YiyecekID { get; set; }
         public string YiyecekAdi { get; set; }
         public double Porsiyon { get; set; }

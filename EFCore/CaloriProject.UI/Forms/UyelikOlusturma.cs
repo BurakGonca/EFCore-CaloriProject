@@ -13,7 +13,7 @@ namespace CaloriProject.UI.Forms
 {
     public partial class UyelikOlusturma : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=KASKADE;Initial Catalog=loginEkrani_c#;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection connect = new SqlConnection(@"Data Source=BURAK;Initial Catalog=loginEkrani_c#;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         public UyelikOlusturma()
         {
             InitializeComponent();
@@ -67,7 +67,7 @@ namespace CaloriProject.UI.Forms
                         {
                             string insertData = "INSERT INTO users(Cinsiyet, Ad, Soyad, DogumTarihi, Kilo, Boy, Email, Sifre, SifreTekrar) VALUES(@cinsiyet,@ad,@soyad,@dogumTarihi,@kilo,@boy,@email,@sifre,@sifreTekrar)";
 
-                            DateTime selectedDate = DogumTarihi_dateTimePicker.Value; 
+                            DateTime selectedDate = DogumTarihi_dateTimePicker.Value;
 
                             string formattedDate = selectedDate.ToString("yyyy-MM-dd");
 
@@ -85,14 +85,14 @@ namespace CaloriProject.UI.Forms
                                 cmd.Parameters.AddWithValue("@sifreTekrar", sifreTekrar_textBox.Text.Trim());
 
                                 cmd.ExecuteNonQuery();
-                                MessageBox.Show("Başarıyla kayıt olundu.","Bilgilendirme Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Başarıyla kayıt olundu.", "Bilgilendirme Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 //kapanıyosa sil (to switch form demiş)
                                 UyelikOlusturma uyelikOlusturma = new UyelikOlusturma();
                                 uyelikOlusturma.Show();
                                 this.Hide();
                             }
-                                }
+                        }
                     }
                 }
                 catch (Exception ex)
