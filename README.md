@@ -1,2 +1,2 @@
-# EFCore-UygulamaS-navProje
+# EFCore-CaloriProject
 C# EF Core Git repo
