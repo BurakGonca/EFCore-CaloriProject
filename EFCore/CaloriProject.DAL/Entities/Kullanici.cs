@@ -22,11 +22,7 @@ namespace CaloriProject.DAL.Entities
         public Cinsiyet Cinsiyet { get; set; }
 
 
-        public List<Ogun> Ogunler { get; set; } //navigation prop.
-        public List<Yiyecek> Yiyecekler { get; set; } //navigation prop.
-
-
-
+        
 
 
 

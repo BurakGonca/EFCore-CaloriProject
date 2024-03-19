@@ -22,7 +22,9 @@ namespace CaloriProject.DAL.Context
         public DbSet<Kategori> Kategoriler { get; set; } 
         public DbSet<Kullanici> Kullanicilar { get; set; } 
         public DbSet<Ogun> Ogünler { get; set; } 
-        public DbSet<Yiyecek> Yiyecekler { get; set; } 
+        public DbSet<Yiyecek> Yiyecekler { get; set; }
+        public DbSet<KullaniciOgunYiyecek> KullaniciOgunYiyecek { get; set; }
+
 
 
 

@@ -13,14 +13,5 @@ namespace CaloriProject.DAL.Entities
         public string OgunAdi { get; set; }
 
 
-
-        public int KullaniciID { get; set; } //ForeignKey  "kullanici-ogün >> 1-n"
-        public Kullanici Kullanici { get; set; } //Navigation Prop.
-
-
-        public List<Yiyecek> Yiyecekler { get; set; } //navigation prop.  "ogün-yiyecek >> n-n"
-
-
-
     }
 }
