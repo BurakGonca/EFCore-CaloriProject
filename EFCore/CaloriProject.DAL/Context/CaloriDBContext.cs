@@ -14,7 +14,7 @@ namespace CaloriProject.DAL.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=.;Database=CaloriDB;Trusted_Connection=true;trustservercertificate=true");
+            optionsBuilder.UseSqlServer("server=BURAK;Database=CaloriDB;Trusted_Connection=true;trustservercertificate=true");
 
         }
 
@@ -22,7 +22,9 @@ namespace CaloriProject.DAL.Context
         public DbSet<Kategori> Kategoriler { get; set; } 
         public DbSet<Kullanici> Kullanicilar { get; set; } 
         public DbSet<Ogun> Ogünler { get; set; } 
-        public DbSet<Yiyecek> Yiyecekler { get; set; } 
+        public DbSet<Yiyecek> Yiyecekler { get; set; }
+        public DbSet<KullaniciOgunYiyecek> KullaniciOgunYiyecek { get; set; }
+
 
 
 

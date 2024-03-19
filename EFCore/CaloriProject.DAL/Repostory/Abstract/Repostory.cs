@@ -94,7 +94,7 @@ namespace CaloriProject.DAL.Repostory.Abstract
             entity.CreatedDate = GetById(entity.Id).CreatedDate;
 
             //statüyü güncellendi yap
-
+            entity.Status= Status.Updated;
 
             //silindi değilse updated yap.
 

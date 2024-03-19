@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CaloriProject.DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,27 @@ using System.Windows.Forms;
 
 namespace CaloriProject.UI.Forms
 {
-	public partial class AnaSayfa : Form
-	{
-		public AnaSayfa()
-		{
-			InitializeComponent();
-		}
-	}
+    public partial class AnaSayfa : Form
+    {
+        private OgunGir ogunGir;
+        public AnaSayfa(OgunGir ogun = null)
+        {
+            ogunGir = ogun ?? new OgunGir(this);
+            InitializeComponent();
+
+
+        }
+
+        private void AnaSayfa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ogunGir.Show();
+            this.Hide();
+
+        }
+    }
 }

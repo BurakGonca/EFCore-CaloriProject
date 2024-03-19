@@ -1,3 +1,4 @@
+using CaloriProject.DAL.Entities;
 using CaloriProject.UI.Forms;
 
 namespace CaloriProject.UI
@@ -10,10 +11,16 @@ namespace CaloriProject.UI
         [STAThread]
         static void Main()
         {
+            
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Karsilama());
+            Application.Run(new AnaSayfa());
+
+            
         }
+
+       
+
     }
 }

@@ -9,18 +9,13 @@ namespace CaloriProject.DAL.Entities
 {
     public class Ogun : Entity
     {
-        public int OgunID { get; set; }
+        
         public string OgunAdi { get; set; }
 
-
-
-        public int KullaniciID { get; set; } //ForeignKey  "kullanici-ogün >> 1-n"
-        public Kullanici Kullanici { get; set; } //Navigation Prop.
-
-
-        public List<Yiyecek> Yiyecekler { get; set; } //navigation prop.  "ogün-yiyecek >> n-n"
-
-
+        public override string ToString()
+        {
+            return OgunAdi;
+        }
 
     }
 }
