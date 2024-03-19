@@ -31,11 +31,11 @@
 			pictureBox1 = new PictureBox();
 			backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			panel1 = new Panel();
-			panel2 = new Panel();
-			label1 = new Label();
-			label2 = new Label();
-			label3 = new Label();
 			label4 = new Label();
+			label3 = new Label();
+			label2 = new Label();
+			label1 = new Label();
+			panel2 = new Panel();
 			button1 = new Button();
 			label5 = new Label();
 			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -67,41 +67,17 @@
 			panel1.TabIndex = 1;
 			panel1.Paint += panel1_Paint;
 			// 
-			// panel2
+			// label4
 			// 
-			panel2.BackColor = Color.Olive;
-			panel2.Controls.Add(button1);
-			panel2.Controls.Add(label5);
-			panel2.Dock = DockStyle.Right;
-			panel2.ForeColor = Color.Yellow;
-			panel2.Location = new Point(790, 0);
-			panel2.Name = "panel2";
-			panel2.Size = new Size(326, 525);
-			panel2.TabIndex = 2;
-			// 
-			// label1
-			// 
-			label1.AutoSize = true;
-			label1.BackColor = Color.Olive;
-			label1.Font = new Font("Bauhaus 93", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			label1.ForeColor = Color.Black;
-			label1.Location = new Point(42, 35);
-			label1.Name = "label1";
-			label1.Size = new Size(170, 54);
-			label1.TabIndex = 0;
-			label1.Text = "Healty";
-			// 
-			// label2
-			// 
-			label2.AutoSize = true;
-			label2.BackColor = Color.DarkKhaki;
-			label2.Font = new Font("Algerian", 48F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
-			label2.ForeColor = Color.Black;
-			label2.Location = new Point(3, 118);
-			label2.Name = "label2";
-			label2.Size = new Size(188, 71);
-			label2.TabIndex = 1;
-			label2.Text = "FOOD";
+			label4.AutoSize = true;
+			label4.BackColor = Color.DarkKhaki;
+			label4.Font = new Font("Algerian", 48F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+			label4.ForeColor = Color.Black;
+			label4.Location = new Point(3, 320);
+			label4.Name = "label4";
+			label4.Size = new Size(200, 71);
+			label4.TabIndex = 3;
+			label4.Text = "MOOD";
 			// 
 			// label3
 			// 
@@ -115,17 +91,41 @@
 			label3.TabIndex = 2;
 			label3.Text = "for wealthy";
 			// 
-			// label4
+			// label2
 			// 
-			label4.AutoSize = true;
-			label4.BackColor = Color.DarkKhaki;
-			label4.Font = new Font("Algerian", 48F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
-			label4.ForeColor = Color.Black;
-			label4.Location = new Point(3, 320);
-			label4.Name = "label4";
-			label4.Size = new Size(200, 71);
-			label4.TabIndex = 3;
-			label4.Text = "MOOD";
+			label2.AutoSize = true;
+			label2.BackColor = Color.DarkKhaki;
+			label2.Font = new Font("Algerian", 48F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+			label2.ForeColor = Color.Black;
+			label2.Location = new Point(3, 118);
+			label2.Name = "label2";
+			label2.Size = new Size(188, 71);
+			label2.TabIndex = 1;
+			label2.Text = "FOOD";
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.BackColor = Color.Olive;
+			label1.Font = new Font("Bauhaus 93", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			label1.ForeColor = Color.Black;
+			label1.Location = new Point(42, 35);
+			label1.Name = "label1";
+			label1.Size = new Size(170, 54);
+			label1.TabIndex = 0;
+			label1.Text = "Healty";
+			// 
+			// panel2
+			// 
+			panel2.BackColor = Color.Olive;
+			panel2.Controls.Add(button1);
+			panel2.Controls.Add(label5);
+			panel2.Dock = DockStyle.Right;
+			panel2.ForeColor = Color.Yellow;
+			panel2.Location = new Point(790, 0);
+			panel2.Name = "panel2";
+			panel2.Size = new Size(326, 525);
+			panel2.TabIndex = 2;
 			// 
 			// button1
 			// 
@@ -136,6 +136,7 @@
 			button1.Size = new Size(240, 170);
 			button1.TabIndex = 0;
 			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
 			// 
 			// label5
 			// 
