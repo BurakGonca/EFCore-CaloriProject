@@ -1,8 +1,8 @@
 namespace CaloriProject.UI
 {
-    public partial class Karsilama : Form
+    public partial class Giris : Form
     {
-        public Karsilama()
+        public Giris()
         {
             InitializeComponent();
         }
