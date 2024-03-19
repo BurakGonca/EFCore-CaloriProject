@@ -1,6 +1,6 @@
 ﻿namespace CaloriProject.UI
 {
-    partial class Form1
+    partial class Karsilama
     {
         /// <summary>
         ///  Required designer variable.
