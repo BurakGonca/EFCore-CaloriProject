@@ -11,7 +11,7 @@ namespace CaloriProject.DAL.Entities
 {
     public class Kullanici : Entity
     {
-        public int KullaniciID { get; set; }
+        
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public DateTime DogumTarihi { get; set; }
@@ -22,7 +22,10 @@ namespace CaloriProject.DAL.Entities
         public Cinsiyet Cinsiyet { get; set; }
 
 
-        
+        public override string ToString()
+        {
+            return Ad + " " + Soyad;
+        }
 
 
 

@@ -30,62 +30,49 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OgunGir));
             dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
+            comboBox1_ogun = new ComboBox();
+            comboBox3_yiyecek = new ComboBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            comboBox4 = new ComboBox();
             dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            ekle_buton = new Button();
+            sil_buton = new Button();
+            guncelle_buton = new Button();
             button4 = new Button();
+            kullanici_Isım_Lbl = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(660, 58);
+            dateTimePicker1.Location = new Point(660, 175);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(250, 27);
             dateTimePicker1.TabIndex = 0;
             // 
-            // comboBox1
+            // comboBox1_ogun
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Kahvalti", "Brunch", "Öğle Yemeği", "Akşam Yemeği", "Aperatif" });
-            comboBox1.Location = new Point(660, 115);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(250, 28);
-            comboBox1.TabIndex = 1;
+            comboBox1_ogun.FormattingEnabled = true;
+            comboBox1_ogun.Location = new Point(660, 232);
+            comboBox1_ogun.Name = "comboBox1_ogun";
+            comboBox1_ogun.Size = new Size(250, 28);
+            comboBox1_ogun.TabIndex = 1;
             // 
-            // comboBox2
+            // comboBox3_yiyecek
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Aperatif", "Ara Sicak", "Ana Yemek", "Soğuk İçecek", "Sıcak İçecek" });
-            comboBox2.Location = new Point(660, 173);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(250, 28);
-            comboBox2.TabIndex = 2;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(660, 234);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(250, 28);
-            comboBox3.TabIndex = 3;
+            comboBox3_yiyecek.FormattingEnabled = true;
+            comboBox3_yiyecek.Location = new Point(660, 290);
+            comboBox3_yiyecek.Name = "comboBox3_yiyecek";
+            comboBox3_yiyecek.Size = new Size(250, 28);
+            comboBox3_yiyecek.TabIndex = 3;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.Location = new Point(578, 61);
+            label1.Location = new Point(578, 178);
             label1.Name = "label1";
             label1.Size = new Size(50, 23);
             label1.TabIndex = 4;
@@ -96,52 +83,22 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label2.Location = new Point(578, 120);
+            label2.Location = new Point(578, 237);
             label2.Name = "label2";
             label2.Size = new Size(57, 23);
             label2.TabIndex = 5;
             label2.Text = "Öğün:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label3.Location = new Point(578, 178);
-            label3.Name = "label3";
-            label3.Size = new Size(78, 23);
-            label3.TabIndex = 6;
-            label3.Text = "Kategori:";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label4.Location = new Point(578, 239);
+            label4.Location = new Point(578, 295);
             label4.Name = "label4";
             label4.Size = new Size(73, 23);
             label4.TabIndex = 7;
             label4.Text = "Yiyecek:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label5.Location = new Point(578, 299);
-            label5.Name = "label5";
-            label5.Size = new Size(79, 23);
-            label5.TabIndex = 9;
-            label5.Text = "Porsiyon:";
-            // 
-            // comboBox4
-            // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(660, 294);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(250, 28);
-            comboBox4.TabIndex = 8;
             // 
             // dataGridView1
             // 
@@ -152,36 +109,40 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(857, 313);
             dataGridView1.TabIndex = 10;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
-            // button1
+            // ekle_buton
             // 
-            button1.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button1.Location = new Point(53, 285);
-            button1.Name = "button1";
-            button1.Size = new Size(93, 37);
-            button1.TabIndex = 11;
-            button1.Text = "Ekle";
-            button1.UseVisualStyleBackColor = true;
+            ekle_buton.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            ekle_buton.Location = new Point(53, 285);
+            ekle_buton.Name = "ekle_buton";
+            ekle_buton.Size = new Size(93, 37);
+            ekle_buton.TabIndex = 11;
+            ekle_buton.Text = "Ekle";
+            ekle_buton.UseVisualStyleBackColor = true;
+            ekle_buton.Click += ekle_buton_Click;
             // 
-            // button2
+            // sil_buton
             // 
-            button2.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button2.Location = new Point(171, 285);
-            button2.Name = "button2";
-            button2.Size = new Size(93, 37);
-            button2.TabIndex = 12;
-            button2.Text = "Sil";
-            button2.UseVisualStyleBackColor = true;
+            sil_buton.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            sil_buton.Location = new Point(171, 285);
+            sil_buton.Name = "sil_buton";
+            sil_buton.Size = new Size(93, 37);
+            sil_buton.TabIndex = 12;
+            sil_buton.Text = "Sil";
+            sil_buton.UseVisualStyleBackColor = true;
+            sil_buton.Click += sil_buton_Click;
             // 
-            // button3
+            // guncelle_buton
             // 
-            button3.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button3.Location = new Point(289, 285);
-            button3.Name = "button3";
-            button3.Size = new Size(93, 37);
-            button3.TabIndex = 13;
-            button3.Text = "Güncelle";
-            button3.UseVisualStyleBackColor = true;
+            guncelle_buton.Font = new Font("Trebuchet MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            guncelle_buton.Location = new Point(289, 285);
+            guncelle_buton.Name = "guncelle_buton";
+            guncelle_buton.Size = new Size(93, 37);
+            guncelle_buton.TabIndex = 13;
+            guncelle_buton.Text = "Güncelle";
+            guncelle_buton.UseVisualStyleBackColor = true;
+            guncelle_buton.Click += guncelle_buton_Click;
             // 
             // button4
             // 
@@ -194,6 +155,17 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // kullanici_Isım_Lbl
+            // 
+            kullanici_Isım_Lbl.AutoSize = true;
+            kullanici_Isım_Lbl.BackColor = Color.LemonChiffon;
+            kullanici_Isım_Lbl.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
+            kullanici_Isım_Lbl.Location = new Point(782, 63);
+            kullanici_Isım_Lbl.Name = "kullanici_Isım_Lbl";
+            kullanici_Isım_Lbl.Size = new Size(128, 28);
+            kullanici_Isım_Lbl.TabIndex = 15;
+            kullanici_Isım_Lbl.Text = "Burak Gonca";
+            // 
             // OgunGir
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -201,20 +173,17 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(963, 713);
+            Controls.Add(kullanici_Isım_Lbl);
             Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(guncelle_buton);
+            Controls.Add(sil_buton);
+            Controls.Add(ekle_buton);
             Controls.Add(dataGridView1);
-            Controls.Add(label5);
-            Controls.Add(comboBox4);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBox3_yiyecek);
+            Controls.Add(comboBox1_ogun);
             Controls.Add(dateTimePicker1);
             Name = "OgunGir";
             Text = "OgunGir";
@@ -226,19 +195,16 @@
         #endregion
 
         private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private ComboBox comboBox1_ogun;
+        private ComboBox comboBox3_yiyecek;
         private Label label1;
         private Label label2;
-        private Label label3;
         private Label label4;
-        private Label label5;
-        private ComboBox comboBox4;
         private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button ekle_buton;
+        private Button sil_buton;
+        private Button guncelle_buton;
         private Button button4;
+        private Label kullanici_Isım_Lbl;
     }
 }

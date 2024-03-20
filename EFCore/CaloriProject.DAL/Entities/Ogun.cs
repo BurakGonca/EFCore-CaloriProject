@@ -9,9 +9,13 @@ namespace CaloriProject.DAL.Entities
 {
     public class Ogun : Entity
     {
-        public int OgunID { get; set; }
+        
         public string OgunAdi { get; set; }
 
+        public override string ToString()
+        {
+            return OgunAdi;
+        }
 
     }
 }

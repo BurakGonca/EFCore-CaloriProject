@@ -10,7 +10,7 @@ namespace CaloriProject.DAL.Entities
     public class Yiyecek : Entity
     {
         
-        public int YiyecekID { get; set; }
+        
         public string YiyecekAdi { get; set; }
         public double Porsiyon { get; set; }
         public double Kalori { get; set; }
@@ -22,7 +22,10 @@ namespace CaloriProject.DAL.Entities
         public Kategori Kategori { get; set; } //Navigation Prop.
 
 
-     
+        public override string ToString()
+        {
+            return YiyecekAdi;
+        }
 
 
 

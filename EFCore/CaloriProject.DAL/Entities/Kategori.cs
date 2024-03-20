@@ -9,7 +9,7 @@ namespace CaloriProject.DAL.Entities
 {
     public class Kategori : Entity
     {
-        public int KategoriID { get; set; }
+        
         public string KategoriAdi { get; set; }
 
 

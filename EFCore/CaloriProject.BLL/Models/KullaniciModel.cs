@@ -10,6 +10,7 @@ namespace CaloriProject.BLL.Models
     {
         public int Id { get; set; }
         public string Ad { get; set; }
-        
+        public string SoyAd { get; set; }
+
     }
 }
