@@ -2,7 +2,6 @@
 using CaloriProject.BLL.MappingProfile;
 using CaloriProject.DAL.Context;
 using CaloriProject.DAL.Entities;
-using CaloriProject.DAL.Repostory.Abstract;
 using CaloriProject.DAL.Repostory.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,18 +11,14 @@ using System.Threading.Tasks;
 
 namespace CaloriProject.BLL.Manager.Concrete
 {
-    public class KategoriManager : Manager<KategoriManager,Kategori,KategoriMapProfile>
+    public class YiyecekManager : Manager<YiyecekManager, Yiyecek, YiyecekMapProfile>
     {
-
-        public KategoriManager()
+        public YiyecekManager()
         {
 
-            _repository = new KategoriRepostory(new CaloriDBContext());
+            _repository = new YiyecekRepostory(new CaloriDBContext());
+
 
         }
-
-
-
-
     }
 }

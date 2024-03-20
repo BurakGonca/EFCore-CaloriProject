@@ -14,12 +14,15 @@ namespace CaloriProject.UI.Forms
     public partial class UyelikOlusturma : Form
     {
         SqlConnection connect = new SqlConnection(@"Data Source=BURAK;Initial Catalog=loginEkrani_c#;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        public UyelikOlusturma()
+        private Giris giris;
+
+        public UyelikOlusturma(Giris gir)
         {
+            giris = gir;
             InitializeComponent();
         }
 
-
+       
 
         private void UyelikOlusturma_Load(object sender, EventArgs e)
         {
@@ -88,9 +91,12 @@ namespace CaloriProject.UI.Forms
                                 MessageBox.Show("Başarıyla kayıt olundu.", "Bilgilendirme Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 //kapanıyosa sil (to switch form demiş)
-                                UyelikOlusturma uyelikOlusturma = new UyelikOlusturma();
-                                uyelikOlusturma.Show();
-                                this.Hide();
+
+                                //UyelikOlusturma uyelikOlusturma = new UyelikOlusturma(); //Giris gir.
+
+
+                                //uyelikOlusturma.Show();
+                                //this.Hide();
                             }
                         }
                     }

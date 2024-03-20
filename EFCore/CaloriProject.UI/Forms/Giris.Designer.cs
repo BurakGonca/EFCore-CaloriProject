@@ -36,6 +36,7 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
+            button2 = new Button();
             button1 = new Button();
             label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -120,6 +121,7 @@
             // panel2
             // 
             panel2.BackColor = Color.Olive;
+            panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(label5);
             panel2.Dock = DockStyle.Right;
@@ -130,15 +132,25 @@
             panel2.Size = new Size(373, 700);
             panel2.TabIndex = 2;
             // 
+            // button2
+            // 
+            button2.ForeColor = Color.Black;
+            button2.Location = new Point(66, 522);
+            button2.Name = "button2";
+            button2.Size = new Size(117, 29);
+            button2.TabIndex = 3;
+            button2.Text = "YENİ ÜYELİK";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // button1
             // 
-            button1.BackgroundImage = Properties.Resources.küçüldü;
-            button1.ForeColor = Color.Cornsilk;
-            button1.Location = new Point(57, 457);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.ForeColor = Color.Black;
+            button1.Location = new Point(77, 487);
             button1.Name = "button1";
-            button1.Size = new Size(274, 217);
-            button1.TabIndex = 0;
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 2;
+            button1.Text = "GİRİŞ";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -184,7 +196,8 @@
 		private Label label3;
 		private Label label2;
 		private Label label4;
-		private Button button1;
 		private Label label5;
-	}
+        private Button button2;
+        private Button button1;
+    }
 }

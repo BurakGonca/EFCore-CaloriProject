@@ -16,7 +16,7 @@ namespace CaloriProject.UI.Forms
         private OgunGir ogunGir;
         public AnaSayfa(OgunGir ogun = null)
         {
-            ogunGir = ogun ?? new OgunGir(this);
+            //ogunGir = ogun ?? new OgunGir(this); //user girecek
             InitializeComponent();
 
 

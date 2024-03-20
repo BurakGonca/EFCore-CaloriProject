@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CaloriProject.DAL\CaloriProject.DAL.csproj" />
+    <ProjectReference Include="..\CaloriProject.BLL\CaloriProject.BLL.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -21,11 +21,9 @@ namespace CaloriProject.DAL.Entities
         public int KategoriID { get; set; } //ForeignKey "kategori-yiyecek >> 1-n"
         public Kategori Kategori { get; set; } //Navigation Prop.
 
+        public List<KullaniciOgunYiyecek> kullaniciOgunYiyecekler { get; set; } //n-n iliski icin
 
-        public override string ToString()
-        {
-            return YiyecekAdi;
-        }
+        
 
 
 

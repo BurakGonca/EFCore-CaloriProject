@@ -21,11 +21,9 @@ namespace CaloriProject.DAL.Entities
         public string Sifre { get; set; }
         public Cinsiyet Cinsiyet { get; set; }
 
+        public List<KullaniciOgunYiyecek> kullaniciOgunYiyecekler { get; set; } //n-n iliski icin
 
-        public override string ToString()
-        {
-            return Ad + " " + Soyad;
-        }
+        
 
 
 

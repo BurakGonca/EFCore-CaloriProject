@@ -14,10 +14,15 @@ public partial class KullaniciGiris : Form
 {
 
     SqlConnection connect = new SqlConnection(@"Data Source=KASKADE;Initial Catalog=loginEkrani_c#;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-    public KullaniciGiris()
+    private Giris giris;
+
+    public KullaniciGiris(Giris gir)
     {
+        giris=gir;
         InitializeComponent();
     }
+
+   
 
     private void KullaniciGiris_Load(object sender, EventArgs e)
     {
