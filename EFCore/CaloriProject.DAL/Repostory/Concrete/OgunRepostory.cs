@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CaloriProject.DAL.Repostory.Concrete
 {
-    public class OgunRepostory : Repostory<Kategori>
+    public class OgunRepostory : Repostory<Ogun>
     {
         public OgunRepostory(CaloriDBContext db) : base(db)
         {

@@ -21,6 +21,7 @@ namespace CaloriProject.UI.Forms
         CaloriDBContext Db = new CaloriDBContext();
 
         private AnaSayfa anaSayfa;
+
         private readonly KullaniciModel kullaniciModel;
         KullaniciOgunYiyecek secilenOgun;
 

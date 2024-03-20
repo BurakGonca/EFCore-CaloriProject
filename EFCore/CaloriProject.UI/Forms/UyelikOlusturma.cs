@@ -24,26 +24,11 @@ namespace CaloriProject.UI.Forms
 
        
 
+        
+
         private void UyelikOlusturma_Load(object sender, EventArgs e)
         {
-            label1.Parent = pictureBox1;
-            label1.BackColor = Color.Transparent;
-            label2.Parent = pictureBox1;
-            label2.BackColor = Color.Transparent;
-            label3.Parent = pictureBox1;
-            label3.BackColor = Color.Transparent;
-            label4.Parent = pictureBox1;
-            label4.BackColor = Color.Transparent;
-            label5.Parent = pictureBox1;
-            label5.BackColor = Color.Transparent;
-            label6.Parent = pictureBox1;
-            label6.BackColor = Color.Transparent;
-            label7.Parent = pictureBox1;
-            label7.BackColor = Color.Transparent;
-            label8.Parent = pictureBox1;
-            label8.BackColor = Color.Transparent;
-            label9.Parent = pictureBox1;
-            label9.BackColor = Color.Transparent;
+
 
 
         }
@@ -109,6 +94,12 @@ namespace CaloriProject.UI.Forms
                 finally { connect.Close(); }
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            giris.Show();
+            this.Hide();
         }
     }
 }

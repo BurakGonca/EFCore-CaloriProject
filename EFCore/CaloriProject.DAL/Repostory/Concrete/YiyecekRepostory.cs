@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CaloriProject.DAL.Repostory.Concrete
 {
-    public class YiyecekRepostory : Repostory<Kategori>
+    public class YiyecekRepostory : Repostory<Yiyecek>
     {
         public YiyecekRepostory(CaloriDBContext db) : base(db)
         {

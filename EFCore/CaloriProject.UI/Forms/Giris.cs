@@ -8,18 +8,14 @@ namespace CaloriProject.UI
         private UyelikOlusturma UyelikOlusturma;
 
 
-        public Giris(KullaniciGiris kullanici = null)
+        public Giris(KullaniciGiris kullanici = null , UyelikOlusturma uyelik = null)
         {
             kullaniciGiris = kullanici ?? new KullaniciGiris(this);
-
+            UyelikOlusturma = uyelik ?? new UyelikOlusturma(this);
             InitializeComponent();
         }
 
-        public Giris(UyelikOlusturma uyelik)
-        {
-            UyelikOlusturma = uyelik ?? new UyelikOlusturma(this);
-        }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -39,7 +35,7 @@ namespace CaloriProject.UI
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //uyelik olusturma ekrani
         {
             UyelikOlusturma.Show();
             this.Hide();

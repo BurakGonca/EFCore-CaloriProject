@@ -9,27 +9,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CaloriProject.UI.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using String = String;
 
 public partial class KullaniciGiris : Form
 {
 
-    SqlConnection connect = new SqlConnection(@"Data Source=KASKADE;Initial Catalog=loginEkrani_c#;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+    SqlConnection connect = new SqlConnection(@"Data Source=BURAK;Initial Catalog=Kullanicilar;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+
     private Giris giris;
+    private AnaSayfa anaSayfa;
 
     public KullaniciGiris(Giris gir)
     {
-        giris=gir;
+        giris = gir;
+        
         InitializeComponent();
     }
 
-   
+
+    public KullaniciGiris(AnaSayfa ana)
+    {
+        anaSayfa = ana;
+        InitializeComponent();
+    }
+
+
 
     private void KullaniciGiris_Load(object sender, EventArgs e)
     {
 
     }
 
-    private void btn_girisYap_Click(object sender, EventArgs e)
+    private void btn_girisYap_Click(object sender, EventArgs e) //kullanici giris butonu
     {
         if (g_email_textBox.Text == "" || g_sifre_textBox.Text == "")
         {
@@ -55,6 +69,12 @@ public partial class KullaniciGiris : Form
                         if (table.Rows.Count >= 1)
                         {
                             MessageBox.Show("Başarıyla giriş yapıldı.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                            //
+                            anaSayfa.Show();
+                            this.Hide();
+
                         }
                         else
                         {
@@ -75,6 +95,14 @@ public partial class KullaniciGiris : Form
             }
 
         }
+    }
+
+    private void button1_Click(object sender, EventArgs e) //ana sayfaya geri dönüs
+    {
+
+        giris.Show();
+        this.Hide();
+
     }
 }
 

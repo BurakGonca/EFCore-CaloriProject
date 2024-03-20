@@ -33,58 +33,75 @@
             g_email_textBox = new TextBox();
             g_sifre_textBox = new TextBox();
             btn_girisYap = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.Location = new Point(86, 164);
+            label1.Location = new Point(98, 219);
             label1.Name = "label1";
-            label1.Size = new Size(100, 23);
+            label1.Size = new Size(114, 31);
             label1.TabIndex = 0;
             label1.Text = "label1";
             // 
             // label2
             // 
-            label2.Location = new Point(86, 244);
+            label2.Location = new Point(98, 325);
             label2.Name = "label2";
-            label2.Size = new Size(100, 28);
+            label2.Size = new Size(114, 37);
             label2.TabIndex = 1;
             label2.Text = "label2";
             // 
             // g_email_textBox
             // 
-            g_email_textBox.Location = new Point(260, 164);
+            g_email_textBox.Location = new Point(297, 219);
+            g_email_textBox.Margin = new Padding(3, 4, 3, 4);
             g_email_textBox.Name = "g_email_textBox";
-            g_email_textBox.Size = new Size(100, 23);
+            g_email_textBox.Size = new Size(114, 27);
             g_email_textBox.TabIndex = 2;
             // 
             // g_sifre_textBox
             // 
-            g_sifre_textBox.Location = new Point(260, 244);
+            g_sifre_textBox.Location = new Point(297, 325);
+            g_sifre_textBox.Margin = new Padding(3, 4, 3, 4);
             g_sifre_textBox.Name = "g_sifre_textBox";
-            g_sifre_textBox.Size = new Size(100, 23);
+            g_sifre_textBox.Size = new Size(114, 27);
             g_sifre_textBox.TabIndex = 3;
             // 
             // btn_girisYap
             // 
-            btn_girisYap.Location = new Point(260, 334);
+            btn_girisYap.Location = new Point(297, 401);
+            btn_girisYap.Margin = new Padding(3, 4, 3, 4);
             btn_girisYap.Name = "btn_girisYap";
-            btn_girisYap.Size = new Size(96, 39);
+            btn_girisYap.Size = new Size(110, 52);
             btn_girisYap.TabIndex = 4;
-            btn_girisYap.Text = "button1";
+            btn_girisYap.Text = "GİRİŞ YAP";
             btn_girisYap.UseVisualStyleBackColor = true;
             btn_girisYap.Click += btn_girisYap_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(102, 401);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(110, 52);
+            button1.TabIndex = 5;
+            button1.Text = "GİRİS EKRANI";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // KullaniciGiris
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(781, 704);
+            ClientSize = new Size(893, 939);
+            Controls.Add(button1);
             Controls.Add(btn_girisYap);
             Controls.Add(g_sifre_textBox);
             Controls.Add(g_email_textBox);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "KullaniciGiris";
             Text = "KullaniciGiris";
             Load += KullaniciGiris_Load;
@@ -99,5 +116,6 @@
         private TextBox g_email_textBox;
         private TextBox g_sifre_textBox;
         private Button btn_girisYap;
+        private Button button1;
     }
 }

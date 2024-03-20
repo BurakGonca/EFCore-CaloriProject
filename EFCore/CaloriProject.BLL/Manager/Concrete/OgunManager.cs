@@ -17,7 +17,7 @@ namespace CaloriProject.BLL.Manager.Concrete
         {
 
             _repository = new OgunRepostory(new CaloriDBContext());
-
+            
         }
     }
 }
