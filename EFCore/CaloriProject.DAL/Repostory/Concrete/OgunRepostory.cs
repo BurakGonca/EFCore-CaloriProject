@@ -13,6 +13,7 @@ namespace CaloriProject.DAL.Repostory.Concrete
     {
         public OgunRepostory(CaloriDBContext db) : base(db)
         {
+
         }
     }
 }

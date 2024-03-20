@@ -14,6 +14,7 @@ namespace CaloriProject.DAL.Repostory.Abstract
     public abstract class Repostory<T> : IRepostory<T> where T : Entity, new()
     {
         private readonly CaloriDBContext _db;
+
         //neden entities?
         //çünkü hangi türde varlıklar olduğunu bilmiyoruz.
         //T yerine ne gönderilirse o olacak 

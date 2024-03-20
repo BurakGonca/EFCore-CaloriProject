@@ -5,43 +5,43 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CaloriProject.DAL.Repostory.Abstract
+namespace CaloriProject.BLL.Manager.Abstract
 {
-    public interface IRepostory<T>
+    public interface IManager<TModel> where TModel : class
     {
+        //ekleme, silme, güncelleme getirme vb.... işlemleri yazmamız gerekir.
         //içerisine gönderileni ekleyecek
-        public void Add(T entity);
+        public void Add(TModel model);
 
         //içerisine gönderileni tabloda tutacak ama durumunu silindi yapacak
-        public void Delete(T entity);
+        public void Delete(TModel model);
 
         //içerisine gönderileni gerçekten silecek
-        public void Remove(T entity);
+        public void Remove(TModel model);
 
 
         //içerisine gönderileni güncellecek
-        public void Update(T entity);
+        public void Update(TModel model);
 
         //içerisine id'ye göre varlığı getirecek
-        public T GetById(int id);
+        public TModel GetById(int id);
 
 
         //Dönüş tipinin henüz belleğe alınmasını istemiyoruz. Çünkü daha önümüzde başka katmanlar da var. En son aşamada, kullanıcıya gösterilirken List olarak yapalım ki o zaman belleğe yüklensin.
 
-        //Arada bir katman oılduğu için direkt belleğe yüklennmiş halini getirmiyor da daha hafif bir halini getiriip onu yukarıya iletiyor.
+        //Arada bir katman olduğu için direkt belleğe yüklennmiş halini getirmiyor da daha hafif bir halini getiriip onu yukarıya iletiyor.
 
         //Daha sonra yukarıda (başka katmanda) bu List olarak getirilecek.
         //Yani belleğe yüklecek.
 
-        public IQueryable<T> GetAll();
+        public List<TModel> GetAll();
 
 
         //burada kriter yazılacak. Bu kritere göre arama yapılıp sonuç gelecek. (ya da yoksa gelmeyecek :) )
-        public IQueryable<T> Search(Expression<Func<T, bool>> predicate);
+        public List<TModel> Search(Expression<Func<TModel, bool>> predicate);
 
-        public IQueryable<T> GetAllWithIncludes(params string[] navigationProperties);
+        public List<TModel> GetAllWithIncludes(params string[] navigationProperties);
 
-        public IQueryable<T> GetAllWithIncludes();
-
+        public List<TModel> GetAllWithIncludes();
     }
 }
