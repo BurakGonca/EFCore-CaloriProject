@@ -21,5 +21,7 @@ namespace CaloriProject.BLL.Models
         public DateTime Tarih { get; set; }
         public double Porsiyon { get; set; }
 
+
+
     }
 }

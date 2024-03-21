@@ -162,9 +162,9 @@
             kullanici_Isım_Lbl.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
             kullanici_Isım_Lbl.Location = new Point(782, 63);
             kullanici_Isım_Lbl.Name = "kullanici_Isım_Lbl";
-            kullanici_Isım_Lbl.Size = new Size(128, 28);
+            kullanici_Isım_Lbl.Size = new Size(91, 28);
             kullanici_Isım_Lbl.TabIndex = 15;
-            kullanici_Isım_Lbl.Text = "Burak Gonca";
+            kullanici_Isım_Lbl.Text = "kullanici";
             // 
             // OgunGir
             // 
@@ -187,6 +187,7 @@
             Controls.Add(dateTimePicker1);
             Name = "OgunGir";
             Text = "OgunGir";
+            Load += OgunGir_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

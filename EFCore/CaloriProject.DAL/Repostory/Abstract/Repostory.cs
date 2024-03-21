@@ -20,7 +20,7 @@ namespace CaloriProject.DAL.Repostory.Abstract
         //T yerine ne gönderilirse o olacak 
 
         //gönderilecek tipte olan varlıklarımız 
-        private DbSet<T> entities;
+        protected DbSet<T> entities;
 
         public Repostory(CaloriDBContext db)
         {

@@ -6,8 +6,7 @@ namespace CaloriProject.UI
     {
         private KullaniciGiris kullaniciGiris;
         private UyelikOlusturma UyelikOlusturma;
-
-
+        
         public Giris(KullaniciGiris kullanici = null, UyelikOlusturma uyelik = null)
         {
             kullaniciGiris = kullanici ?? new KullaniciGiris(this);

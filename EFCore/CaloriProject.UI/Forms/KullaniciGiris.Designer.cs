@@ -30,8 +30,8 @@
         {
             label1 = new Label();
             label2 = new Label();
-            g_email_textBox = new TextBox();
-            g_sifre_textBox = new TextBox();
+            email_textBox = new TextBox();
+            sifre_textBox = new TextBox();
             btn_girisYap = new Button();
             button1 = new Button();
             SuspendLayout();
@@ -52,21 +52,21 @@
             label2.TabIndex = 1;
             label2.Text = "Sifre:";
             // 
-            // g_email_textBox
+            // email_textBox
             // 
-            g_email_textBox.Location = new Point(377, 197);
-            g_email_textBox.Margin = new Padding(3, 4, 3, 4);
-            g_email_textBox.Name = "g_email_textBox";
-            g_email_textBox.Size = new Size(114, 27);
-            g_email_textBox.TabIndex = 2;
+            email_textBox.Location = new Point(377, 197);
+            email_textBox.Margin = new Padding(3, 4, 3, 4);
+            email_textBox.Name = "email_textBox";
+            email_textBox.Size = new Size(114, 27);
+            email_textBox.TabIndex = 2;
             // 
-            // g_sifre_textBox
+            // sifre_textBox
             // 
-            g_sifre_textBox.Location = new Point(377, 303);
-            g_sifre_textBox.Margin = new Padding(3, 4, 3, 4);
-            g_sifre_textBox.Name = "g_sifre_textBox";
-            g_sifre_textBox.Size = new Size(114, 27);
-            g_sifre_textBox.TabIndex = 3;
+            sifre_textBox.Location = new Point(377, 303);
+            sifre_textBox.Margin = new Padding(3, 4, 3, 4);
+            sifre_textBox.Name = "sifre_textBox";
+            sifre_textBox.Size = new Size(114, 27);
+            sifre_textBox.TabIndex = 3;
             // 
             // btn_girisYap
             // 
@@ -97,8 +97,8 @@
             ClientSize = new Size(733, 604);
             Controls.Add(button1);
             Controls.Add(btn_girisYap);
-            Controls.Add(g_sifre_textBox);
-            Controls.Add(g_email_textBox);
+            Controls.Add(sifre_textBox);
+            Controls.Add(email_textBox);
             Controls.Add(label2);
             Controls.Add(label1);
             Margin = new Padding(3, 4, 3, 4);
@@ -113,8 +113,8 @@
 
         private Label label1;
         private Label label2;
-        private TextBox g_email_textBox;
-        private TextBox g_sifre_textBox;
+        private TextBox email_textBox;
+        private TextBox sifre_textBox;
         private Button btn_girisYap;
         private Button button1;
     }

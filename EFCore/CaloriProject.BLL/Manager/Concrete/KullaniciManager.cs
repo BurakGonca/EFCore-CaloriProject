@@ -3,6 +3,7 @@ using CaloriProject.BLL.MappingProfile;
 using CaloriProject.BLL.Models;
 using CaloriProject.DAL.Context;
 using CaloriProject.DAL.Entities;
+using CaloriProject.DAL.Repostory.Abstract;
 using CaloriProject.DAL.Repostory.Concrete;
 using System;
 using System.Collections.Generic;
@@ -21,5 +22,14 @@ namespace CaloriProject.BLL.Manager.Concrete
             _repository = new KullaniciRepostory(new CaloriDBContext());
 
         }
+
+        public KullaniciModel KullaniciModelBul(string eMail, string sifre)
+        {
+            IKullaniciRepostory kullaniciRepo = _repository as IKullaniciRepostory;
+            Kullanici kullanici = kullaniciRepo.KullaniciBul(eMail,sifre);
+            return _mapper.Map<KullaniciModel>(kullanici);
+
+        }
+
     }
 }

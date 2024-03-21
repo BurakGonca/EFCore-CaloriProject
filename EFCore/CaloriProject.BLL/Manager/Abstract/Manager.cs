@@ -14,7 +14,7 @@ namespace CaloriProject.BLL.Manager.Abstract
         where TEntity : class
         where TMapperProfile : Profile, new()
     {
-        private IMapper _mapper;
+        protected IMapper _mapper;
         protected IRepostory<TEntity> _repository;
         protected MapperConfiguration _config;
 

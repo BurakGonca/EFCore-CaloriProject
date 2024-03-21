@@ -38,9 +38,9 @@
             boyunuz_label = new Label();
             kilonuz_label = new Label();
             vücut_kitle_label = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            vki_label = new Label();
+            kilo_label = new Label();
+            boy_label = new Label();
             SuspendLayout();
             // 
             // button2
@@ -102,9 +102,8 @@
             kullanici_Isım_Lbl.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
             kullanici_Isım_Lbl.Location = new Point(666, 94);
             kullanici_Isım_Lbl.Name = "kullanici_Isım_Lbl";
-            kullanici_Isım_Lbl.Size = new Size(128, 28);
+            kullanici_Isım_Lbl.Size = new Size(0, 28);
             kullanici_Isım_Lbl.TabIndex = 6;
-            kullanici_Isım_Lbl.Text = "Burak Gonca";
             // 
             // boyunuz_label
             // 
@@ -139,38 +138,38 @@
             vücut_kitle_label.TabIndex = 9;
             vücut_kitle_label.Text = "Vücut Kitle Endeksi:";
             // 
-            // label2
+            // vki_label
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
-            label2.Location = new Point(526, 331);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 28);
-            label2.TabIndex = 12;
-            label2.Text = "27.14";
+            vki_label.AutoSize = true;
+            vki_label.BackColor = Color.Transparent;
+            vki_label.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
+            vki_label.Location = new Point(526, 331);
+            vki_label.Name = "vki_label";
+            vki_label.Size = new Size(39, 28);
+            vki_label.TabIndex = 12;
+            vki_label.Text = "vki";
             // 
-            // label3
+            // kilo_label
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
-            label3.Location = new Point(526, 290);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 28);
-            label3.TabIndex = 11;
-            label3.Text = "92kg";
+            kilo_label.AutoSize = true;
+            kilo_label.BackColor = Color.Transparent;
+            kilo_label.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
+            kilo_label.Location = new Point(526, 290);
+            kilo_label.Name = "kilo_label";
+            kilo_label.Size = new Size(46, 28);
+            kilo_label.TabIndex = 11;
+            kilo_label.Text = "kilo";
             // 
-            // label4
+            // boy_label
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
-            label4.Location = new Point(526, 248);
-            label4.Name = "label4";
-            label4.Size = new Size(69, 28);
-            label4.TabIndex = 10;
-            label4.Text = "184cm";
+            boy_label.AutoSize = true;
+            boy_label.BackColor = Color.Transparent;
+            boy_label.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
+            boy_label.Location = new Point(526, 248);
+            boy_label.Name = "boy_label";
+            boy_label.Size = new Size(44, 28);
+            boy_label.TabIndex = 10;
+            boy_label.Text = "boy";
             // 
             // AnaSayfa
             // 
@@ -179,9 +178,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(928, 702);
-            Controls.Add(label2);
-            Controls.Add(label3);
-            Controls.Add(label4);
+            Controls.Add(vki_label);
+            Controls.Add(kilo_label);
+            Controls.Add(boy_label);
             Controls.Add(vücut_kitle_label);
             Controls.Add(kilonuz_label);
             Controls.Add(boyunuz_label);
@@ -208,8 +207,8 @@
         private Label boyunuz_label;
         private Label kilonuz_label;
         private Label vücut_kitle_label;
-        private Label label2;
-        private Label label3;
-        private Label label4;
+        private Label vki_label;
+        private Label kilo_label;
+        private Label boy_label;
     }
 }

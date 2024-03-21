@@ -26,9 +26,10 @@ namespace CaloriProject.UI.Forms
         KullaniciOgunYiyecek secilenOgun;
 
         KullaniciOgunYiyecekManager kullaniciOgunYiyecekManager = new KullaniciOgunYiyecekManager();
-        
 
-        public OgunGir(AnaSayfa ana , KullaniciModel kullaniciModel)
+        OgunManager ogunManager = new OgunManager();
+        YiyecekManager YiyecekManager = new YiyecekManager();
+        public OgunGir(AnaSayfa ana, KullaniciModel kullaniciModel)
         {
             anaSayfa = ana;
 
@@ -42,8 +43,8 @@ namespace CaloriProject.UI.Forms
 
             dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
 
-            comboBox1_ogun.DataSource = Db.Ogünler.ToList();
-            comboBox3_yiyecek.DataSource = Db.Yiyecekler.ToList();
+            comboBox1_ogun.DataSource = ogunManager.GetAllWithIncludes();
+            comboBox3_yiyecek.DataSource = YiyecekManager.GetAllWithIncludes();
 
 
 
@@ -77,7 +78,7 @@ namespace CaloriProject.UI.Forms
             //if (comboBox3_yiyecek.SelectedItem != null)
             //{
             //    //kullaniciOgunYiyecekModel.YiyecekID = ((Yiyecek)comboBox3_yiyecek.SelectedItem).Id;
-                kullaniciOgunYiyecekModel.YiyecekID = 3;
+            kullaniciOgunYiyecekModel.YiyecekID = 3;
             //}
             //else
             //{
@@ -88,8 +89,8 @@ namespace CaloriProject.UI.Forms
 
             //if (comboBox1_ogun.SelectedItem != null)
             //{
-                //kullaniciOgunYiyecekModel.OgunID = ((Ogun)comboBox1_ogun.SelectedItem).Id;
-                kullaniciOgunYiyecekModel.OgunID = 2;
+            //kullaniciOgunYiyecekModel.OgunID = ((Ogun)comboBox1_ogun.SelectedItem).Id;
+            kullaniciOgunYiyecekModel.OgunID = 2;
             //}
             //else
             //{
@@ -166,6 +167,11 @@ namespace CaloriProject.UI.Forms
             }
             else
                 MessageBox.Show("Secili Öğün Yok!");
+        }
+
+        private void OgunGir_Load(object sender, EventArgs e)
+        {
+            kullanici_Isım_Lbl.Text = Program.kullaniciModel.Ad + " " + Program.kullaniciModel.Soyad; 
         }
     }
 }

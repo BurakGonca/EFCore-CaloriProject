@@ -13,7 +13,10 @@ namespace CaloriProject.BLL.Models
 
         public List<KullaniciOgunYiyecekModel> KullaniciOgunYiyecekModeller { get; set; }
 
-
+        public override string ToString()
+        {
+            return Ad;
+        }
 
     }
 }
