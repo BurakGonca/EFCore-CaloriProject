@@ -1,5 +1,6 @@
 ﻿using CaloriProject.BLL.Manager.Abstract;
 using CaloriProject.BLL.MappingProfile;
+using CaloriProject.BLL.Models;
 using CaloriProject.DAL.Context;
 using CaloriProject.DAL.Entities;
 using CaloriProject.DAL.Repostory.Concrete;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CaloriProject.BLL.Manager.Concrete
 {
-    public class KullaniciManager : Manager<KullaniciManager, Kullanici, KullaniciMapProfile>
+    public class KullaniciManager : Manager<KullaniciModel, Kullanici, KullaniciMapProfile>
     {
 
         public KullaniciManager()

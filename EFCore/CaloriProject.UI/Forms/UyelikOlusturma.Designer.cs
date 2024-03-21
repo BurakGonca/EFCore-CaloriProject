@@ -171,7 +171,7 @@
             // label3
             // 
             label3.Font = new Font("Sylfaen", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(47, 218);
+            label3.Location = new Point(47, 222);
             label3.Name = "label3";
             label3.Size = new Size(314, 37);
             label3.TabIndex = 22;

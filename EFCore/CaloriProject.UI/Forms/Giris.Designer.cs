@@ -50,7 +50,7 @@
             pictureBox1.Location = new Point(362, 0);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(918, 711);
+            pictureBox1.Size = new Size(747, 711);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -66,7 +66,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(367, 700);
+            panel1.Size = new Size(367, 677);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
@@ -88,7 +88,7 @@
             label3.BackColor = Color.Olive;
             label3.Font = new Font("Bauhaus 93", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(48, 279);
+            label3.Location = new Point(20, 284);
             label3.Name = "label3";
             label3.Size = new Size(344, 68);
             label3.TabIndex = 2;
@@ -126,10 +126,10 @@
             panel2.Controls.Add(label5);
             panel2.Dock = DockStyle.Right;
             panel2.ForeColor = Color.Yellow;
-            panel2.Location = new Point(902, 0);
+            panel2.Location = new Point(736, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(373, 700);
+            panel2.Size = new Size(373, 677);
             panel2.TabIndex = 2;
             // 
             // button2
@@ -152,7 +152,7 @@
             button1.TabIndex = 2;
             button1.Text = "GİRİŞ";
             button1.UseVisualStyleBackColor = true;
-           
+            button1.Click += button1_Click_1;
             // 
             // label5
             // 
@@ -171,7 +171,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1275, 700);
+            ClientSize = new Size(1109, 677);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);

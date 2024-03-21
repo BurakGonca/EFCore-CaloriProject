@@ -8,13 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using CaloriProject.DAL.Context;
+using CaloriProject.BLL.Models;
+using CaloriProject.DAL.Enums;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
+using CaloriProject.BLL.Manager.Concrete;
 
 namespace CaloriProject.UI.Forms
 {
     public partial class UyelikOlusturma : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=BURAK;Initial Catalog=loginEkrani_c#;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        KullaniciManager kullaniciManager = new KullaniciManager();
+
         private Giris giris;
+
+        private AnaSayfa anaSayfa = new AnaSayfa();
 
         public UyelikOlusturma(Giris gir)
         {
@@ -22,9 +31,9 @@ namespace CaloriProject.UI.Forms
             InitializeComponent();
         }
 
-       
 
-        
+
+
 
         private void UyelikOlusturma_Load(object sender, EventArgs e)
         {
@@ -33,67 +42,112 @@ namespace CaloriProject.UI.Forms
 
         }
 
-        private void btn_Olustur_Click(object sender, EventArgs e)
+        private void btn_Olustur_Click(object sender, EventArgs e) //uyelik olusturma butonu.
         {
-            if (connect.State != ConnectionState.Open)
+            KullaniciModel kullaniciModel = new KullaniciModel();
+
+
+            if (!AlanKontrol(ad_textBox.Text))
             {
-                try
-                {
-                    connect.Open();
-                    String checkUsername = "SELECT * FROM users WHERE Email = ' " + eMail_textBox.Text.Trim() + "'";
-                    using (SqlCommand checkUser = new SqlCommand(checkUsername, connect))
-                    {
-                        SqlDataAdapter adapter = new SqlDataAdapter(checkUser);
-                        DataTable table = new DataTable();
-                        adapter.Fill(table);
-
-                        if (table.Rows.Count >= 1)
-                        {
-                            MessageBox.Show(eMail_textBox.Text + " is already exist", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            string insertData = "INSERT INTO users(Cinsiyet, Ad, Soyad, DogumTarihi, Kilo, Boy, Email, Sifre, SifreTekrar) VALUES(@cinsiyet,@ad,@soyad,@dogumTarihi,@kilo,@boy,@email,@sifre,@sifreTekrar)";
-
-                            DateTime selectedDate = DogumTarihi_dateTimePicker.Value;
-
-                            string formattedDate = selectedDate.ToString("yyyy-MM-dd");
-
-                            using (SqlCommand cmd = new SqlCommand(insertData, connect))
-                            {
-                                cmd.Parameters.AddWithValue("@cinsiyet", radioButton_Erkek.Checked ? "Erkek" : "Kadın");
-                                //cmd.Parameters.AddWithValue("@cinsiyet", radioButton_Erkek.Checked);
-                                cmd.Parameters.AddWithValue("@ad", ad_textBox.Text.Trim());
-                                cmd.Parameters.AddWithValue("@soyad", soyad_textBox.Text.Trim());
-                                cmd.Parameters.AddWithValue("@dogumTarihi", formattedDate);
-                                cmd.Parameters.AddWithValue("@kilo", kilo_textBox.Text.Trim());
-                                cmd.Parameters.AddWithValue("@boy", boy_textBox.Text.Trim());
-                                cmd.Parameters.AddWithValue("@email", eMail_textBox.Text.Trim());
-                                cmd.Parameters.AddWithValue("@sifre", sifre_textBox.Text.Trim());
-                                cmd.Parameters.AddWithValue("@sifreTekrar", sifreTekrar_textBox.Text.Trim());
-
-                                cmd.ExecuteNonQuery();
-                                MessageBox.Show("Başarıyla kayıt olundu.", "Bilgilendirme Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                //kapanıyosa sil (to switch form demiş)
-
-                                //UyelikOlusturma uyelikOlusturma = new UyelikOlusturma(); //Giris gir.
-
-
-                                //uyelikOlusturma.Show();
-                                //this.Hide();
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show("Error connecting Database: " + ex, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally { connect.Close(); }
-
+                MessageBox.Show("Lütfen adınızı giriniz.");
+                return;
             }
+            kullaniciModel.Ad = ad_textBox.Text.Trim();
+
+
+            if (!AlanKontrol(soyad_textBox.Text))
+            {
+                MessageBox.Show("Lütfen soyadınızı giriniz.");
+                return;
+            }
+            kullaniciModel.Soyad = soyad_textBox.Text.Trim();
+
+
+            //cinsiyet secimi yaptiriyorum
+            if (radioButton_Erkek.Checked)
+                kullaniciModel.Cinsiyet = Cinsiyet.Erkek;
+            else if (radioButton_Kadin.Checked)
+                kullaniciModel.Cinsiyet = Cinsiyet.Kadın;
+            else
+            {
+                MessageBox.Show("Lütfen Cinsiyetinizi Seciniz");
+                return;
+            }
+
+
+
+            //dogumtarihi icin 18 yas siniri ilave ediyorum.
+            int yas = (DateTime.Now.Year - DogumTarihi_dateTimePicker.Value.Year);
+            if (yas <= 18)
+            {
+                MessageBox.Show("Üzgünüz, programımız yalnizca 18 yas ve üstü icindir.");
+                return;
+            }
+            kullaniciModel.DogumTarihi = DogumTarihi_dateTimePicker.Value;
+
+
+            if (!AlanKontrol(kilo_textBox.Text))
+            {
+                MessageBox.Show("Lütfen kilonuzu giriniz.");
+                return;
+            }
+            kullaniciModel.Kilo = double.Parse(kilo_textBox.Text.Trim());
+
+            if (!AlanKontrol(boy_textBox.Text))
+            {
+                MessageBox.Show("Lütfen boyunuzu giriniz.");
+                return;
+            }
+            kullaniciModel.Boy = double.Parse(boy_textBox.Text.Trim());
+
+            if (!AlanKontrol(eMail_textBox.Text))
+            {
+                MessageBox.Show("Lütfen e-mailinizi giriniz.");
+                return;
+            }
+
+            if (!EMailKontrol(eMail_textBox.Text))
+            {
+                MessageBox.Show("Lütfen geçerli bir e-mail adresi giriniz.");
+                return;
+            }
+            kullaniciModel.EMail = eMail_textBox.Text.Trim(); ;
+
+            if (!AlanKontrol(sifre_textBox.Text))
+            {
+                MessageBox.Show("Lütfen sifrenizi giriniz.");
+                return;
+            }
+
+            if (!SifreKontrol(sifre_textBox.Text))
+            {
+                MessageBox.Show("Şifre geçerli değil. Şifre en az 1 büyük harf, en az 1 küçük harf, en az 1 rakam içermeli ve 8-10 karakter uzunluğunda olmalıdır.");
+                return;
+            }
+           
+
+            if (!AlanKontrol(sifreTekrar_textBox.Text))
+            {
+                MessageBox.Show("Lütfen tekrar sifrenizi giriniz.");
+                return;
+            }
+
+            if (sifre_textBox.Text != sifreTekrar_textBox.Text)
+            {
+                MessageBox.Show("Şifreniz ile şifre tekrarınız uyuşmuyor, lütfen kontrol ediniz.");
+                return;
+            }
+            kullaniciModel.Sifre = sifre_textBox.Text;
+
+            // Tüm kontroller başarılı ise kullanıcıyı ekleyebiliriz
+
+            kullaniciManager.Add(kullaniciModel);
+            MessageBox.Show("Verdiginiz bilgiler icin tesekkür ederiz, üyeliginiz basariyla olusturuldu.");
+
+            giris.Show();
+            this.Hide();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -101,5 +155,52 @@ namespace CaloriProject.UI.Forms
             giris.Show();
             this.Hide();
         }
+
+
+        private bool EMailKontrol(string email)
+        {
+            try
+            {
+                var mailAddress = new MailAddress(email);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
+        static bool SifreKontrol(string sifre)
+        {
+            // Sifre en az 8, en fazla 10 karakterden oluşmalı
+            if (sifre.Length < 8 || sifre.Length > 10)
+                return false;
+
+            // En az bir büyük harf içermeli
+            if (!Regex.IsMatch(sifre, "[A-Z]"))
+                return false;
+
+            // En az bir küçük harf içermeli
+            if (!Regex.IsMatch(sifre, "[a-z]"))
+                return false;
+
+            // En az bir rakam içermeli
+            if (!Regex.IsMatch(sifre, "[0-9]"))
+                return false;
+
+            // Diğer tüm koşullar sağlanıyorsa, sifre geçerlidir
+            return true;
+        }
+
+
+        private bool AlanKontrol(string alan)
+        {
+            if (string.IsNullOrWhiteSpace(alan)) // Alanın boş olup olmadığını kontrol ediyoruz
+                return false;
+            return true;
+        }
+
+
+
     }
 }
