@@ -23,7 +23,7 @@ namespace CaloriProject.UI.Forms
 
         private Giris giris;
 
-        private AnaSayfa anaSayfa = new AnaSayfa();
+        
 
         public UyelikOlusturma(Giris gir)
         {
@@ -93,6 +93,7 @@ namespace CaloriProject.UI.Forms
             }
             kullaniciModel.Kilo = double.Parse(kilo_textBox.Text.Trim());
 
+           
             if (!AlanKontrol(boy_textBox.Text))
             {
                 MessageBox.Show("Lütfen boyunuzu giriniz.");

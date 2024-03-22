@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnaSayfa));
             button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            raporlar_buton = new Button();
+            ayarlar_buton = new Button();
+            cikisYap_buton = new Button();
             label1 = new Label();
             kullanici_Isım_Lbl = new Label();
             boyunuz_label = new Label();
@@ -41,12 +41,13 @@
             vki_label = new Label();
             kilo_label = new Label();
             boy_label = new Label();
+            yiyecekEkle_buton = new Button();
             SuspendLayout();
             // 
             // button2
             // 
             button2.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button2.Location = new Point(204, 465);
+            button2.Location = new Point(125, 465);
             button2.Name = "button2";
             button2.Size = new Size(116, 62);
             button2.TabIndex = 1;
@@ -54,35 +55,38 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // button3
+            // raporlar_buton
             // 
-            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button3.Location = new Point(336, 465);
-            button3.Name = "button3";
-            button3.Size = new Size(116, 62);
-            button3.TabIndex = 2;
-            button3.Text = "Raporlar";
-            button3.UseVisualStyleBackColor = true;
+            raporlar_buton.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            raporlar_buton.Location = new Point(411, 465);
+            raporlar_buton.Name = "raporlar_buton";
+            raporlar_buton.Size = new Size(116, 62);
+            raporlar_buton.TabIndex = 2;
+            raporlar_buton.Text = "Raporlar";
+            raporlar_buton.UseVisualStyleBackColor = true;
+            raporlar_buton.Click += raporlar_buton_Click;
             // 
-            // button4
+            // ayarlar_buton
             // 
-            button4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button4.Location = new Point(470, 465);
-            button4.Name = "button4";
-            button4.Size = new Size(116, 62);
-            button4.TabIndex = 3;
-            button4.Text = "Ayarlar";
-            button4.UseVisualStyleBackColor = true;
+            ayarlar_buton.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            ayarlar_buton.Location = new Point(552, 465);
+            ayarlar_buton.Name = "ayarlar_buton";
+            ayarlar_buton.Size = new Size(116, 62);
+            ayarlar_buton.TabIndex = 3;
+            ayarlar_buton.Text = "Ayarlar";
+            ayarlar_buton.UseVisualStyleBackColor = true;
+            ayarlar_buton.Click += ayarlar_buton_Click;
             // 
-            // button5
+            // cikisYap_buton
             // 
-            button5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button5.Location = new Point(609, 465);
-            button5.Name = "button5";
-            button5.Size = new Size(116, 62);
-            button5.TabIndex = 4;
-            button5.Text = "Çıkış Yap";
-            button5.UseVisualStyleBackColor = true;
+            cikisYap_buton.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            cikisYap_buton.Location = new Point(688, 465);
+            cikisYap_buton.Name = "cikisYap_buton";
+            cikisYap_buton.Size = new Size(116, 62);
+            cikisYap_buton.TabIndex = 4;
+            cikisYap_buton.Text = "Çıkış Yap";
+            cikisYap_buton.UseVisualStyleBackColor = true;
+            cikisYap_buton.Click += cikisYap_buton_Click;
             // 
             // label1
             // 
@@ -171,6 +175,17 @@
             boy_label.TabIndex = 10;
             boy_label.Text = "boy";
             // 
+            // yiyecekEkle_buton
+            // 
+            yiyecekEkle_buton.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            yiyecekEkle_buton.Location = new Point(268, 465);
+            yiyecekEkle_buton.Name = "yiyecekEkle_buton";
+            yiyecekEkle_buton.Size = new Size(116, 62);
+            yiyecekEkle_buton.TabIndex = 13;
+            yiyecekEkle_buton.Text = "Yiyecek Ekle";
+            yiyecekEkle_buton.UseVisualStyleBackColor = true;
+            yiyecekEkle_buton.Click += yiyecekEkle_buton_Click;
+            // 
             // AnaSayfa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -178,6 +193,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(928, 702);
+            Controls.Add(yiyecekEkle_buton);
             Controls.Add(vki_label);
             Controls.Add(kilo_label);
             Controls.Add(boy_label);
@@ -186,9 +202,9 @@
             Controls.Add(boyunuz_label);
             Controls.Add(kullanici_Isım_Lbl);
             Controls.Add(label1);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(cikisYap_buton);
+            Controls.Add(ayarlar_buton);
+            Controls.Add(raporlar_buton);
             Controls.Add(button2);
             Name = "AnaSayfa";
             Text = "AnaSayfa";
@@ -199,9 +215,9 @@
 
         #endregion
         private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button raporlar_buton;
+        private Button ayarlar_buton;
+        private Button cikisYap_buton;
         private Label label1;
         private Label kullanici_Isım_Lbl;
         private Label boyunuz_label;
@@ -210,5 +226,6 @@
         private Label vki_label;
         private Label kilo_label;
         private Label boy_label;
+        private Button yiyecekEkle_buton;
     }
 }

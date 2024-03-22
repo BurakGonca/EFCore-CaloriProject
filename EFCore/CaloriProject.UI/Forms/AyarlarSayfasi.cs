@@ -11,15 +11,15 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CaloriProject.UI.Forms
 {
-    public partial class RaporSayfası : Form
-    {
 
+    public partial class AyarlarSayfasi : Form
+    {
         private AnaSayfa anaSayfa;
 
-        public RaporSayfası(AnaSayfa ana)
+        public AyarlarSayfasi(AnaSayfa ana)
         {
             Program.AktifSayfa = this;
-            anaSayfa = ana; 
+            anaSayfa = ana;
             InitializeComponent();
         }
 

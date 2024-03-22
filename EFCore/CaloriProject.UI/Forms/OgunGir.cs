@@ -18,45 +18,36 @@ namespace CaloriProject.UI.Forms
 {
     public partial class OgunGir : Form
     {
-        CaloriDBContext Db = new CaloriDBContext();
 
         private AnaSayfa anaSayfa;
-
-        private readonly KullaniciModel kullaniciModel;
-        KullaniciOgunYiyecek secilenOgun;
+        KullaniciOgunYiyecekModel secilenOgun;
 
         KullaniciOgunYiyecekManager kullaniciOgunYiyecekManager = new KullaniciOgunYiyecekManager();
 
-        OgunManager ogunManager = new OgunManager();
         YiyecekManager YiyecekManager = new YiyecekManager();
-        public OgunGir(AnaSayfa ana, KullaniciModel kullaniciModel)
+
+        CaloriDBContext CaloriDBContext = new CaloriDBContext();
+
+        public OgunGir(AnaSayfa ana,KullaniciModel kullaniciModel)
         {
             anaSayfa = ana;
 
-            this.kullaniciModel = kullaniciModel;
-
             InitializeComponent();
 
+        }
 
-
-
-
-            dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
-
-            comboBox1_ogun.DataSource = ogunManager.GetAllWithIncludes();
+        
+        private void OgunGir_Load(object sender, EventArgs e)
+        {
+            kullanici_Isım_Lbl.Text = Program.kullaniciModel.Ad + " " + Program.kullaniciModel.Soyad;
+            
+            comboBox1_ogun.DataSource = CaloriDBContext.Ogünler.ToList();
             comboBox3_yiyecek.DataSource = YiyecekManager.GetAllWithIncludes();
 
+            //dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
 
-
+            dataGridView1.DataSource = Program.kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
         }
-
-        public OgunGir()
-        {
-            InitializeComponent();
-
-        }
-
-
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -70,33 +61,25 @@ namespace CaloriProject.UI.Forms
 
             KullaniciOgunYiyecekModel kullaniciOgunYiyecekModel = new KullaniciOgunYiyecekModel();
 
-
-            //kullaniciOgunYiyecekModel.KullaniciID = kullaniciModel.Id;
-            kullaniciOgunYiyecekModel.KullaniciID = 1;
+            kullaniciOgunYiyecekModel.KullaniciID = Program.kullaniciModel.Id;
 
 
-            //if (comboBox3_yiyecek.SelectedItem != null)
-            //{
-            //    //kullaniciOgunYiyecekModel.YiyecekID = ((Yiyecek)comboBox3_yiyecek.SelectedItem).Id;
-            kullaniciOgunYiyecekModel.YiyecekID = 3;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Lütfen bir yiyecek seçin.");
-            //    return;
-            //}
+            if (comboBox3_yiyecek.SelectedItem != null)
+                kullaniciOgunYiyecekModel.YiyecekID = ((YiyecekModel)comboBox3_yiyecek.SelectedItem).Id;
+            else
+            {
+                MessageBox.Show("Lütfen bir yiyecek seçin.");
+                return;
+            }
 
 
-            //if (comboBox1_ogun.SelectedItem != null)
-            //{
-            //kullaniciOgunYiyecekModel.OgunID = ((Ogun)comboBox1_ogun.SelectedItem).Id;
-            kullaniciOgunYiyecekModel.OgunID = 2;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Lütfen bir öğün seçin.");
-            //    return;
-            //}
+            if (comboBox1_ogun.SelectedItem != null)
+                kullaniciOgunYiyecekModel.OgunID = ((Ogun)comboBox1_ogun.SelectedItem).Id;
+            else
+            {
+                MessageBox.Show("Lütfen bir öğün seçin.");
+                return;
+            }
 
             kullaniciOgunYiyecekModel.Tarih = dateTimePicker1.Value;
 
@@ -119,31 +102,34 @@ namespace CaloriProject.UI.Forms
                 MessageBox.Show("Öğün Ekleme İptal Edilmiştir.");
             }
 
-            comboBox1_ogun.Items.Clear();
-            comboBox3_yiyecek.Items.Clear();
+           
 
         }
 
         private void sil_buton_Click(object sender, EventArgs e)
         {
-            //if (secilenOgun != null)
-            //{
-            //    var silinecekOgun = Db.KullaniciOgunYiyecek.FirstOrDefault(k => k.Id == secilenOgun.Id);
-            //    koyRepostory.Remove(silinecekOgun);
-            //    MessageBox.Show("Öğün silinmiştir.");
-            //    dataGridView1.DataSource = Db.KullaniciOgunYiyecek.ToList();
-
-            //}
-            //else
-            //    MessageBox.Show("Secili Öğün Yok!");
+            if (secilenOgun != null)
+            {
+                
+                kullaniciOgunYiyecekManager.Delete(secilenOgun);
+                MessageBox.Show("Öğün silinmiştir.");
+                //dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
+                dataGridView1.DataSource = Program.kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
+            }
+            else
+                MessageBox.Show("Secili Öğün Yok!");
 
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            secilenOgun = (KullaniciOgunYiyecek)dataGridView1.SelectedRows[0].DataBoundItem;
-            comboBox1_ogun.Text = secilenOgun.Ogun.OgunAdi;
-            comboBox3_yiyecek.Text = secilenOgun.Yiyecek.YiyecekAdi;
+            secilenOgun = (KullaniciOgunYiyecekModel)dataGridView1.SelectedRows[0].DataBoundItem;
+            //comboBox1_ogun.Text = secilenOgun.OgunModeller.ToString();
+            //comboBox3_yiyecek.Text = secilenOgun.YiyecekModeller.ToString();
+
+            
+
+
 
         }
 
@@ -169,9 +155,6 @@ namespace CaloriProject.UI.Forms
                 MessageBox.Show("Secili Öğün Yok!");
         }
 
-        private void OgunGir_Load(object sender, EventArgs e)
-        {
-            kullanici_Isım_Lbl.Text = Program.kullaniciModel.Ad + " " + Program.kullaniciModel.Soyad; 
-        }
+
     }
 }

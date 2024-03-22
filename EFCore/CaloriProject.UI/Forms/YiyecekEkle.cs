@@ -14,6 +14,7 @@ using CaloriProject.DAL.Enums;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 using CaloriProject.BLL.Manager.Concrete;
+using CaloriProject.UI.Forms;
 
 namespace CaloriProject.UI
 {
@@ -21,18 +22,22 @@ namespace CaloriProject.UI
     {
         YiyecekManager yiyecekManager = new YiyecekManager();
 
+        private AnaSayfa anaSayfa;
 
-        public YiyecekEkle()
+        public YiyecekEkle(AnaSayfa ana)
         {
+            anaSayfa = ana;
             InitializeComponent();
         }
+
+        
 
         private void YiyecekEkle_Load(object sender, EventArgs e)
         {
 
         }
 
-        
+
 
         private void txt_Porsiyon_TextChanged(object sender, EventArgs e)
         {
@@ -48,7 +53,7 @@ namespace CaloriProject.UI
                 {
                     // Girilen metin sayıya dönüştürülemezse hata mesajı göster
                     MessageBox.Show("Lütfen sadece sayı giriniz.");
-                    // Metni temizle veya geçerli bir değer atayabilirsiniz
+                    
                     txt_Porsiyon.Text = "";
                 }
             }
@@ -61,15 +66,15 @@ namespace CaloriProject.UI
             {
                 try
                 {
-                    // Girilen metni sayıya dönüştürmeye çalış
+                    
                     int porsiyon = int.Parse(txt_kalori.Text);
-                    // Başarılıysa devam et
+                    
                 }
                 catch (FormatException)
                 {
-                    // Girilen metin sayıya dönüştürülemezse hata mesajı göster
+                    
                     MessageBox.Show("Lütfen sadece sayı giriniz.");
-                    // Metni temizle veya geçerli bir değer atayabilirsiniz
+                    
                     txt_kalori.Text = "";
                 }
             }
@@ -85,12 +90,12 @@ namespace CaloriProject.UI
         {
             YiyecekModel yiyecekModel = new YiyecekModel();
 
-            // Boş TextBox'ları kontrol etmek için bir dizi oluşturun
+           
             TextBox[] textBoxes = { txt_Porsiyon, txt_kalori, txt_yiyecekAdi };
 
             foreach (TextBox textBox in textBoxes)
             {
-                // TextBox boşsa hata mesajı göster ve işlemi durdur
+                // TextBox boşsa hata mesajı gösterir
                 if (string.IsNullOrWhiteSpace(textBox.Text))
                 {
                     MessageBox.Show("Lütfen boş alanları doldurun.");
@@ -98,18 +103,26 @@ namespace CaloriProject.UI
                 }
             }
 
-            // Buraya geldiğinde tüm TextBox'lar dolu demektir, işlemi devam ettirebilirsiniz.
+           
 
-            yiyecekModel.YiyecekAdi=txt_yiyecekAdi.Text.Trim();
+            yiyecekModel.YiyecekAdi = txt_yiyecekAdi.Text.Trim();
             yiyecekModel.Kalori = Convert.ToDouble(txt_kalori.Text.Trim());
             yiyecekModel.Porsiyon = Convert.ToDouble(txt_Porsiyon.Text.Trim());
-            yiyecekModel.KategoriID = 2;
+            yiyecekModel.KategoriID = 12; 
 
             yiyecekManager.Add(yiyecekModel);
 
             MessageBox.Show("Başarılı.");
 
+            txt_kalori.Clear();
+            txt_Porsiyon.Clear();
+            txt_yiyecekAdi.Clear();
+        }
 
+        private void anaSayfa_buton_Click(object sender, EventArgs e)
+        {
+            anaSayfa.Show();
+            this.Hide();
         }
     }
 }
