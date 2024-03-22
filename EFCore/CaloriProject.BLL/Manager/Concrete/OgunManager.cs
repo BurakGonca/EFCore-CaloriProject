@@ -1,5 +1,6 @@
 ﻿using CaloriProject.BLL.Manager.Abstract;
 using CaloriProject.BLL.MappingProfile;
+using CaloriProject.BLL.Models;
 using CaloriProject.DAL.Context;
 using CaloriProject.DAL.Entities;
 using CaloriProject.DAL.Repostory.Concrete;
@@ -11,13 +12,17 @@ using System.Threading.Tasks;
 
 namespace CaloriProject.BLL.Manager.Concrete
 {
-    public class OgunManager : Manager<OgunManager, Ogun, OgunMapProfile>
+    public class OgunManager : Manager<OgunModel, Ogun, OgunMapProfile>
     {
+        
         public OgunManager()
         {
-
+            
             _repository = new OgunRepostory(new CaloriDBContext());
             
         }
+
+        
+
     }
 }

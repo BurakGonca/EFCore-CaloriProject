@@ -32,13 +32,15 @@
             txt_yiyecekAdi = new TextBox();
             txt_Porsiyon = new TextBox();
             txt_kalori = new TextBox();
+            anaSayfa_buton = new Button();
             SuspendLayout();
             // 
             // btn_yiyecekEkle
             // 
-            btn_yiyecekEkle.Location = new Point(287, 277);
+            btn_yiyecekEkle.Location = new Point(328, 369);
+            btn_yiyecekEkle.Margin = new Padding(3, 4, 3, 4);
             btn_yiyecekEkle.Name = "btn_yiyecekEkle";
-            btn_yiyecekEkle.Size = new Size(123, 38);
+            btn_yiyecekEkle.Size = new Size(141, 51);
             btn_yiyecekEkle.TabIndex = 0;
             btn_yiyecekEkle.Text = "Yiyecek Ekle";
             btn_yiyecekEkle.UseVisualStyleBackColor = true;
@@ -46,40 +48,56 @@
             // 
             // txt_yiyecekAdi
             // 
-            txt_yiyecekAdi.Location = new Point(297, 98);
+            txt_yiyecekAdi.Location = new Point(339, 131);
+            txt_yiyecekAdi.Margin = new Padding(3, 4, 3, 4);
             txt_yiyecekAdi.Name = "txt_yiyecekAdi";
             txt_yiyecekAdi.PlaceholderText = " Yiyecek Adı";
-            txt_yiyecekAdi.Size = new Size(100, 23);
+            txt_yiyecekAdi.Size = new Size(114, 27);
             txt_yiyecekAdi.TabIndex = 1;
             txt_yiyecekAdi.TextChanged += txt_yiyecekAdi_TextChanged;
             // 
             // txt_Porsiyon
             // 
-            txt_Porsiyon.Location = new Point(297, 150);
+            txt_Porsiyon.Location = new Point(339, 200);
+            txt_Porsiyon.Margin = new Padding(3, 4, 3, 4);
             txt_Porsiyon.Name = "txt_Porsiyon";
             txt_Porsiyon.PlaceholderText = "Porsiyon";
-            txt_Porsiyon.Size = new Size(100, 23);
+            txt_Porsiyon.Size = new Size(114, 27);
             txt_Porsiyon.TabIndex = 1;
             txt_Porsiyon.TextChanged += txt_Porsiyon_TextChanged;
             // 
             // txt_kalori
             // 
-            txt_kalori.Location = new Point(297, 202);
+            txt_kalori.Location = new Point(339, 269);
+            txt_kalori.Margin = new Padding(3, 4, 3, 4);
             txt_kalori.Name = "txt_kalori";
             txt_kalori.PlaceholderText = "Kalori";
-            txt_kalori.Size = new Size(100, 23);
+            txt_kalori.Size = new Size(114, 27);
             txt_kalori.TabIndex = 1;
             txt_kalori.TextChanged += txt_kalori_TextChanged;
             // 
+            // anaSayfa_buton
+            // 
+            anaSayfa_buton.Location = new Point(328, 448);
+            anaSayfa_buton.Margin = new Padding(3, 4, 3, 4);
+            anaSayfa_buton.Name = "anaSayfa_buton";
+            anaSayfa_buton.Size = new Size(141, 51);
+            anaSayfa_buton.TabIndex = 2;
+            anaSayfa_buton.Text = "ANA SAYFA";
+            anaSayfa_buton.UseVisualStyleBackColor = true;
+            anaSayfa_buton.Click += anaSayfa_buton_Click;
+            // 
             // YiyecekEkle
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(791, 565);
+            Controls.Add(anaSayfa_buton);
             Controls.Add(txt_kalori);
             Controls.Add(txt_Porsiyon);
             Controls.Add(txt_yiyecekAdi);
             Controls.Add(btn_yiyecekEkle);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "YiyecekEkle";
             Text = "YiyecekEkle";
             Load += YiyecekEkle_Load;
@@ -93,5 +111,6 @@
         private TextBox txt_yiyecekAdi;
         private TextBox txt_Porsiyon;
         private TextBox txt_kalori;
+        private Button anaSayfa_buton;
     }
 }

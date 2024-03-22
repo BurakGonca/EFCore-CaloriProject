@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace CaloriProject.DAL.Migrations
 {
     /// <inheritdoc />
@@ -17,7 +19,6 @@ namespace CaloriProject.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    KategoriID = table.Column<int>(type: "int", nullable: false),
                     KategoriAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -35,7 +36,6 @@ namespace CaloriProject.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    KullaniciID = table.Column<int>(type: "int", nullable: false),
                     Ad = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Soyad = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DogumTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -60,7 +60,6 @@ namespace CaloriProject.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OgunID = table.Column<int>(type: "int", nullable: false),
                     OgunAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -78,7 +77,6 @@ namespace CaloriProject.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    YiyecekID = table.Column<int>(type: "int", nullable: false),
                     YiyecekAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Porsiyon = table.Column<double>(type: "float", nullable: false),
                     Kalori = table.Column<double>(type: "float", nullable: false),
@@ -101,7 +99,7 @@ namespace CaloriProject.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "KullaniciOgunYiyecek",
+                name: "KullaniciOgunYiyecekler",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -118,40 +116,63 @@ namespace CaloriProject.DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_KullaniciOgunYiyecek", x => x.Id);
+                    table.PrimaryKey("PK_KullaniciOgunYiyecekler", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_KullaniciOgunYiyecek_Kullanicilar_KullaniciID",
+                        name: "FK_KullaniciOgunYiyecekler_Kullanicilar_KullaniciID",
                         column: x => x.KullaniciID,
                         principalTable: "Kullanicilar",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_KullaniciOgunYiyecek_Ogünler_OgunID",
+                        name: "FK_KullaniciOgunYiyecekler_Ogünler_OgunID",
                         column: x => x.OgunID,
                         principalTable: "Ogünler",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_KullaniciOgunYiyecek_Yiyecekler_YiyecekID",
+                        name: "FK_KullaniciOgunYiyecekler_Yiyecekler_YiyecekID",
                         column: x => x.YiyecekID,
                         principalTable: "Yiyecekler",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Kategoriler",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "KategoriAdi", "Status", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1654), null, "Kahvalti", 1, null },
+                    { 2, new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1655), null, "Ara Sicak", 1, null },
+                    { 3, new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1656), null, "Aperatifler", 1, null },
+                    { 4, new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1657), null, "Corbalar", 1, null },
+                    { 5, new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1658), null, "Ana Yemekler", 1, null },
+                    { 6, new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1659), null, "Icecekler", 1, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Ogünler",
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "OgunAdi", "Status", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1541), null, "Kahvalti", 1, null },
+                    { 2, new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1551), null, "Ogle", 1, null },
+                    { 3, new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1552), null, "Aksam", 1, null }
+                });
+
             migrationBuilder.CreateIndex(
-                name: "IX_KullaniciOgunYiyecek_KullaniciID",
-                table: "KullaniciOgunYiyecek",
+                name: "IX_KullaniciOgunYiyecekler_KullaniciID",
+                table: "KullaniciOgunYiyecekler",
                 column: "KullaniciID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_KullaniciOgunYiyecek_OgunID",
-                table: "KullaniciOgunYiyecek",
+                name: "IX_KullaniciOgunYiyecekler_OgunID",
+                table: "KullaniciOgunYiyecekler",
                 column: "OgunID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_KullaniciOgunYiyecek_YiyecekID",
-                table: "KullaniciOgunYiyecek",
+                name: "IX_KullaniciOgunYiyecekler_YiyecekID",
+                table: "KullaniciOgunYiyecekler",
                 column: "YiyecekID");
 
             migrationBuilder.CreateIndex(
@@ -164,7 +185,7 @@ namespace CaloriProject.DAL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "KullaniciOgunYiyecek");
+                name: "KullaniciOgunYiyecekler");
 
             migrationBuilder.DropTable(
                 name: "Kullanicilar");

@@ -8,6 +8,10 @@ namespace CaloriProject.UI
     {
         public static KullaniciModel kullaniciModel { get; set; }
 
+        public static Form AnaSayfa { get; set; }
+        public static Form ReferansSayfa { get; set; }
+        public static Form AktifSayfa { get; set; } //gelen sayfa
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

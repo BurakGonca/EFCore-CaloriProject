@@ -49,6 +49,50 @@ namespace CaloriProject.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Kategoriler");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1654),
+                            KategoriAdi = "Kahvalti",
+                            Status = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1655),
+                            KategoriAdi = "Ara Sicak",
+                            Status = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1656),
+                            KategoriAdi = "Aperatifler",
+                            Status = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1657),
+                            KategoriAdi = "Corbalar",
+                            Status = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedDate = new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1658),
+                            KategoriAdi = "Ana Yemekler",
+                            Status = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedDate = new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1659),
+                            KategoriAdi = "Icecekler",
+                            Status = 1
+                        });
                 });
 
             modelBuilder.Entity("CaloriProject.DAL.Entities.Kullanici", b =>
@@ -177,6 +221,29 @@ namespace CaloriProject.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Ogünler");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1541),
+                            OgunAdi = "Kahvalti",
+                            Status = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1551),
+                            OgunAdi = "Ogle",
+                            Status = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(2024, 3, 22, 14, 17, 30, 613, DateTimeKind.Local).AddTicks(1552),
+                            OgunAdi = "Aksam",
+                            Status = 1
+                        });
                 });
 
             modelBuilder.Entity("CaloriProject.DAL.Entities.Yiyecek", b =>

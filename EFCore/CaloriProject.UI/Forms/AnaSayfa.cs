@@ -14,16 +14,29 @@ namespace CaloriProject.UI.Forms
     public partial class AnaSayfa : Form
     {
         private OgunGir ogunGir;
+        private YiyecekEkle yiyecekEkle;
+        private KullaniciGiris kullaniciGiris;
+        private AyarlarSayfasi ayarlarSayfasi;
+        private RaporSayfası raporSayfası;
+
+
         
 
-        public AnaSayfa(OgunGir ogun = null)
+        public AnaSayfa(KullaniciGiris kullaniciGiris)
         {
-            ogunGir = ogun ?? new OgunGir(this,Program.kullaniciModel); //user girecek
-            
+            this.kullaniciGiris = kullaniciGiris;
+            ogunGir =  new OgunGir(this, Program.kullaniciModel);
+            yiyecekEkle =  new YiyecekEkle(this);
+            ayarlarSayfasi = new AyarlarSayfasi(this);
+            raporSayfası = new RaporSayfası(this);
+            Program.AnaSayfa = this;
+            Program.AktifSayfa= this; 
+           
             InitializeComponent();
 
-            
+
         }
+
 
         private void AnaSayfa_Load(object sender, EventArgs e)
         {
@@ -36,11 +49,39 @@ namespace CaloriProject.UI.Forms
         }
 
 
-
         private void button2_Click(object sender, EventArgs e)
         {
             ogunGir.Show();
             this.Hide();
+
+        }
+
+        private void yiyecekEkle_buton_Click(object sender, EventArgs e)
+        {
+            yiyecekEkle.Show();
+            this.Hide();
+        }
+
+        private void cikisYap_buton_Click(object sender, EventArgs e) //kullanici cikis islemi
+        {
+            kullaniciGiris.Show();
+            this.Hide();
+        }
+
+        private void ayarlar_buton_Click(object sender, EventArgs e)
+        {
+            Program.ReferansSayfa = this;
+            Program.AktifSayfa = ayarlarSayfasi;
+            Program.AktifSayfa.Show();
+            Program.ReferansSayfa.Hide();
+        }
+
+        private void raporlar_buton_Click(object sender, EventArgs e)
+        {
+            Program.ReferansSayfa = this;
+            Program.AktifSayfa = raporSayfası;
+            Program.AktifSayfa.Show();
+            Program.ReferansSayfa.Hide();
 
         }
     }
