@@ -54,12 +54,12 @@ namespace CaloriProject.UI.Forms
             anaSayfa.Show();
             this.Hide();
 
-        }
+		}
 
-        private void ekle_buton_Click(object sender, EventArgs e)
-        {
+		private void ekle_buton_Click(object sender, EventArgs e)
+		{
 
-            KullaniciOgunYiyecekModel kullaniciOgunYiyecekModel = new KullaniciOgunYiyecekModel();
+			KullaniciOgunYiyecekModel kullaniciOgunYiyecekModel = new KullaniciOgunYiyecekModel();
 
             kullaniciOgunYiyecekModel.KullaniciID = Program.kullaniciModel.Id;
 
@@ -81,30 +81,30 @@ namespace CaloriProject.UI.Forms
                 return;
             }
 
-            kullaniciOgunYiyecekModel.Tarih = dateTimePicker1.Value;
+			kullaniciOgunYiyecekModel.Tarih = dateTimePicker1.Value;
 
-            DialogResult dialog = MessageBox.Show("Öğününüzü eklemek istediğinizden emin misiniz?", "Ekle", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
+			DialogResult dialog = MessageBox.Show("Öğününüzü eklemek istediğinizden emin misiniz?", "Ekle", MessageBoxButtons.YesNo);
+			if (dialog == DialogResult.Yes)
+			{
 
 
 
-                kullaniciOgunYiyecekManager.Add(kullaniciOgunYiyecekModel);
+				kullaniciOgunYiyecekManager.Add(kullaniciOgunYiyecekModel);
 
-                MessageBox.Show("Öğün Başarıyla Eklenmiştir!");
+				MessageBox.Show("Öğün Başarıyla Eklenmiştir!");
 
-                // DataGridView güncellemesi
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
-            }
-            else
-            {
-                MessageBox.Show("Öğün Ekleme İptal Edilmiştir.");
-            }
+				// DataGridView güncellemesi
+				dataGridView1.DataSource = null;
+				dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
+			}
+			else
+			{
+				MessageBox.Show("Öğün Ekleme İptal Edilmiştir.");
+			}
 
            
 
-        }
+		}
 
         private void sil_buton_Click(object sender, EventArgs e)
         {
@@ -119,7 +119,7 @@ namespace CaloriProject.UI.Forms
             else
                 MessageBox.Show("Secili Öğün Yok!");
 
-        }
+		}
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -131,29 +131,29 @@ namespace CaloriProject.UI.Forms
 
 
 
-        }
+		}
 
-        private void guncelle_buton_Click(object sender, EventArgs e)
-        {
-            if (secilenOgun != null)
-            {
+		private void guncelle_buton_Click(object sender, EventArgs e)
+		{
+			if (secilenOgun != null)
+			{
 
-                //var guncellenecekOgun = Db.KullaniciOgunYiyecek.FirstOrDefault(k => k.Id == secilenOgun.Id);
+				//var guncellenecekOgun = Db.KullaniciOgunYiyecek.FirstOrDefault(k => k.Id == secilenOgun.Id);
 
-                //guncellenecekOgun.UpdatedDate = DateTime.Now;
-                //guncellenecekOgun.Yiyecek = (Yiyecek)(comboBox3_yiyecek.SelectedItem);
-                //guncellenecekOgun.Ogun = (Ogun)comboBox1_ogun.SelectedItem;
-                //guncellenecekOgun.Tarih = dateTimePicker1.Value;
+				//guncellenecekOgun.UpdatedDate = DateTime.Now;
+				//guncellenecekOgun.Yiyecek = (Yiyecek)(comboBox3_yiyecek.SelectedItem);
+				//guncellenecekOgun.Ogun = (Ogun)comboBox1_ogun.SelectedItem;
+				//guncellenecekOgun.Tarih = dateTimePicker1.Value;
 
-                //koyRepostory.Update(guncellenecekOgun);
-                //MessageBox.Show("Öğün guncellenmistir");
+				//koyRepostory.Update(guncellenecekOgun);
+				//MessageBox.Show("Öğün guncellenmistir");
 
-                //dataGridView1.DataSource = Db.KullaniciOgunYiyecek.ToList();
+				//dataGridView1.DataSource = Db.KullaniciOgunYiyecek.ToList();
 
-            }
-            else
-                MessageBox.Show("Secili Öğün Yok!");
-        }
+			}
+			else
+				MessageBox.Show("Secili Öğün Yok!");
+		}
 
 
     }

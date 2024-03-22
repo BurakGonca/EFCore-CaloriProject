@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -194,9 +194,9 @@
             PerformLayout();
         }
 
-        #endregion
+		#endregion
 
-        private DateTimePicker dateTimePicker1;
+		private DateTimePicker dateTimePicker1;
         private ComboBox comboBox1_ogun;
         private ComboBox comboBox3_yiyecek;
         private Label label1;
