@@ -16,162 +16,167 @@ using System.Windows.Forms;
 
 namespace CaloriProject.UI.Forms
 {
-    public partial class OgunGir : Form
-    {
-        CaloriDBContext Db = new CaloriDBContext();
+	public partial class OgunGir : Form
+	{
+		CaloriDBContext Db = new CaloriDBContext();
 
-        private AnaSayfa anaSayfa;
+		private AnaSayfa anaSayfa;
 
-        private readonly KullaniciModel kullaniciModel;
-        KullaniciOgunYiyecek secilenOgun;
+		private readonly KullaniciModel kullaniciModel;
+		KullaniciOgunYiyecek secilenOgun;
 
-        KullaniciOgunYiyecekManager kullaniciOgunYiyecekManager = new KullaniciOgunYiyecekManager();
+		KullaniciOgunYiyecekManager kullaniciOgunYiyecekManager = new KullaniciOgunYiyecekManager();
 
-        OgunManager ogunManager = new OgunManager();
-        YiyecekManager YiyecekManager = new YiyecekManager();
-        public OgunGir(AnaSayfa ana, KullaniciModel kullaniciModel)
-        {
-            anaSayfa = ana;
+		OgunManager ogunManager = new OgunManager();
+		YiyecekManager YiyecekManager = new YiyecekManager();
+		public OgunGir(AnaSayfa ana, KullaniciModel kullaniciModel)
+		{
+			anaSayfa = ana;
 
-            this.kullaniciModel = kullaniciModel;
+			this.kullaniciModel = kullaniciModel;
 
-            InitializeComponent();
-
-
+			InitializeComponent();
 
 
 
-            dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
-
-            comboBox1_ogun.DataSource = ogunManager.GetAllWithIncludes();
-            comboBox3_yiyecek.DataSource = YiyecekManager.GetAllWithIncludes();
 
 
+			dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
 
-        }
-
-        public OgunGir()
-        {
-            InitializeComponent();
-
-        }
+			comboBox1_ogun.DataSource = ogunManager.GetAllWithIncludes();
+			comboBox3_yiyecek.DataSource = YiyecekManager.GetAllWithIncludes();
 
 
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            anaSayfa.Show();
-            this.Hide();
+		}
 
-        }
+		public OgunGir()
+		{
+			InitializeComponent();
 
-        private void ekle_buton_Click(object sender, EventArgs e)
-        {
-
-            KullaniciOgunYiyecekModel kullaniciOgunYiyecekModel = new KullaniciOgunYiyecekModel();
-
-
-            //kullaniciOgunYiyecekModel.KullaniciID = kullaniciModel.Id;
-            kullaniciOgunYiyecekModel.KullaniciID = 1;
-
-
-            //if (comboBox3_yiyecek.SelectedItem != null)
-            //{
-            //    //kullaniciOgunYiyecekModel.YiyecekID = ((Yiyecek)comboBox3_yiyecek.SelectedItem).Id;
-            kullaniciOgunYiyecekModel.YiyecekID = 3;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Lütfen bir yiyecek seçin.");
-            //    return;
-            //}
-
-
-            //if (comboBox1_ogun.SelectedItem != null)
-            //{
-            //kullaniciOgunYiyecekModel.OgunID = ((Ogun)comboBox1_ogun.SelectedItem).Id;
-            kullaniciOgunYiyecekModel.OgunID = 2;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Lütfen bir öğün seçin.");
-            //    return;
-            //}
-
-            kullaniciOgunYiyecekModel.Tarih = dateTimePicker1.Value;
-
-            DialogResult dialog = MessageBox.Show("Öğününüzü eklemek istediğinizden emin misiniz?", "Ekle", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
+		}
 
 
 
-                kullaniciOgunYiyecekManager.Add(kullaniciOgunYiyecekModel);
+		private void button4_Click(object sender, EventArgs e)
+		{
+			anaSayfa.Show();
+			this.Hide();
 
-                MessageBox.Show("Öğün Başarıyla Eklenmiştir!");
+		}
 
-                // DataGridView güncellemesi
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
-            }
-            else
-            {
-                MessageBox.Show("Öğün Ekleme İptal Edilmiştir.");
-            }
+		private void ekle_buton_Click(object sender, EventArgs e)
+		{
 
-            comboBox1_ogun.Items.Clear();
-            comboBox3_yiyecek.Items.Clear();
+			KullaniciOgunYiyecekModel kullaniciOgunYiyecekModel = new KullaniciOgunYiyecekModel();
 
-        }
 
-        private void sil_buton_Click(object sender, EventArgs e)
-        {
-            //if (secilenOgun != null)
-            //{
-            //    var silinecekOgun = Db.KullaniciOgunYiyecek.FirstOrDefault(k => k.Id == secilenOgun.Id);
-            //    koyRepostory.Remove(silinecekOgun);
-            //    MessageBox.Show("Öğün silinmiştir.");
-            //    dataGridView1.DataSource = Db.KullaniciOgunYiyecek.ToList();
+			//kullaniciOgunYiyecekModel.KullaniciID = kullaniciModel.Id;
+			kullaniciOgunYiyecekModel.KullaniciID = 1;
 
-            //}
-            //else
-            //    MessageBox.Show("Secili Öğün Yok!");
 
-        }
+			//if (comboBox3_yiyecek.SelectedItem != null)
+			//{
+			//    //kullaniciOgunYiyecekModel.YiyecekID = ((Yiyecek)comboBox3_yiyecek.SelectedItem).Id;
+			kullaniciOgunYiyecekModel.YiyecekID = 3;
+			//}
+			//else
+			//{
+			//    MessageBox.Show("Lütfen bir yiyecek seçin.");
+			//    return;
+			//}
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            secilenOgun = (KullaniciOgunYiyecek)dataGridView1.SelectedRows[0].DataBoundItem;
-            comboBox1_ogun.Text = secilenOgun.Ogun.OgunAdi;
-            comboBox3_yiyecek.Text = secilenOgun.Yiyecek.YiyecekAdi;
 
-        }
+			//if (comboBox1_ogun.SelectedItem != null)
+			//{
+			//kullaniciOgunYiyecekModel.OgunID = ((Ogun)comboBox1_ogun.SelectedItem).Id;
+			kullaniciOgunYiyecekModel.OgunID = 2;
+			//}
+			//else
+			//{
+			//    MessageBox.Show("Lütfen bir öğün seçin.");
+			//    return;
+			//}
 
-        private void guncelle_buton_Click(object sender, EventArgs e)
-        {
-            if (secilenOgun != null)
-            {
+			kullaniciOgunYiyecekModel.Tarih = dateTimePicker1.Value;
 
-                //var guncellenecekOgun = Db.KullaniciOgunYiyecek.FirstOrDefault(k => k.Id == secilenOgun.Id);
+			DialogResult dialog = MessageBox.Show("Öğününüzü eklemek istediğinizden emin misiniz?", "Ekle", MessageBoxButtons.YesNo);
+			if (dialog == DialogResult.Yes)
+			{
 
-                //guncellenecekOgun.UpdatedDate = DateTime.Now;
-                //guncellenecekOgun.Yiyecek = (Yiyecek)(comboBox3_yiyecek.SelectedItem);
-                //guncellenecekOgun.Ogun = (Ogun)comboBox1_ogun.SelectedItem;
-                //guncellenecekOgun.Tarih = dateTimePicker1.Value;
 
-                //koyRepostory.Update(guncellenecekOgun);
-                //MessageBox.Show("Öğün guncellenmistir");
 
-                //dataGridView1.DataSource = Db.KullaniciOgunYiyecek.ToList();
+				kullaniciOgunYiyecekManager.Add(kullaniciOgunYiyecekModel);
 
-            }
-            else
-                MessageBox.Show("Secili Öğün Yok!");
-        }
+				MessageBox.Show("Öğün Başarıyla Eklenmiştir!");
 
-        private void OgunGir_Load(object sender, EventArgs e)
-        {
-            kullanici_Isım_Lbl.Text = Program.kullaniciModel.Ad + " " + Program.kullaniciModel.Soyad; 
-        }
-    }
+				// DataGridView güncellemesi
+				dataGridView1.DataSource = null;
+				dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
+			}
+			else
+			{
+				MessageBox.Show("Öğün Ekleme İptal Edilmiştir.");
+			}
+
+			comboBox1_ogun.Items.Clear();
+			comboBox3_yiyecek.Items.Clear();
+
+		}
+
+		private void sil_buton_Click(object sender, EventArgs e)
+		{
+			//if (secilenOgun != null)
+			//{
+			//    var silinecekOgun = Db.KullaniciOgunYiyecek.FirstOrDefault(k => k.Id == secilenOgun.Id);
+			//    koyRepostory.Remove(silinecekOgun);
+			//    MessageBox.Show("Öğün silinmiştir.");
+			//    dataGridView1.DataSource = Db.KullaniciOgunYiyecek.ToList();
+
+			//}
+			//else
+			//    MessageBox.Show("Secili Öğün Yok!");
+
+		}
+
+		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			secilenOgun = (KullaniciOgunYiyecek)dataGridView1.SelectedRows[0].DataBoundItem;
+			comboBox1_ogun.Text = secilenOgun.Ogun.OgunAdi;
+			comboBox3_yiyecek.Text = secilenOgun.Yiyecek.YiyecekAdi;
+
+		}
+
+		private void guncelle_buton_Click(object sender, EventArgs e)
+		{
+			if (secilenOgun != null)
+			{
+
+				//var guncellenecekOgun = Db.KullaniciOgunYiyecek.FirstOrDefault(k => k.Id == secilenOgun.Id);
+
+				//guncellenecekOgun.UpdatedDate = DateTime.Now;
+				//guncellenecekOgun.Yiyecek = (Yiyecek)(comboBox3_yiyecek.SelectedItem);
+				//guncellenecekOgun.Ogun = (Ogun)comboBox1_ogun.SelectedItem;
+				//guncellenecekOgun.Tarih = dateTimePicker1.Value;
+
+				//koyRepostory.Update(guncellenecekOgun);
+				//MessageBox.Show("Öğün guncellenmistir");
+
+				//dataGridView1.DataSource = Db.KullaniciOgunYiyecek.ToList();
+
+			}
+			else
+				MessageBox.Show("Secili Öğün Yok!");
+		}
+
+		private void OgunGir_Load(object sender, EventArgs e)
+		{
+			kullanici_Isım_Lbl.Text = Program.kullaniciModel.Ad + " " + Program.kullaniciModel.Soyad;
+		}
+
+		private void comboBox1_ogun_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
