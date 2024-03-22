@@ -15,13 +15,15 @@ using System.Net.Mail;
 using System.Text.RegularExpressions;
 using CaloriProject.BLL.Manager.Concrete;
 using CaloriProject.UI.Forms;
+using CaloriProject.DAL.Context;
+using CaloriProject.DAL.Entities;
 
 namespace CaloriProject.UI
 {
     public partial class YiyecekEkle : Form
     {
         YiyecekManager yiyecekManager = new YiyecekManager();
-
+        CaloriDBContext CaloriDBContext = new CaloriDBContext();
         private AnaSayfa anaSayfa;
 
         public YiyecekEkle(AnaSayfa ana)
@@ -34,31 +36,13 @@ namespace CaloriProject.UI
 
         private void YiyecekEkle_Load(object sender, EventArgs e)
         {
+            kategori_combobox.DataSource = CaloriDBContext.Kategoriler.ToList();
 
         }
 
 
 
-        private void txt_Porsiyon_TextChanged(object sender, EventArgs e)
-        {
-            void txt_Porsiyon_TextChanged(object sender, EventArgs e)
-            {
-                try
-                {
-                    // Girilen metni sayıya dönüştürmeye çalış
-                    int porsiyon = int.Parse(txt_Porsiyon.Text);
-                    // Başarılıysa devam et
-                }
-                catch (FormatException)
-                {
-                    // Girilen metin sayıya dönüştürülemezse hata mesajı göster
-                    MessageBox.Show("Lütfen sadece sayı giriniz.");
-                    
-                    txt_Porsiyon.Text = "";
-                }
-            }
-
-        }
+        
 
         private void txt_kalori_TextChanged(object sender, EventArgs e)
         {
@@ -91,7 +75,7 @@ namespace CaloriProject.UI
             YiyecekModel yiyecekModel = new YiyecekModel();
 
            
-            TextBox[] textBoxes = { txt_Porsiyon, txt_kalori, txt_yiyecekAdi };
+            TextBox[] textBoxes = { txt_kalori, txt_yiyecekAdi };
 
             foreach (TextBox textBox in textBoxes)
             {
@@ -107,15 +91,26 @@ namespace CaloriProject.UI
 
             yiyecekModel.YiyecekAdi = txt_yiyecekAdi.Text.Trim();
             yiyecekModel.Kalori = Convert.ToDouble(txt_kalori.Text.Trim());
-            yiyecekModel.Porsiyon = Convert.ToDouble(txt_Porsiyon.Text.Trim());
-            yiyecekModel.KategoriID = 12; 
+            yiyecekModel.Porsiyon = 1;
 
+            if (kategori_combobox.SelectedItem != null)
+            {
+                yiyecekModel.KategoriID = ((Kategori)(kategori_combobox.SelectedItem)).Id;
+            }
+                
+            else
+            {
+                MessageBox.Show("Lütfen bir kategori seçin.");
+                return;
+            }
+
+            
             yiyecekManager.Add(yiyecekModel);
 
             MessageBox.Show("Başarılı.");
 
             txt_kalori.Clear();
-            txt_Porsiyon.Clear();
+            
             txt_yiyecekAdi.Clear();
         }
 

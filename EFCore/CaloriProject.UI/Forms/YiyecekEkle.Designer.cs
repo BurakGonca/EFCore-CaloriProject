@@ -30,9 +30,9 @@
         {
             btn_yiyecekEkle = new Button();
             txt_yiyecekAdi = new TextBox();
-            txt_Porsiyon = new TextBox();
             txt_kalori = new TextBox();
             anaSayfa_buton = new Button();
+            kategori_combobox = new ComboBox();
             SuspendLayout();
             // 
             // btn_yiyecekEkle
@@ -48,31 +48,21 @@
             // 
             // txt_yiyecekAdi
             // 
-            txt_yiyecekAdi.Location = new Point(339, 131);
+            txt_yiyecekAdi.Location = new Point(318, 131);
             txt_yiyecekAdi.Margin = new Padding(3, 4, 3, 4);
             txt_yiyecekAdi.Name = "txt_yiyecekAdi";
             txt_yiyecekAdi.PlaceholderText = " Yiyecek Adı";
-            txt_yiyecekAdi.Size = new Size(114, 27);
+            txt_yiyecekAdi.Size = new Size(151, 27);
             txt_yiyecekAdi.TabIndex = 1;
             txt_yiyecekAdi.TextChanged += txt_yiyecekAdi_TextChanged;
             // 
-            // txt_Porsiyon
-            // 
-            txt_Porsiyon.Location = new Point(339, 200);
-            txt_Porsiyon.Margin = new Padding(3, 4, 3, 4);
-            txt_Porsiyon.Name = "txt_Porsiyon";
-            txt_Porsiyon.PlaceholderText = "Porsiyon";
-            txt_Porsiyon.Size = new Size(114, 27);
-            txt_Porsiyon.TabIndex = 1;
-            txt_Porsiyon.TextChanged += txt_Porsiyon_TextChanged;
-            // 
             // txt_kalori
             // 
-            txt_kalori.Location = new Point(339, 269);
+            txt_kalori.Location = new Point(318, 269);
             txt_kalori.Margin = new Padding(3, 4, 3, 4);
             txt_kalori.Name = "txt_kalori";
             txt_kalori.PlaceholderText = "Kalori";
-            txt_kalori.Size = new Size(114, 27);
+            txt_kalori.Size = new Size(151, 27);
             txt_kalori.TabIndex = 1;
             txt_kalori.TextChanged += txt_kalori_TextChanged;
             // 
@@ -87,14 +77,22 @@
             anaSayfa_buton.UseVisualStyleBackColor = true;
             anaSayfa_buton.Click += anaSayfa_buton_Click;
             // 
+            // kategori_combobox
+            // 
+            kategori_combobox.FormattingEnabled = true;
+            kategori_combobox.Location = new Point(318, 208);
+            kategori_combobox.Name = "kategori_combobox";
+            kategori_combobox.Size = new Size(151, 28);
+            kategori_combobox.TabIndex = 3;
+            // 
             // YiyecekEkle
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(791, 565);
+            Controls.Add(kategori_combobox);
             Controls.Add(anaSayfa_buton);
             Controls.Add(txt_kalori);
-            Controls.Add(txt_Porsiyon);
             Controls.Add(txt_yiyecekAdi);
             Controls.Add(btn_yiyecekEkle);
             Margin = new Padding(3, 4, 3, 4);
@@ -109,8 +107,8 @@
 
         private Button btn_yiyecekEkle;
         private TextBox txt_yiyecekAdi;
-        private TextBox txt_Porsiyon;
         private TextBox txt_kalori;
         private Button anaSayfa_buton;
+        private ComboBox kategori_combobox;
     }
 }

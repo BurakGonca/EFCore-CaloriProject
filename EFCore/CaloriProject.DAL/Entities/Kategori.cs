@@ -15,7 +15,10 @@ namespace CaloriProject.DAL.Entities
 
         public List<Yiyecek> Yiyecekler { get; set; } //navigation prop.
 
-
+        public override string ToString()
+        {
+            return KategoriAdi;
+        }
 
     }
 }

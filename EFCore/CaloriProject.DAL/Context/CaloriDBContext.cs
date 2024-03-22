@@ -46,10 +46,26 @@ namespace CaloriProject.DAL.Context
                     new Kategori() { Id = 3, KategoriAdi = "Aperatifler" },
                     new Kategori() { Id = 4, KategoriAdi = "Corbalar" },
                     new Kategori() { Id = 5, KategoriAdi = "Ana Yemekler" },
-                    new Kategori() { Id = 6, KategoriAdi = "Icecekler" }
+                    new Kategori() { Id = 6, KategoriAdi = "Icecekler" },
+                    new Kategori() { Id = 7, KategoriAdi = "Tatli" }
 
                 );
 
+            modelBuilder.Entity<Yiyecek>().HasData
+                (
+                    new Yiyecek() { Id = 1, YiyecekAdi = "Manti" ,Porsiyon =1 , Kalori = 300 , KategoriID = 5  },
+                    new Yiyecek() { Id = 2, YiyecekAdi = "Menemen" ,Porsiyon =1 , Kalori = 200 , KategoriID = 1  },
+                    new Yiyecek() { Id = 3, YiyecekAdi = "Patates Kızartmasi" ,Porsiyon =2 , Kalori = 300 , KategoriID = 3  },
+                    new Yiyecek() { Id = 4, YiyecekAdi = "Adana Kebap" ,Porsiyon =1 , Kalori = 500 , KategoriID = 5  },
+                    new Yiyecek() { Id = 5, YiyecekAdi = "Mercimek Corbasi" ,Porsiyon =1 , Kalori = 200 , KategoriID = 4  },
+                    new Yiyecek() { Id = 6, YiyecekAdi = "Baklava" ,Porsiyon =1 , Kalori = 400 , KategoriID = 7  },
+                    new Yiyecek() { Id = 7, YiyecekAdi = "Su" ,Porsiyon =1 , Kalori = 50 , KategoriID = 6  },
+                    new Yiyecek() { Id = 8, YiyecekAdi = "Omlet" ,Porsiyon =1 , Kalori = 200 , KategoriID = 1  },
+                    new Yiyecek() { Id = 9, YiyecekAdi = "Yaprak Ciger" ,Porsiyon =1 , Kalori = 400 , KategoriID = 2  },
+                    new Yiyecek() { Id = 10, YiyecekAdi = "Sütlü Nuriye" ,Porsiyon =1 , Kalori = 200 , KategoriID = 7  }
+                   
+
+                );
 
         }
 
