@@ -31,7 +31,7 @@ namespace CaloriProject.UI.Forms
         public OgunGir(AnaSayfa ana,KullaniciModel kullaniciModel)
         {
             anaSayfa = ana;
-
+            Program.KullaniciModel= kullaniciModel; //deneme yapıyorum
             InitializeComponent();
 
         }
@@ -39,14 +39,14 @@ namespace CaloriProject.UI.Forms
         
         private void OgunGir_Load(object sender, EventArgs e)
         {
-            kullanici_Isım_Lbl.Text = Program.kullaniciModel.Ad + " " + Program.kullaniciModel.Soyad;
+            kullanici_Isım_Lbl.Text = Program.KullaniciModel.Ad + " " + Program.KullaniciModel.Soyad;
             
             comboBox1_ogun.DataSource = CaloriDBContext.Ogünler.ToList();
             comboBox3_yiyecek.DataSource = YiyecekManager.GetAllWithIncludes();
 
             //dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
 
-            dataGridView1.DataSource = Program.kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
+            dataGridView1.DataSource = Program.KullaniciModel.KullaniciOgunYiyecekModeller.ToList();
 
 
             
@@ -66,7 +66,7 @@ namespace CaloriProject.UI.Forms
 
 			KullaniciOgunYiyecekModel kullaniciOgunYiyecekModel = new KullaniciOgunYiyecekModel();
 
-            kullaniciOgunYiyecekModel.KullaniciID = Program.kullaniciModel.Id;
+            kullaniciOgunYiyecekModel.KullaniciID = Program.KullaniciModel.Id;
 
 
             if (comboBox3_yiyecek.SelectedItem != null)
@@ -100,7 +100,7 @@ namespace CaloriProject.UI.Forms
 
 				// DataGridView güncellemesi
 				dataGridView1.DataSource = null;
-                dataGridView1.DataSource = Program.kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
+                dataGridView1.DataSource = Program.KullaniciModel.KullaniciOgunYiyecekModeller.ToList();
 
             }
 			else
@@ -120,7 +120,7 @@ namespace CaloriProject.UI.Forms
                 kullaniciOgunYiyecekManager.Delete(secilenOgun);
                 MessageBox.Show("Öğün silinmiştir.");
                 //dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
-                dataGridView1.DataSource = Program.kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
+                dataGridView1.DataSource = Program.KullaniciModel.KullaniciOgunYiyecekModeller.ToList();
             }
             else
                 MessageBox.Show("Secili Öğün Yok!");
@@ -134,8 +134,6 @@ namespace CaloriProject.UI.Forms
             comboBox3_yiyecek.Text = secilenOgun.YiyecekModeller.ToString();
 
             
-
-
 
 		}
 

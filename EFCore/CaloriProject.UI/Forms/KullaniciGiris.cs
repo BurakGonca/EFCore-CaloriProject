@@ -34,7 +34,7 @@ public partial class KullaniciGiris : Form
 
     }
 
-    
+
 
     private void KullaniciGiris_Load(object sender, EventArgs e)
     {
@@ -71,21 +71,26 @@ public partial class KullaniciGiris : Form
 
         KullaniciModel kullanici = kullaniciManager.KullaniciModelBul(email_textBox.Text, sifre_textBox.Text);
 
-        Program.kullaniciModel = kullanici;
 
-        KullaniciOgunYiyecekManager manager = new KullaniciOgunYiyecekManager();
-        List<KullaniciOgunYiyecekModel> model = manager.Search(k => k.KullaniciID == kullanici.Id);
-
-        Program.kullaniciModel.KullaniciOgunYiyecekModeller = model;
 
         if (kullanici != null) // Kullanıcı bulunduysa
         {
+            
+            Program.KullaniciModel = kullanici;
+
+            KullaniciOgunYiyecekManager manager = new KullaniciOgunYiyecekManager();
+            List<KullaniciOgunYiyecekModel> model = manager.Search(k => k.KullaniciID == kullanici.Id);
+            Program.KullaniciModel.KullaniciOgunYiyecekModeller = model;
+
             MessageBox.Show("Giriş başarılı. Ana sayfaya yönlendiriliyorsunuz.");
             anaSayfa.Show();
             this.Hide();
         }
         else
+        {
             MessageBox.Show("E-mail adresi veya şifre hatalı.");
+            return;
+        }
 
 
 
@@ -102,7 +107,7 @@ public partial class KullaniciGiris : Form
 
     }
 
-   
+
 
 }
 

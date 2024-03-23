@@ -23,18 +23,23 @@ namespace CaloriProject.UI.Forms
     public partial class AyarlarSayfasi : Form
     {
         private AnaSayfa anaSayfa;
+        private KullaniciGiris kullaniciGiris;
 
-        CaloriDBContext db = new CaloriDBContext();
-        Kullanici kullanici = new Kullanici();
+                
+        KullaniciManager kullaniciManager = new KullaniciManager();
+        
 
-        public AyarlarSayfasi(AnaSayfa ana)
+        public AyarlarSayfasi(AnaSayfa ana, KullaniciGiris kullanici)
         {
             Program.AktifSayfa = this;
             anaSayfa = ana;
+            kullaniciGiris = kullanici;
             InitializeComponent();
+
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //anasayfaya donus
         {
             Program.AktifSayfa.Hide();
             anaSayfa.Show();
@@ -42,12 +47,12 @@ namespace CaloriProject.UI.Forms
 
         private void AyarlarSayfasi_Load(object sender, EventArgs e)
         {
-            txt_Ad.Text = Program.kullaniciModel.Ad;
-            txt_Soyad.Text = Program.kullaniciModel.Soyad; ;
-            txt_Boy.Text = Program.kullaniciModel.Boy.ToString();
-            txt_Kilo.Text = Program.kullaniciModel.Kilo.ToString();
-            txt_Email.Text = Program.kullaniciModel.EMail;
-            dogumTarihiPicker.Text = Program.kullaniciModel.DogumTarihi.ToShortDateString();
+            txt_Ad.Text = Program.KullaniciModel.Ad;
+            txt_Soyad.Text = Program.KullaniciModel.Soyad; ;
+            txt_Boy.Text = Program.KullaniciModel.Boy.ToString();
+            txt_Kilo.Text = Program.KullaniciModel.Kilo.ToString();
+            txt_Sifre.Text = Program.KullaniciModel.Sifre;
+            dogumTarihiPicker.Text = Program.KullaniciModel.DogumTarihi.ToShortDateString();
 
         }
 
@@ -56,54 +61,55 @@ namespace CaloriProject.UI.Forms
         private void btn_Kaydet_Click(object sender, EventArgs e)
         {
 
-            var guncelle = db.Kullanicilar.First(x => x.EMail == Program.kullaniciModel.EMail);
-            guncelle.Ad = txt_Ad.Text;
-            guncelle.Soyad = txt_Soyad.Text;
-            guncelle.Boy = Convert.ToDouble(txt_Boy.Text);
-            guncelle.Kilo = Convert.ToDouble(txt_Kilo.Text);
-            guncelle.DogumTarihi = Convert.ToDateTime(dogumTarihiPicker.Text);
-            guncelle.EMail = txt_Email.Text;
 
 
 
-            // Program.kullaniciModel içindeki verilerin güncellenmesi
-            Program.kullaniciModel.Ad = txt_Ad.Text;
-            Program.kullaniciModel.Soyad = txt_Soyad.Text;
-            Program.kullaniciModel.Boy = Convert.ToDouble(txt_Boy.Text);
-            Program.kullaniciModel.Kilo = Convert.ToDouble(txt_Kilo.Text);
+            
+            Program.KullaniciModel.Ad = txt_Ad.Text;
+            Program.KullaniciModel.Soyad = txt_Soyad.Text;
+            Program.KullaniciModel.Boy = Convert.ToDouble(txt_Boy.Text);
+            Program.KullaniciModel.Kilo = Convert.ToDouble(txt_Kilo.Text);
             //Program.kullaniciModel.EMail = yeniEmail;
-            Program.kullaniciModel.DogumTarihi = Convert.ToDateTime(dogumTarihiPicker.Text);
+            Program.KullaniciModel.DogumTarihi = Convert.ToDateTime(dogumTarihiPicker.Text);
+            Program.KullaniciModel.Sifre = txt_Sifre.Text;
+            
 
 
 
-            //Veritabanında kullanıcı modelinin güncellenmesi için uygun kodlar buraya yazılmalıdır
-            //Örneğin, veritabanı bağlantısı kurma, güncelleme sorgusu oluşturma ve çalıştırma işlemleri burada gerçekleştirilebilir
-            //Veritabanı işlemleri için uygun kütüphaneleri ve yöntemleri kullanarak veritabanına güncelleme yapılabilir
+
 
             DialogResult result = MessageBox.Show("Profil güncellenecek onaylıyor musun?", "Onaylıyorum", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
-                kullanici.Update(guncelle);
+                kullaniciManager.Update(Program.KullaniciModel);
                 MessageBox.Show("Profil başarıyla güncellendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            
+
+            
         }
 
         private void btn_Sil_Click(object sender, EventArgs e)
         {
-            var sil = db.Kullanicilar.FirstOrDefault(x => x.EMail == Program.kullaniciModel.EMail);
+            
 
             DialogResult result = MessageBox.Show("Profili silmek istiyor musun?", "Evet", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (result == DialogResult.OK)
             {
-                kullanici.Delete(sil);
+
+                kullaniciManager.Remove(Program.KullaniciModel);
                 MessageBox.Show("Profil başarıyla silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                Giris giris = new Giris();
-                giris.Show();
-                this.Hide();
+                Program.AktifSayfa.Hide();
+                kullaniciGiris.Show();
+                
             }
+
+
+
         }
     }
 }
