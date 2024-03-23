@@ -24,6 +24,8 @@ namespace CaloriProject.UI.Forms
 
         public AnaSayfa(KullaniciGiris kullaniciGiris)
         {
+
+
             this.kullaniciGiris = kullaniciGiris;
             ogunGir =  new OgunGir(this, Program.kullaniciModel);
             yiyecekEkle =  new YiyecekEkle(this);
@@ -64,8 +66,12 @@ namespace CaloriProject.UI.Forms
 
         private void cikisYap_buton_Click(object sender, EventArgs e) //kullanici cikis islemi
         {
+            Program.kullaniciModel = null;
             kullaniciGiris.Show();
             this.Hide();
+
+
+
         }
 
         private void ayarlar_buton_Click(object sender, EventArgs e)
@@ -84,5 +90,9 @@ namespace CaloriProject.UI.Forms
             Program.ReferansSayfa.Hide();
 
         }
+
+
+       
+
     }
 }

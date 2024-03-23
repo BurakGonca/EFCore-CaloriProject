@@ -43,23 +43,23 @@ public partial class KullaniciGiris : Form
 
     private void btn_girisYap_Click(object sender, EventArgs e) //kullanici giris butonu
     {
-        if (!AlanKontrol(email_textBox.Text))
+        if (!UyelikOlusturma.AlanKontrol(email_textBox.Text))
         {
             MessageBox.Show("Lütfen e-mailinizi giriniz");
             return;
         }
-        if (!EMailKontrol(email_textBox.Text))
+        if (!UyelikOlusturma.EMailKontrol(email_textBox.Text))
         {
             MessageBox.Show("Lütfen geçerli bir e-mail adresi giriniz.");
             return;
         }
-        if (!AlanKontrol(sifre_textBox.Text))
+        if (!UyelikOlusturma.AlanKontrol(sifre_textBox.Text))
         {
             MessageBox.Show("Lütfen sifrenizi giriniz");
             return;
         }
 
-        if (!SifreKontrol(sifre_textBox.Text))
+        if (!UyelikOlusturma.SifreKontrol(sifre_textBox.Text))
         {
             MessageBox.Show("Şifre geçerli değil. Şifre en az 1 büyük harf, en az 1 küçük harf, en az 1 rakam içermeli ve 8-10 karakter uzunluğunda olmalıdır.");
             return;
@@ -69,14 +69,14 @@ public partial class KullaniciGiris : Form
         KullaniciManager kullaniciManager = new KullaniciManager();
 
 
-        KullaniciModel kullanici = kullaniciManager.KullaniciModelBul(email_textBox.Text ,sifre_textBox.Text);
+        KullaniciModel kullanici = kullaniciManager.KullaniciModelBul(email_textBox.Text, sifre_textBox.Text);
 
         Program.kullaniciModel = kullanici;
 
         KullaniciOgunYiyecekManager manager = new KullaniciOgunYiyecekManager();
-        List<KullaniciOgunYiyecekModel> model = manager.Search(k=> k.KullaniciID == kullanici.Id);
+        List<KullaniciOgunYiyecekModel> model = manager.Search(k => k.KullaniciID == kullanici.Id);
 
-        Program.kullaniciModel.KullaniciOgunYiyecekModeller= model;
+        Program.kullaniciModel.KullaniciOgunYiyecekModeller = model;
 
         if (kullanici != null) // Kullanıcı bulunduysa
         {
@@ -102,49 +102,7 @@ public partial class KullaniciGiris : Form
 
     }
 
-    private bool AlanKontrol(string alan)
-    {
-        if (string.IsNullOrWhiteSpace(alan)) // Alanın boş olup olmadığını kontrol ediyoruz
-            return false;
-        return true;
-    }
-
-    private bool EMailKontrol(string email)
-    {
-        try
-        {
-            var mailAddress = new MailAddress(email);
-            return true;
-        }
-        catch (FormatException)
-        {
-            return false;
-        }
-    }
-
-
-    static bool SifreKontrol(string sifre)
-    {
-        // Sifre en az 8, en fazla 10 karakterden oluşmalı
-        if (sifre.Length < 8 || sifre.Length > 10)
-            return false;
-
-        // En az bir büyük harf içermeli
-        if (!Regex.IsMatch(sifre, "[A-Z]"))
-            return false;
-
-        // En az bir küçük harf içermeli
-        if (!Regex.IsMatch(sifre, "[a-z]"))
-            return false;
-
-        // En az bir rakam içermeli
-        if (!Regex.IsMatch(sifre, "[0-9]"))
-            return false;
-
-        // Diğer tüm koşullar sağlanıyorsa, sifre geçerlidir
-        return true;
-    }
-
+   
 
 }
 

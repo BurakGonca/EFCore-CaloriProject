@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -104,6 +104,7 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridView1.Location = new Point(53, 355);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -187,16 +188,16 @@
             Controls.Add(comboBox1_ogun);
             Controls.Add(dateTimePicker1);
             Name = "OgunGir";
-            Text = "OgunGir";
+            Text = "S";
             Load += OgunGir_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
-		#endregion
+        #endregion
 
-		private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker1;
         private ComboBox comboBox1_ogun;
         private ComboBox comboBox3_yiyecek;
         private Label label1;

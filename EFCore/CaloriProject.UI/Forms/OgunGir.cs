@@ -47,6 +47,11 @@ namespace CaloriProject.UI.Forms
             //dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
 
             dataGridView1.DataSource = Program.kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
+
+
+            
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -95,8 +100,9 @@ namespace CaloriProject.UI.Forms
 
 				// DataGridView güncellemesi
 				dataGridView1.DataSource = null;
-				dataGridView1.DataSource = kullaniciOgunYiyecekManager.GetAllWithIncludes();
-			}
+                dataGridView1.DataSource = Program.kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
+
+            }
 			else
 			{
 				MessageBox.Show("Öğün Ekleme İptal Edilmiştir.");
@@ -124,8 +130,8 @@ namespace CaloriProject.UI.Forms
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             secilenOgun = (KullaniciOgunYiyecekModel)dataGridView1.SelectedRows[0].DataBoundItem;
-            //comboBox1_ogun.Text = secilenOgun.OgunModeller.ToString();
-            //comboBox3_yiyecek.Text = secilenOgun.YiyecekModeller.ToString();
+            comboBox1_ogun.Text = secilenOgun.OgunModeller.ToString();
+            comboBox3_yiyecek.Text = secilenOgun.YiyecekModeller.ToString();
 
             
 
