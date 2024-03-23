@@ -23,7 +23,7 @@ namespace CaloriProject.UI.Forms
 
         
 
-        public AnaSayfa(KullaniciGiris kullanici)
+        public AnaSayfa(KullaniciGiris kullanici , KullaniciModel kullaniciModel)
         {
 
 
@@ -37,6 +37,8 @@ namespace CaloriProject.UI.Forms
             Program.AktifSayfa= this;
 
             
+
+
             InitializeComponent();
 
 

@@ -20,7 +20,7 @@ using CaloriProject.BLL.Manager.Concrete;
 public partial class KullaniciGiris : Form
 {
 
-
+    
     private Giris giris;
     private AnaSayfa anaSayfa;
 
@@ -28,8 +28,8 @@ public partial class KullaniciGiris : Form
     {
         giris = gir;
 
-        anaSayfa = ana ?? new AnaSayfa(this);
-
+        anaSayfa = ana ?? new AnaSayfa(this,Program.KullaniciModel);
+        
         InitializeComponent();
 
     }
@@ -38,7 +38,7 @@ public partial class KullaniciGiris : Form
 
     private void KullaniciGiris_Load(object sender, EventArgs e)
     {
-
+        
     }
 
     private void btn_girisYap_Click(object sender, EventArgs e) //kullanici giris butonu

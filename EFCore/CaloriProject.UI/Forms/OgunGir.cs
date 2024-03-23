@@ -31,7 +31,7 @@ namespace CaloriProject.UI.Forms
         public OgunGir(AnaSayfa ana,KullaniciModel kullaniciModel)
         {
             anaSayfa = ana;
-            Program.KullaniciModel= kullaniciModel; //deneme yapıyorum
+            //Program.KullaniciModel= kullaniciModel; //deneme yapıyorum
             InitializeComponent();
 
         }
