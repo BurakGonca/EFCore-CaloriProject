@@ -3,7 +3,9 @@ using CaloriProject.BLL.Models;
 using CaloriProject.DAL.Context;
 using CaloriProject.DAL.Entities;
 using CaloriProject.DAL.Repostory.Concrete;
+using CaloriProject.UI.Views;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Identity.Client.Platforms.Features.WinFormsLegacyWebUi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,18 +26,23 @@ namespace CaloriProject.UI.Forms
         KullaniciOgunYiyecekModel secilenOgun;
 
         KullaniciOgunYiyecekManager kullaniciOgunYiyecekManager = new KullaniciOgunYiyecekManager();
-
         YiyecekManager YiyecekManager = new YiyecekManager();
-
+        KullaniciManager KullaniciManager = new KullaniciManager();
+        OgunManager OgunManager = new OgunManager();
+        KullaniciOgunYiyecekModel KullaniciOgunYiyecekModelSecilen = new KullaniciOgunYiyecekModel();
         CaloriDBContext CaloriDBContext = new CaloriDBContext();
 
         private KullaniciModel kullaniciModel;
         private YiyecekModel YiyecekModel;
 
+
+
+
         public OgunIslemleri(AnaSayfa ana, KullaniciModel kullaniciModel)
         {
             this.kullaniciModel = kullaniciModel;
             anaSayfa = ana;
+
             InitializeComponent();
 
         }
@@ -50,7 +57,8 @@ namespace CaloriProject.UI.Forms
             comboBox1_ogun.DataSource = CaloriDBContext.Ogünler.ToList();
             comboBox3_yiyecek.DataSource = YiyecekManager.GetAllWithIncludes();
 
-            dataGridView1.DataSource = kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
+            YemekGetir();
+
 
 
 
@@ -106,9 +114,7 @@ namespace CaloriProject.UI.Forms
                 MessageBox.Show("Öğün Başarıyla Eklenmiştir!");
 
 
-
-
-                dataGridView1.DataSource = kullaniciOgunYiyecekManager.Search(k => k.KullaniciID == kullaniciOgunYiyecekModel.KullaniciID).ToList();
+                YemekGetir();
 
 
 
@@ -130,18 +136,17 @@ namespace CaloriProject.UI.Forms
         {
 
 
-            if (secilenOgun != null)
+            if (KullaniciOgunYiyecekModelSecilen != null)
             {
 
-                kullaniciOgunYiyecekManager.Delete(secilenOgun);
+                kullaniciOgunYiyecekManager.Remove(KullaniciOgunYiyecekModelSecilen);
 
-                //kullaniciModel.KullaniciOgunYiyecekModeller.Remove(secilenOgun);
+                
 
                 MessageBox.Show("Öğün silinmiştir.");
 
-                dataGridView1.DataSource = kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
-
-               // dataGridView1.DataSource = kullaniciOgunYiyecekManager.Search(k => k.KullaniciID == secilenOgun.KullaniciID).ToList();
+               
+                YemekGetir();
             }
             else
                 MessageBox.Show("Secili Öğün Yok!");
@@ -151,32 +156,29 @@ namespace CaloriProject.UI.Forms
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+
 
         }
 
         private void guncelle_buton_Click(object sender, EventArgs e)
         {
-            if (secilenOgun != null)
+            if (KullaniciOgunYiyecekModelSecilen != null)
             {
 
 
-                kullaniciOgunYiyecekManager.Update(secilenOgun);
 
+                KullaniciOgunYiyecekModelSecilen.KullaniciID = kullaniciModel.Id;
 
-                KullaniciOgunYiyecekModel kullaniciOgunYiyecekModel2 = new KullaniciOgunYiyecekModel();
+                KullaniciOgunYiyecekModelSecilen.YiyecekID = ((YiyecekModel)(comboBox3_yiyecek.SelectedItem)).Id;
+                KullaniciOgunYiyecekModelSecilen.OgunID = ((Ogun)comboBox1_ogun.SelectedItem).Id;
 
-                kullaniciOgunYiyecekModel2.KullaniciID = kullaniciModel.Id;
+                kullaniciOgunYiyecekManager.Update(KullaniciOgunYiyecekModelSecilen);
 
-                kullaniciOgunYiyecekModel2.YiyecekID = ((YiyecekModel)(comboBox3_yiyecek.SelectedItem)).Id;
-                kullaniciOgunYiyecekModel2.OgunID = ((Ogun)comboBox1_ogun.SelectedItem).Id;
-                kullaniciOgunYiyecekModel2.Tarih = dateTimePicker1.Value;
-                kullaniciOgunYiyecekManager.Add(kullaniciOgunYiyecekModel2);
 
                 MessageBox.Show("Öğün guncellenmistir");
 
-                dataGridView1.DataSource = kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
 
+                YemekGetir();
             }
             else
                 MessageBox.Show("Secili Öğün Yok!");
@@ -187,8 +189,49 @@ namespace CaloriProject.UI.Forms
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            secilenOgun = (KullaniciOgunYiyecekModel)dataGridView1.SelectedRows[0].DataBoundItem;
+            var secilenOgun1 = (YemekView)dataGridView1.SelectedRows[0].DataBoundItem;
+
+            KullaniciOgunYiyecekModelSecilen = kullaniciOgunYiyecekManager.Search((x => x.Id == secilenOgun1.KoyId)).FirstOrDefault();
+
         }
+
+        
+
+        public object YemekGetir()
+        {
+            var yemekListesi = (from koy in kullaniciOgunYiyecekManager.GetAll()
+                                join k in KullaniciManager.GetAll() on koy.KullaniciID equals k.Id
+                                join yem in YiyecekManager.GetAll() on koy.YiyecekID equals yem.Id
+                                join ogun in OgunManager.GetAll() on koy.OgunID equals ogun.Id
+                                where k.Id == kullaniciModel.Id
+
+                                group koy by new
+                                {
+                                    yem.YiyecekAdi,
+                                    yem.Kalori,
+                                    ogun.OgunAd,
+                                    koy.Tarih,
+                                    koy.Id
+                                }
+                                           into gcs
+                                select new YemekView  { yemekAdi = gcs.Key.YiyecekAdi, toplamKalori = gcs.Key.Kalori, ogunAdi = gcs.Key.OgunAd, tarih = gcs.Key.Tarih , KoyId = gcs.Key.Id }
+                                    ).ToList();
+            
+
+            dataGridView1.DataSource = yemekListesi;
+
+            dataGridView1.Columns["KoyId"].Visible = false;
+
+            return dataGridView1.DataSource;
+            
+            
+        }
+
+
+
+
+
+
     }
 
 

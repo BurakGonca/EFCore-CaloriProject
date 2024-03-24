@@ -9,8 +9,8 @@ namespace CaloriProject.BLL.Models
 {
     public class KullaniciOgunYiyecekModel
     {
-       
 
+        public int Id { get; set; } 
         public int KullaniciID { get; set; }
         public KullaniciModel KullaniciModeller { get; set; }
 
