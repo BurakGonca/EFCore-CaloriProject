@@ -75,6 +75,8 @@ namespace CaloriProject.DAL.Repostory.Abstract
         public void Remove(T entity)
         {
             //gerçekten silecek (tablodan silecek)
+
+            
             entities.Remove(entity);
             _db.SaveChanges();
         }

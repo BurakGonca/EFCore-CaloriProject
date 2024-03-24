@@ -1,4 +1,5 @@
-﻿using CaloriProject.DAL.Entities;
+﻿using CaloriProject.BLL.Models;
+using CaloriProject.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,38 +14,44 @@ namespace CaloriProject.UI.Forms
 {
     public partial class AnaSayfa : Form
     {
-        private OgunGir ogunGir;
+        private OgunIslemleri ogunGir;
         private YiyecekEkle yiyecekEkle;
         private KullaniciGiris kullaniciGiris;
         private AyarlarSayfasi ayarlarSayfasi;
         private RaporSayfası raporSayfası;
 
+        private KullaniciModel kullaniciModel; 
 
-        
 
-        public AnaSayfa(KullaniciGiris kullaniciGiris)
+
+        public AnaSayfa(KullaniciGiris kullanici, KullaniciModel kullaniciModel2)
         {
-            this.kullaniciGiris = kullaniciGiris;
-            ogunGir =  new OgunGir(this, Program.kullaniciModel);
-            yiyecekEkle =  new YiyecekEkle(this);
-            ayarlarSayfasi = new AyarlarSayfasi(this);
+
+
+
+            kullaniciGiris = kullanici;
+            kullaniciModel= kullaniciModel2;
+            ogunGir = new OgunIslemleri(this, kullaniciModel);
+
+            yiyecekEkle = new YiyecekEkle(this);
+
+            ayarlarSayfasi = new AyarlarSayfasi(this, kullaniciGiris, kullaniciModel);
             raporSayfası = new RaporSayfası(this);
             Program.AnaSayfa = this;
-            Program.AktifSayfa= this; 
-           
-            InitializeComponent();
+            Program.AktifSayfa = this;
 
+
+
+
+            InitializeComponent();
 
         }
 
 
         private void AnaSayfa_Load(object sender, EventArgs e)
         {
-            kullanici_Isım_Lbl.Text = Program.kullaniciModel.Ad + " " + Program.kullaniciModel.Soyad;
-            boy_label.Text = Program.kullaniciModel.Boy.ToString();
-            kilo_label.Text = Program.kullaniciModel.Kilo.ToString();
-            vki_label.Text = (Program.kullaniciModel.Kilo / Math.Pow(Program.kullaniciModel.Boy / 100, 2)).ToString();
 
+            KullaniciVerileriGuncelle(Program.KullaniciModel);
 
         }
 
@@ -64,8 +71,12 @@ namespace CaloriProject.UI.Forms
 
         private void cikisYap_buton_Click(object sender, EventArgs e) //kullanici cikis islemi
         {
+            Program.KullaniciModel = null;
+            MessageBox.Show("Cikis yapilmistir.");
             kullaniciGiris.Show();
             this.Hide();
+
+
         }
 
         private void ayarlar_buton_Click(object sender, EventArgs e)
@@ -84,5 +95,18 @@ namespace CaloriProject.UI.Forms
             Program.ReferansSayfa.Hide();
 
         }
+
+
+        public void KullaniciVerileriGuncelle(KullaniciModel yeniKullanici)
+        {
+
+            kullanici_Isım_Lbl.Text = yeniKullanici.Ad + " " + yeniKullanici.Soyad;
+            boy_label.Text = yeniKullanici.Boy.ToString();
+            kilo_label.Text = yeniKullanici.Kilo.ToString();
+            vki_label.Text = (yeniKullanici.Kilo / Math.Pow(yeniKullanici.Boy / 100, 2)).ToString();
+
+
+        }
+
     }
 }

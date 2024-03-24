@@ -54,49 +54,49 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5815),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8777),
                             KategoriAdi = "Kahvalti",
                             Status = 1
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5816),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8778),
                             KategoriAdi = "Ara Sicak",
                             Status = 1
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5817),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8779),
                             KategoriAdi = "Aperatifler",
                             Status = 1
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5818),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8779),
                             KategoriAdi = "Corbalar",
                             Status = 1
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5818),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8780),
                             KategoriAdi = "Ana Yemekler",
                             Status = 1
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5819),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8780),
                             KategoriAdi = "Icecekler",
                             Status = 1
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5820),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8781),
                             KategoriAdi = "Tatli",
                             Status = 1
                         });
@@ -233,21 +233,21 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5620),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8699),
                             OgunAdi = "Kahvalti",
                             Status = 1
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5630),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8703),
                             OgunAdi = "Ogle",
                             Status = 1
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5631),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8703),
                             OgunAdi = "Aksam",
                             Status = 1
                         });
@@ -299,7 +299,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5841),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8795),
                             Kalori = 300.0,
                             KategoriID = 5,
                             Porsiyon = 1.0,
@@ -309,7 +309,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5843),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8797),
                             Kalori = 200.0,
                             KategoriID = 1,
                             Porsiyon = 1.0,
@@ -319,7 +319,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5845),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8797),
                             Kalori = 300.0,
                             KategoriID = 3,
                             Porsiyon = 2.0,
@@ -329,7 +329,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5846),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8798),
                             Kalori = 500.0,
                             KategoriID = 5,
                             Porsiyon = 1.0,
@@ -339,7 +339,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5847),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8799),
                             Kalori = 200.0,
                             KategoriID = 4,
                             Porsiyon = 1.0,
@@ -349,7 +349,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5848),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8800),
                             Kalori = 400.0,
                             KategoriID = 7,
                             Porsiyon = 1.0,
@@ -359,7 +359,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5849),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8800),
                             Kalori = 50.0,
                             KategoriID = 6,
                             Porsiyon = 1.0,
@@ -369,7 +369,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5850),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8801),
                             Kalori = 200.0,
                             KategoriID = 1,
                             Porsiyon = 1.0,
@@ -379,7 +379,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5851),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8802),
                             Kalori = 400.0,
                             KategoriID = 2,
                             Porsiyon = 1.0,
@@ -389,7 +389,7 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 12, 22, 426, DateTimeKind.Local).AddTicks(5852),
+                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8802),
                             Kalori = 200.0,
                             KategoriID = 7,
                             Porsiyon = 1.0,

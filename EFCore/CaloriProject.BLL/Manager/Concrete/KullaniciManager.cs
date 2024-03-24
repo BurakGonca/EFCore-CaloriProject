@@ -15,12 +15,12 @@ namespace CaloriProject.BLL.Manager.Concrete
 {
     public class KullaniciManager : Manager<KullaniciModel, Kullanici, KullaniciMapProfile>
     {
-
+       
         public KullaniciManager()
         {
-
-            _repository = new KullaniciRepostory(new CaloriDBContext());
-
+                   
+        _repository = new KullaniciRepostory(new CaloriDBContext());
+            
         }
 
         public KullaniciModel KullaniciModelBul(string eMail, string sifre)
@@ -30,6 +30,6 @@ namespace CaloriProject.BLL.Manager.Concrete
             return _mapper.Map<KullaniciModel>(kullanici);
 
         }
-
+        
     }
 }

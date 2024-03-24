@@ -1,4 +1,5 @@
-﻿using CaloriProject.DAL.Enums;
+﻿using CaloriProject.DAL.Context;
+using CaloriProject.DAL.Enums;
 using CaloriProject.DAL.Repostory.Abstract;
 using System;
 using System.Collections.Generic;
@@ -23,8 +24,20 @@ namespace CaloriProject.DAL.Entities
 
         public List<KullaniciOgunYiyecek> kullaniciOgunYiyecekler { get; set; } //n-n iliski icin
 
-        
 
+        CaloriDBContext db = new CaloriDBContext();
+
+        public void Update(Kullanici item)
+        {
+            db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void Delete(Kullanici item)
+        {
+            db.Kullanicilar.Remove(item);
+            db.SaveChanges();
+        }
 
 
     }

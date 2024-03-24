@@ -9,6 +9,8 @@ namespace CaloriProject.BLL.Models
 {
     public class KullaniciOgunYiyecekModel
     {
+       
+
         public int KullaniciID { get; set; }
         public KullaniciModel KullaniciModeller { get; set; }
 
@@ -21,7 +23,9 @@ namespace CaloriProject.BLL.Models
         public DateTime Tarih { get; set; }
         public double Porsiyon { get; set; }
 
+        
 
+       
 
     }
 }

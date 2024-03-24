@@ -158,7 +158,7 @@ namespace CaloriProject.UI.Forms
         }
 
 
-        private bool EMailKontrol(string email)
+        public static bool EMailKontrol(string email)
         {
             try
             {
@@ -171,7 +171,7 @@ namespace CaloriProject.UI.Forms
             }
         }
 
-        static bool SifreKontrol(string sifre)
+        public static bool SifreKontrol(string sifre)
         {
             // Sifre en az 8, en fazla 10 karakterden oluşmalı
             if (sifre.Length < 8 || sifre.Length > 10)
@@ -194,7 +194,7 @@ namespace CaloriProject.UI.Forms
         }
 
 
-        private bool AlanKontrol(string alan)
+        public static bool AlanKontrol(string alan)
         {
             if (string.IsNullOrWhiteSpace(alan)) // Alanın boş olup olmadığını kontrol ediyoruz
                 return false;
