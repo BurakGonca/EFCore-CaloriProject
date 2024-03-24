@@ -44,21 +44,21 @@
 			Label = new Label();
 			dateTimePicker1 = new DateTimePicker();
 			tabKıyasRapor = new TabPage();
+			dgvKıyasRapor = new DataGridView();
 			tabyemekcesidRapor = new TabPage();
 			dgvyemekcesidirapor = new DataGridView();
 			aksamyemegibuton = new Button();
 			OglenButton = new Button();
 			kahvaltıbuton = new Button();
-			dgvKıyasRapor = new DataGridView();
 			Raporlar.SuspendLayout();
 			tabgünSonu.SuspendLayout();
 			groupBox1.SuspendLayout();
 			groupboxaksam.SuspendLayout();
 			groupBoxOglen.SuspendLayout();
 			tabKıyasRapor.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)dgvKıyasRapor).BeginInit();
 			tabyemekcesidRapor.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvyemekcesidirapor).BeginInit();
-			((System.ComponentModel.ISupportInitialize)dgvKıyasRapor).BeginInit();
 			SuspendLayout();
 			// 
 			// button1
@@ -251,6 +251,15 @@
 			tabKıyasRapor.Text = "Kıyas Raporu";
 			tabKıyasRapor.UseVisualStyleBackColor = true;
 			// 
+			// dgvKıyasRapor
+			// 
+			dgvKıyasRapor.BackgroundColor = Color.Bisque;
+			dgvKıyasRapor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgvKıyasRapor.Location = new Point(66, 185);
+			dgvKıyasRapor.Name = "dgvKıyasRapor";
+			dgvKıyasRapor.Size = new Size(556, 214);
+			dgvKıyasRapor.TabIndex = 0;
+			// 
 			// tabyemekcesidRapor
 			// 
 			tabyemekcesidRapor.BackgroundImage = Properties.Resources._7;
@@ -276,6 +285,7 @@
 			dgvyemekcesidirapor.RowHeadersWidth = 51;
 			dgvyemekcesidirapor.Size = new Size(444, 259);
 			dgvyemekcesidirapor.TabIndex = 3;
+			dgvyemekcesidirapor.CellContentClick += dgvyemekcesidirapor_CellContentClick;
 			// 
 			// aksamyemegibuton
 			// 
@@ -306,15 +316,7 @@
 			kahvaltıbuton.TabIndex = 0;
 			kahvaltıbuton.Text = "Kahvaltı";
 			kahvaltıbuton.UseVisualStyleBackColor = false;
-			// 
-			// dgvKıyasRapor
-			// 
-			dgvKıyasRapor.BackgroundColor = Color.Bisque;
-			dgvKıyasRapor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvKıyasRapor.Location = new Point(66, 185);
-			dgvKıyasRapor.Name = "dgvKıyasRapor";
-			dgvKıyasRapor.Size = new Size(556, 214);
-			dgvKıyasRapor.TabIndex = 0;
+			kahvaltıbuton.Click += kahvaltıbuton_Click;
 			// 
 			// RaporSayfası
 			// 
@@ -338,9 +340,9 @@
 			groupBoxOglen.ResumeLayout(false);
 			groupBoxOglen.PerformLayout();
 			tabKıyasRapor.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)dgvKıyasRapor).EndInit();
 			tabyemekcesidRapor.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)dgvyemekcesidirapor).EndInit();
-			((System.ComponentModel.ISupportInitialize)dgvKıyasRapor).EndInit();
 			ResumeLayout(false);
 		}
 
