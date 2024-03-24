@@ -15,7 +15,7 @@ namespace CaloriProject.DAL.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Pull'layan server'ı ve Database'i değiştirmeyi unutmasın.
-            optionsBuilder.UseSqlServer("server=BURAK;Database=CaloriDB;Trusted_Connection=true;trustservercertificate=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-G9J8U06;Database=CaloriDB;Trusted_Connection=true;trustservercertificate=true");
 
         }
 
