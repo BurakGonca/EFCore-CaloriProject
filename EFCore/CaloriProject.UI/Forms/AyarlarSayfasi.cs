@@ -27,10 +27,12 @@ namespace CaloriProject.UI.Forms
 
                 
         KullaniciManager kullaniciManager = new KullaniciManager();
-        
 
-        public AyarlarSayfasi(AnaSayfa ana, KullaniciGiris kullanici)
+        private KullaniciModel kullaniciModel;
+
+        public AyarlarSayfasi(AnaSayfa ana, KullaniciGiris kullanici , KullaniciModel kullanici1)
         {
+            kullaniciModel = kullanici1;
             Program.AktifSayfa = this;
             anaSayfa = ana;
             kullaniciGiris = kullanici;
@@ -47,12 +49,12 @@ namespace CaloriProject.UI.Forms
 
         private void AyarlarSayfasi_Load(object sender, EventArgs e)
         {
-            txt_Ad.Text = Program.KullaniciModel.Ad;
-            txt_Soyad.Text = Program.KullaniciModel.Soyad; ;
-            txt_Boy.Text = Program.KullaniciModel.Boy.ToString();
-            txt_Kilo.Text = Program.KullaniciModel.Kilo.ToString();
-            txt_Sifre.Text = Program.KullaniciModel.Sifre;
-            dogumTarihiPicker.Text = Program.KullaniciModel.DogumTarihi.ToShortDateString();
+            txt_Ad.Text = kullaniciModel.Ad;
+            txt_Soyad.Text = kullaniciModel.Soyad; ;
+            txt_Boy.Text = kullaniciModel.Boy.ToString();
+            txt_Kilo.Text = kullaniciModel.Kilo.ToString();
+            txt_Sifre.Text = kullaniciModel.Sifre;
+            dogumTarihiPicker.Text = kullaniciModel.DogumTarihi.ToShortDateString();
 
         }
 
@@ -65,13 +67,13 @@ namespace CaloriProject.UI.Forms
 
 
             
-            Program.KullaniciModel.Ad = txt_Ad.Text;
-            Program.KullaniciModel.Soyad = txt_Soyad.Text;
-            Program.KullaniciModel.Boy = Convert.ToDouble(txt_Boy.Text);
-            Program.KullaniciModel.Kilo = Convert.ToDouble(txt_Kilo.Text);
+            kullaniciModel.Ad = txt_Ad.Text;
+            kullaniciModel.Soyad = txt_Soyad.Text;
+            kullaniciModel.Boy = Convert.ToDouble(txt_Boy.Text);
+            kullaniciModel.Kilo = Convert.ToDouble(txt_Kilo.Text);
             //Program.kullaniciModel.EMail = yeniEmail;
-            Program.KullaniciModel.DogumTarihi = Convert.ToDateTime(dogumTarihiPicker.Text);
-            Program.KullaniciModel.Sifre = txt_Sifre.Text;
+            kullaniciModel.DogumTarihi = Convert.ToDateTime(dogumTarihiPicker.Text);
+            kullaniciModel.Sifre = txt_Sifre.Text;
             
 
 
@@ -82,7 +84,7 @@ namespace CaloriProject.UI.Forms
 
             if (result == DialogResult.Yes)
             {
-                kullaniciManager.Update(Program.KullaniciModel);
+                kullaniciManager.Update(kullaniciModel);
                 MessageBox.Show("Profil başarıyla güncellendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -100,7 +102,7 @@ namespace CaloriProject.UI.Forms
             if (result == DialogResult.OK)
             {
 
-                kullaniciManager.Remove(Program.KullaniciModel);
+                kullaniciManager.Remove(kullaniciModel);
                 MessageBox.Show("Profil başarıyla silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Program.AktifSayfa.Hide();

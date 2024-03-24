@@ -26,11 +26,14 @@ public partial class KullaniciGiris : Form
 
     public KullaniciGiris(Giris gir, AnaSayfa ana = null)
     {
+        
+
         giris = gir;
 
         anaSayfa = ana ?? new AnaSayfa(this,Program.KullaniciModel);
         
         InitializeComponent();
+
 
     }
 
@@ -75,16 +78,18 @@ public partial class KullaniciGiris : Form
 
         if (kullanici != null) // Kullanıcı bulunduysa
         {
-            
-            Program.KullaniciModel = kullanici;
 
+           
+
+            Program.KullaniciModel = kullanici;
             KullaniciOgunYiyecekManager manager = new KullaniciOgunYiyecekManager();
             List<KullaniciOgunYiyecekModel> model = manager.Search(k => k.KullaniciID == kullanici.Id);
             Program.KullaniciModel.KullaniciOgunYiyecekModeller = model;
-
             MessageBox.Show("Giriş başarılı. Ana sayfaya yönlendiriliyorsunuz.");
+            AnaSayfa anaSayfa = new AnaSayfa(this,Program.KullaniciModel);
             anaSayfa.Show();
             this.Hide();
+
         }
         else
         {

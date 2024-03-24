@@ -7,6 +7,7 @@ namespace CaloriProject.UI
     internal static class Program
     {
         public static KullaniciModel KullaniciModel { get; set; }
+        
 
         public static Form AnaSayfa { get; set; }
         public static Form ReferansSayfa { get; set; }

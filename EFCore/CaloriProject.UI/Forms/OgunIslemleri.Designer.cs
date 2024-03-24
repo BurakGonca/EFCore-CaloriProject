@@ -1,6 +1,6 @@
 ﻿namespace CaloriProject.UI.Forms
 {
-    partial class OgunGir
+    partial class OgunIslemleri
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OgunGir));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OgunIslemleri));
             dateTimePicker1 = new DateTimePicker();
             comboBox1_ogun = new ComboBox();
             comboBox3_yiyecek = new ComboBox();
@@ -188,7 +188,7 @@
             Controls.Add(comboBox1_ogun);
             Controls.Add(dateTimePicker1);
             Name = "OgunGir";
-            Text = "S";
+            Text = "Ogun Gir";
             Load += OgunGir_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

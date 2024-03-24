@@ -57,7 +57,7 @@
             email_textBox.Location = new Point(377, 197);
             email_textBox.Margin = new Padding(3, 4, 3, 4);
             email_textBox.Name = "email_textBox";
-            email_textBox.Size = new Size(114, 27);
+            email_textBox.Size = new Size(200, 27);
             email_textBox.TabIndex = 2;
             // 
             // sifre_textBox
@@ -65,7 +65,7 @@
             sifre_textBox.Location = new Point(377, 303);
             sifre_textBox.Margin = new Padding(3, 4, 3, 4);
             sifre_textBox.Name = "sifre_textBox";
-            sifre_textBox.Size = new Size(114, 27);
+            sifre_textBox.Size = new Size(200, 27);
             sifre_textBox.TabIndex = 3;
             // 
             // btn_girisYap

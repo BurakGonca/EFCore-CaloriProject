@@ -14,44 +14,44 @@ namespace CaloriProject.UI.Forms
 {
     public partial class AnaSayfa : Form
     {
-        private OgunGir ogunGir;
+        private OgunIslemleri ogunGir;
         private YiyecekEkle yiyecekEkle;
         private KullaniciGiris kullaniciGiris;
         private AyarlarSayfasi ayarlarSayfasi;
         private RaporSayfası raporSayfası;
-        
 
-        
+        private KullaniciModel kullaniciModel; 
 
-        public AnaSayfa(KullaniciGiris kullanici , KullaniciModel kullaniciModel)
+
+
+        public AnaSayfa(KullaniciGiris kullanici, KullaniciModel kullaniciModel2)
         {
 
 
-            kullaniciGiris = kullanici;
-            ogunGir =  new OgunGir(this, Program.KullaniciModel);
-            yiyecekEkle =  new YiyecekEkle(this);
 
-            ayarlarSayfasi = new AyarlarSayfasi(this, kullaniciGiris);
+            kullaniciGiris = kullanici;
+            kullaniciModel= kullaniciModel2;
+            ogunGir = new OgunIslemleri(this, kullaniciModel);
+
+            yiyecekEkle = new YiyecekEkle(this);
+
+            ayarlarSayfasi = new AyarlarSayfasi(this, kullaniciGiris, kullaniciModel);
             raporSayfası = new RaporSayfası(this);
             Program.AnaSayfa = this;
-            Program.AktifSayfa= this;
+            Program.AktifSayfa = this;
 
-            
+
 
 
             InitializeComponent();
-
 
         }
 
 
         private void AnaSayfa_Load(object sender, EventArgs e)
         {
-            kullanici_Isım_Lbl.Text = Program.KullaniciModel.Ad + " " + Program.KullaniciModel.Soyad;
-            boy_label.Text = Program.KullaniciModel.Boy.ToString();
-            kilo_label.Text = Program.KullaniciModel.Kilo.ToString();
-            vki_label.Text = (Program.KullaniciModel.Kilo / Math.Pow(Program.KullaniciModel.Boy / 100, 2)).ToString();
 
+            KullaniciVerileriGuncelle(Program.KullaniciModel);
 
         }
 
@@ -72,9 +72,9 @@ namespace CaloriProject.UI.Forms
         private void cikisYap_buton_Click(object sender, EventArgs e) //kullanici cikis islemi
         {
             Program.KullaniciModel = null;
+            MessageBox.Show("Cikis yapilmistir.");
             kullaniciGiris.Show();
             this.Hide();
-
 
 
         }
@@ -97,7 +97,16 @@ namespace CaloriProject.UI.Forms
         }
 
 
-       
+        public void KullaniciVerileriGuncelle(KullaniciModel yeniKullanici)
+        {
+
+            kullanici_Isım_Lbl.Text = yeniKullanici.Ad + " " + yeniKullanici.Soyad;
+            boy_label.Text = yeniKullanici.Boy.ToString();
+            kilo_label.Text = yeniKullanici.Kilo.ToString();
+            vki_label.Text = (yeniKullanici.Kilo / Math.Pow(yeniKullanici.Boy / 100, 2)).ToString();
+
+
+        }
 
     }
 }
