@@ -79,6 +79,7 @@ namespace CaloriProject.DAL.Repostory.Abstract
             
             entities.Remove(entity);
             _db.SaveChanges();
+
         }
         
 

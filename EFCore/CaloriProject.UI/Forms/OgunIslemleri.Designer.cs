@@ -112,6 +112,7 @@
             dataGridView1.Size = new Size(857, 313);
             dataGridView1.TabIndex = 10;
             dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
             // 
             // ekle_buton
             // 
@@ -168,7 +169,7 @@
             kullanici_Isım_Lbl.TabIndex = 15;
             kullanici_Isım_Lbl.Text = "kullanici";
             // 
-            // OgunGir
+            // OgunIslemleri
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -187,7 +188,7 @@
             Controls.Add(comboBox3_yiyecek);
             Controls.Add(comboBox1_ogun);
             Controls.Add(dateTimePicker1);
-            Name = "OgunGir";
+            Name = "OgunIslemleri";
             Text = "Ogun Gir";
             Load += OgunGir_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

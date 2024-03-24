@@ -22,7 +22,8 @@ namespace CaloriProject.BLL.MappingProfile
             CreateMap<YiyecekModel, Yiyecek>().
             ForMember(a => a.kullaniciOgunYiyecekler, b => b.MapFrom(src => src.KullaniciOgunYiyecekModeller)).ReverseMap();
 
-           
+            CreateMap<KullaniciOgunYiyecekModel, KullaniciOgunYiyecek>().
+                 ReverseMap();
 
         }
     }

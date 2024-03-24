@@ -36,7 +36,7 @@ namespace CaloriProject.UI.Forms
             yiyecekEkle = new YiyecekEkle(this);
 
             ayarlarSayfasi = new AyarlarSayfasi(this, kullaniciGiris, kullaniciModel);
-            raporSayfası = new RaporSayfası(this);
+            raporSayfası = new RaporSayfası(this, kullaniciModel);
             Program.AnaSayfa = this;
             Program.AktifSayfa = this;
 

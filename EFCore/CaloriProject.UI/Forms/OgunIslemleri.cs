@@ -55,7 +55,7 @@ namespace CaloriProject.UI.Forms
 
 
 
-            
+
 
         }
 
@@ -105,9 +105,9 @@ namespace CaloriProject.UI.Forms
 
                 MessageBox.Show("Öğün Başarıyla Eklenmiştir!");
 
-               
 
-                
+
+
                 dataGridView1.DataSource = kullaniciOgunYiyecekManager.Search(k => k.KullaniciID == kullaniciOgunYiyecekModel.KullaniciID).ToList();
 
 
@@ -132,24 +132,26 @@ namespace CaloriProject.UI.Forms
 
             if (secilenOgun != null)
             {
-                kullaniciOgunYiyecekManager.Remove(secilenOgun);
+
+                kullaniciOgunYiyecekManager.Delete(secilenOgun);
 
                 //kullaniciModel.KullaniciOgunYiyecekModeller.Remove(secilenOgun);
 
                 MessageBox.Show("Öğün silinmiştir.");
 
-                //dataGridView1.DataSource = kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
+                dataGridView1.DataSource = kullaniciModel.KullaniciOgunYiyecekModeller.ToList();
 
-                dataGridView1.DataSource = kullaniciOgunYiyecekManager.Search(k => k.KullaniciID == secilenOgun.KullaniciID).ToList();
+               // dataGridView1.DataSource = kullaniciOgunYiyecekManager.Search(k => k.KullaniciID == secilenOgun.KullaniciID).ToList();
             }
             else
                 MessageBox.Show("Secili Öğün Yok!");
 
         }
 
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            secilenOgun = (KullaniciOgunYiyecekModel)dataGridView1.SelectedRows[0].DataBoundItem;
+          
 
         }
 
@@ -183,13 +185,13 @@ namespace CaloriProject.UI.Forms
 
         }
 
-       
-
-
-
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            secilenOgun = (KullaniciOgunYiyecekModel)dataGridView1.SelectedRows[0].DataBoundItem;
+        }
     }
 
 
-   
+
 
 }
