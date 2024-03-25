@@ -130,6 +130,9 @@
   <data name="start-diet-today-H3EJ44" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\start-diet-today-H3EJ44.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="61" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\61.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,6 +145,9 @@
   <data name="2253308" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2253308.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pexels-any-lane-5945868" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-any-lane-5945868.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,17 +157,23 @@
   <data name="küçüldü1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\küçüldü1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pexels-shvets-production-7195272" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-shvets-production-7195272.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\32.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\42.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="küçüldü" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\küçüldü.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tangerine-newt-RgT22Ixcq4Y-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tangerine-newt-RgT22Ixcq4Y-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pexels-laker-6157033" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-laker-6157033.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2253310" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2253310.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,11 +184,11 @@
   <data name="pexels-karolina-grabowska-4022090" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-karolina-grabowska-4022090.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pexels-any-lane-5946101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-any-lane-5946101.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="14592830fa704327888c0c50fe3a8f31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\14592830fa704327888c0c50fe3a8f31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="42" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\42.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pexels-fernando-arcos-191240" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-fernando-arcos-191240.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +211,7 @@
   <data name="51" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\51.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pexels-any-lane-5946101" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pexels-any-lane-5946101.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pexels-ksenia-chernaya-3952050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-ksenia-chernaya-3952050.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

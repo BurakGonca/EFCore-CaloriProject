@@ -253,6 +253,16 @@ namespace CaloriProject.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pexels_any_lane_5945868 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-any-lane-5945868", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pexels_any_lane_5946101 {
             get {
                 object obj = ResourceManager.GetObject("pexels-any-lane-5946101", resourceCulture);
@@ -276,6 +286,36 @@ namespace CaloriProject.UI.Properties {
         internal static System.Drawing.Bitmap pexels_karolina_grabowska_4022090 {
             get {
                 object obj = ResourceManager.GetObject("pexels-karolina-grabowska-4022090", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_ksenia_chernaya_3952050 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-ksenia-chernaya-3952050", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_laker_6157033 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-laker-6157033", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_shvets_production_7195272 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-shvets-production-7195272", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
