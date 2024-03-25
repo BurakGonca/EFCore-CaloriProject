@@ -213,6 +213,16 @@ namespace CaloriProject.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap diet_plan_nutrition_eating_selection_restriction_concept {
+            get {
+                object obj = ResourceManager.GetObject("diet-plan-nutrition-eating-selection-restriction-concept", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap küçüldü {
             get {
                 object obj = ResourceManager.GetObject("küçüldü", resourceCulture);
@@ -223,9 +233,79 @@ namespace CaloriProject.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap küçüldü1 {
+            get {
+                object obj = ResourceManager.GetObject("küçüldü1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap meal_planning_food_arrangement {
+            get {
+                object obj = ResourceManager.GetObject("meal-planning-food-arrangement", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_any_lane_5946101 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-any-lane-5946101", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_fernando_arcos_191240 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-fernando-arcos-191240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pexels_karolina_grabowska_4022090 {
             get {
                 object obj = ResourceManager.GetObject("pexels-karolina-grabowska-4022090", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_total_shape_2383009 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-total-shape-2383009", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap slate_food_clock {
+            get {
+                object obj = ResourceManager.GetObject("slate-food-clock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap start_diet_today_H3EJ44 {
+            get {
+                object obj = ResourceManager.GetObject("start-diet-today-H3EJ44", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

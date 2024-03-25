@@ -50,6 +50,7 @@
 			aksamyemegibuton = new Button();
 			OglenButton = new Button();
 			kahvaltıbuton = new Button();
+			btnKıyasla = new Button();
 			Raporlar.SuspendLayout();
 			tabgünSonu.SuspendLayout();
 			groupBox1.SuspendLayout();
@@ -241,6 +242,7 @@
 			// 
 			tabKıyasRapor.BackgroundImage = Properties.Resources._51;
 			tabKıyasRapor.BackgroundImageLayout = ImageLayout.Center;
+			tabKıyasRapor.Controls.Add(btnKıyasla);
 			tabKıyasRapor.Controls.Add(dgvKıyasRapor);
 			tabKıyasRapor.Location = new Point(4, 24);
 			tabKıyasRapor.Margin = new Padding(3, 2, 3, 2);
@@ -250,6 +252,7 @@
 			tabKıyasRapor.TabIndex = 1;
 			tabKıyasRapor.Text = "Kıyas Raporu";
 			tabKıyasRapor.UseVisualStyleBackColor = true;
+			tabKıyasRapor.Click += tabKıyasRapor_Click;
 			// 
 			// dgvKıyasRapor
 			// 
@@ -275,6 +278,7 @@
 			tabyemekcesidRapor.TabIndex = 2;
 			tabyemekcesidRapor.Text = "Yemek Cesidi Raporu";
 			tabyemekcesidRapor.UseVisualStyleBackColor = true;
+			tabyemekcesidRapor.Click += tabyemekcesidRapor_Click;
 			// 
 			// dgvyemekcesidirapor
 			// 
@@ -296,6 +300,7 @@
 			aksamyemegibuton.TabIndex = 2;
 			aksamyemegibuton.Text = "Akşam Yemeği";
 			aksamyemegibuton.UseVisualStyleBackColor = false;
+			aksamyemegibuton.Click += aksamyemegibuton_Click;
 			// 
 			// OglenButton
 			// 
@@ -306,6 +311,7 @@
 			OglenButton.TabIndex = 1;
 			OglenButton.Text = "Öğlen Yemeği";
 			OglenButton.UseVisualStyleBackColor = false;
+			OglenButton.Click += OglenButton_Click;
 			// 
 			// kahvaltıbuton
 			// 
@@ -317,6 +323,16 @@
 			kahvaltıbuton.Text = "Kahvaltı";
 			kahvaltıbuton.UseVisualStyleBackColor = false;
 			kahvaltıbuton.Click += kahvaltıbuton_Click;
+			// 
+			// btnKıyasla
+			// 
+			btnKıyasla.Location = new Point(268, 109);
+			btnKıyasla.Name = "btnKıyasla";
+			btnKıyasla.Size = new Size(156, 40);
+			btnKıyasla.TabIndex = 1;
+			btnKıyasla.Text = "Kıyasla";
+			btnKıyasla.UseVisualStyleBackColor = true;
+			btnKıyasla.Click += btnKıyasla_Click;
 			// 
 			// RaporSayfası
 			// 
@@ -370,5 +386,6 @@
 		private Button OglenButton;
 		private Button kahvaltıbuton;
 		private DataGridView dgvKıyasRapor;
+		private Button btnKıyasla;
 	}
 }

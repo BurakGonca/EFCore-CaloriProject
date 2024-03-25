@@ -15,7 +15,7 @@ namespace CaloriProject.DAL.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //Pull'layan server'ı ve Database'i değiştirmeyi unutmasın.
-            optionsBuilder.UseSqlServer("server=BURAK;Database=CaloriDB;Trusted_Connection=true;trustservercertificate=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-G9J8U06;Database=CaloriDB;Trusted_Connection=true;trustservercertificate=true");
 
         }
 
@@ -33,9 +33,9 @@ namespace CaloriProject.DAL.Context
 
             modelBuilder.Entity<Ogun>().HasData
                 (
-                    new Ogun() { Id = 1, OgunAdi = "Kahvalti" } ,
-                    new Ogun() { Id = 2, OgunAdi = "Ogle" },
-                    new Ogun() { Id = 3, OgunAdi = "Aksam" }
+                    new Ogun() { Id = 1, OgunAd = "Kahvalti" } ,
+                    new Ogun() { Id = 2, OgunAd = "Ogle" },
+                    new Ogun() { Id = 3, OgunAd = "Aksam" }
 
                 );
 

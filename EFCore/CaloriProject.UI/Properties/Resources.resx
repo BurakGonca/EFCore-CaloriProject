@@ -118,44 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tangerine-newt-RgT22Ixcq4Y-unsplash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tangerine-newt-RgT22Ixcq4Y-unsplash1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="thought-catalog-fnztlIb52gU-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thought-catalog-fnztlIb52gU-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\32.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pexels-karolina-grabowska-4022090" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pexels-karolina-grabowska-4022090.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="14592830fa704327888c0c50fe3a8f31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\14592830fa704327888c0c50fe3a8f31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="61" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\61.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="63" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\63.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="küçüldü" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\küçüldü.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="42" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\42.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2253308" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2253308.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="meal-planning-food-arrangement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\meal-planning-food-arrangement.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\41.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,19 +127,79 @@
   <data name="62" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\62.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="start-diet-today-H3EJ44" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start-diet-today-H3EJ44.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="61" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\61.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slate-food-clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\slate-food-clock.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pexels-total-shape-2383009" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-total-shape-2383009.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2253308" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2253308.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thought-catalog-fnztlIb52gU-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thought-catalog-fnztlIb52gU-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="küçüldü1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\küçüldü1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2253310" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2253310.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\32.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="küçüldü" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\küçüldü.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tangerine-newt-RgT22Ixcq4Y-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tangerine-newt-RgT22Ixcq4Y-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="2253310" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2253310.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="63" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\63.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pexels-karolina-grabowska-4022090" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-karolina-grabowska-4022090.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="14592830fa704327888c0c50fe3a8f31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\14592830fa704327888c0c50fe3a8f31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\42.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pexels-fernando-arcos-191240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-fernando-arcos-191240.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tangerine-newt-RgT22Ixcq4Y-unsplash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tangerine-newt-RgT22Ixcq4Y-unsplash1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diet-plan-nutrition-eating-selection-restriction-concept" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diet-plan-nutrition-eating-selection-restriction-concept.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="51" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\51.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pexels-any-lane-5946101" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-any-lane-5946101.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

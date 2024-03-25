@@ -122,7 +122,7 @@ namespace CaloriProject.UI.Forms
 
             if (!SifreKontrol(sifre_textBox.Text))
             {
-                MessageBox.Show("Şifre geçerli değil. Şifre en az 1 büyük harf, en az 1 küçük harf, en az 1 rakam içermeli ve 8-10 karakter uzunluğunda olmalıdır.");
+                MessageBox.Show("Şifre geçerli değil. Şifre en az 1 büyük harf, en az 1 küçük harf, en az 1 rakam içermeli ve 8-20 karakter uzunluğunda olmalıdır.");
                 return;
             }
            
@@ -173,8 +173,8 @@ namespace CaloriProject.UI.Forms
 
         public static bool SifreKontrol(string sifre)
         {
-            // Sifre en az 8, en fazla 10 karakterden oluşmalı
-            if (sifre.Length < 8 || sifre.Length > 10)
+            // Sifre en az 8, en fazla 20 karakterden oluşmalı
+            if (sifre.Length < 8 || sifre.Length > 20)
                 return false;
 
             // En az bir büyük harf içermeli

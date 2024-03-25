@@ -1,5 +1,6 @@
 ﻿using CaloriProject.BLL.Manager.Abstract;
 using CaloriProject.BLL.MappingProfile;
+using CaloriProject.BLL.Models;
 using CaloriProject.DAL.Context;
 using CaloriProject.DAL.Entities;
 using CaloriProject.DAL.Repostory.Abstract;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace CaloriProject.BLL.Manager.Concrete
 {
-    public class KategoriManager : Manager<KategoriManager,Kategori,KategoriMapProfile>
+    public class KategoriManager : Manager<KategoriModel,Kategori,KategoriMapProfile>
     {
 
         public KategoriManager()
