@@ -171,7 +171,7 @@ namespace CaloriProject.UI.Forms
 
                 KullaniciOgunYiyecekModelSecilen.YiyecekID = ((YiyecekModel)(comboBox3_yiyecek.SelectedItem)).Id;
                 KullaniciOgunYiyecekModelSecilen.OgunID = ((Ogun)comboBox1_ogun.SelectedItem).Id;
-
+                KullaniciOgunYiyecekModelSecilen.Tarih = dateTimePicker1.Value;
                 kullaniciOgunYiyecekManager.Update(KullaniciOgunYiyecekModelSecilen);
 
 
