@@ -15,7 +15,7 @@ namespace CaloriProject.BLL.MappingProfile
         public KategoriMapProfile()
         {
             CreateMap<KategoriModel, Kategori>().
-            ForMember(a => a.Yiyecekler, b => b.MapFrom(src => src.YiyecekModeller)).ReverseMap();
+		   ForMember(a => a.Id, b => b.MapFrom(src => src.Id)).ReverseMap();
 
 
         }

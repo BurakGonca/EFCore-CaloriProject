@@ -54,51 +54,51 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8777),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2120),
                             KategoriAdi = "Kahvalti",
-                            Status = 1
+                            Status = 0
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8778),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2121),
                             KategoriAdi = "Ara Sicak",
-                            Status = 1
+                            Status = 0
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8779),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2122),
                             KategoriAdi = "Aperatifler",
-                            Status = 1
+                            Status = 0
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8779),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2123),
                             KategoriAdi = "Corbalar",
-                            Status = 1
+                            Status = 0
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8780),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2124),
                             KategoriAdi = "Ana Yemekler",
-                            Status = 1
+                            Status = 0
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8780),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2125),
                             KategoriAdi = "Icecekler",
-                            Status = 1
+                            Status = 0
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8781),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2126),
                             KategoriAdi = "Tatli",
-                            Status = 1
+                            Status = 0
                         });
                 });
 
@@ -215,7 +215,7 @@ namespace CaloriProject.DAL.Migrations
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("OgunAdi")
+                    b.Property<string>("OgunAd")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -233,23 +233,23 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8699),
-                            OgunAdi = "Kahvalti",
-                            Status = 1
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(1914),
+                            OgunAd = "Kahvalti",
+                            Status = 0
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8703),
-                            OgunAdi = "Ogle",
-                            Status = 1
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(1932),
+                            OgunAd = "Ogle",
+                            Status = 0
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8703),
-                            OgunAdi = "Aksam",
-                            Status = 1
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(1933),
+                            OgunAd = "Aksam",
+                            Status = 0
                         });
                 });
 
@@ -299,101 +299,101 @@ namespace CaloriProject.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8795),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2160),
                             Kalori = 300.0,
                             KategoriID = 5,
                             Porsiyon = 1.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Manti"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8797),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2164),
                             Kalori = 200.0,
                             KategoriID = 1,
                             Porsiyon = 1.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Menemen"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8797),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2166),
                             Kalori = 300.0,
                             KategoriID = 3,
                             Porsiyon = 2.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Patates Kızartmasi"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8798),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2167),
                             Kalori = 500.0,
                             KategoriID = 5,
                             Porsiyon = 1.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Adana Kebap"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8799),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2169),
                             Kalori = 200.0,
                             KategoriID = 4,
                             Porsiyon = 1.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Mercimek Corbasi"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8800),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2170),
                             Kalori = 400.0,
                             KategoriID = 7,
                             Porsiyon = 1.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Baklava"
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8800),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2172),
                             Kalori = 50.0,
                             KategoriID = 6,
                             Porsiyon = 1.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Su"
                         },
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8801),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2173),
                             Kalori = 200.0,
                             KategoriID = 1,
                             Porsiyon = 1.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Omlet"
                         },
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8802),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2175),
                             Kalori = 400.0,
                             KategoriID = 2,
                             Porsiyon = 1.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Yaprak Ciger"
                         },
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2024, 3, 22, 16, 58, 28, 91, DateTimeKind.Local).AddTicks(8802),
+                            CreatedDate = new DateTime(2024, 3, 25, 23, 23, 16, 578, DateTimeKind.Local).AddTicks(2176),
                             Kalori = 200.0,
                             KategoriID = 7,
                             Porsiyon = 1.0,
-                            Status = 1,
+                            Status = 0,
                             YiyecekAdi = "Sütlü Nuriye"
                         });
                 });

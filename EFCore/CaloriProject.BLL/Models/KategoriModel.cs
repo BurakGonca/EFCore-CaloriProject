@@ -10,9 +10,9 @@ namespace CaloriProject.BLL.Models
     public class KategoriModel
     {
         public int Id { get; set; }
-        public string Ad { get; set; }
+        public string KategoriAdi { get; set; }
 
-        public List<YiyecekModel> YiyecekModeller { get; set; } 
+        public List<YiyecekModel> Yiyecekler { get; set; } 
 
 
     }

@@ -10,13 +10,13 @@ namespace CaloriProject.DAL.Entities
     public class Ogun : Entity
     {
         
-        public string OgunAdi { get; set; }
+        public string OgunAd { get; set; }
 
         public List<KullaniciOgunYiyecek> kullaniciOgunYiyecekler { get; set; } //n-n iliski icin
 
         public override string ToString()
         {
-            return OgunAdi; 
+            return OgunAd; 
         }
 
     }

@@ -44,21 +44,22 @@
 			Label = new Label();
 			dateTimePicker1 = new DateTimePicker();
 			tabKıyasRapor = new TabPage();
+			dgvKıyasRapor = new DataGridView();
 			tabyemekcesidRapor = new TabPage();
 			dgvyemekcesidirapor = new DataGridView();
 			aksamyemegibuton = new Button();
 			OglenButton = new Button();
 			kahvaltıbuton = new Button();
-			dgvKıyasRapor = new DataGridView();
+			btnKıyasla = new Button();
 			Raporlar.SuspendLayout();
 			tabgünSonu.SuspendLayout();
 			groupBox1.SuspendLayout();
 			groupboxaksam.SuspendLayout();
 			groupBoxOglen.SuspendLayout();
 			tabKıyasRapor.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)dgvKıyasRapor).BeginInit();
 			tabyemekcesidRapor.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dgvyemekcesidirapor).BeginInit();
-			((System.ComponentModel.ISupportInitialize)dgvKıyasRapor).BeginInit();
 			SuspendLayout();
 			// 
 			// button1
@@ -241,6 +242,7 @@
 			// 
 			tabKıyasRapor.BackgroundImage = Properties.Resources._51;
 			tabKıyasRapor.BackgroundImageLayout = ImageLayout.Center;
+			tabKıyasRapor.Controls.Add(btnKıyasla);
 			tabKıyasRapor.Controls.Add(dgvKıyasRapor);
 			tabKıyasRapor.Location = new Point(4, 24);
 			tabKıyasRapor.Margin = new Padding(3, 2, 3, 2);
@@ -250,6 +252,16 @@
 			tabKıyasRapor.TabIndex = 1;
 			tabKıyasRapor.Text = "Kıyas Raporu";
 			tabKıyasRapor.UseVisualStyleBackColor = true;
+			tabKıyasRapor.Click += tabKıyasRapor_Click;
+			// 
+			// dgvKıyasRapor
+			// 
+			dgvKıyasRapor.BackgroundColor = Color.Bisque;
+			dgvKıyasRapor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgvKıyasRapor.Location = new Point(66, 185);
+			dgvKıyasRapor.Name = "dgvKıyasRapor";
+			dgvKıyasRapor.Size = new Size(556, 214);
+			dgvKıyasRapor.TabIndex = 0;
 			// 
 			// tabyemekcesidRapor
 			// 
@@ -266,6 +278,7 @@
 			tabyemekcesidRapor.TabIndex = 2;
 			tabyemekcesidRapor.Text = "Yemek Cesidi Raporu";
 			tabyemekcesidRapor.UseVisualStyleBackColor = true;
+			tabyemekcesidRapor.Click += tabyemekcesidRapor_Click;
 			// 
 			// dgvyemekcesidirapor
 			// 
@@ -276,6 +289,7 @@
 			dgvyemekcesidirapor.RowHeadersWidth = 51;
 			dgvyemekcesidirapor.Size = new Size(444, 259);
 			dgvyemekcesidirapor.TabIndex = 3;
+			dgvyemekcesidirapor.CellContentClick += dgvyemekcesidirapor_CellContentClick;
 			// 
 			// aksamyemegibuton
 			// 
@@ -286,6 +300,7 @@
 			aksamyemegibuton.TabIndex = 2;
 			aksamyemegibuton.Text = "Akşam Yemeği";
 			aksamyemegibuton.UseVisualStyleBackColor = false;
+			aksamyemegibuton.Click += aksamyemegibuton_Click;
 			// 
 			// OglenButton
 			// 
@@ -296,6 +311,7 @@
 			OglenButton.TabIndex = 1;
 			OglenButton.Text = "Öğlen Yemeği";
 			OglenButton.UseVisualStyleBackColor = false;
+			OglenButton.Click += OglenButton_Click;
 			// 
 			// kahvaltıbuton
 			// 
@@ -306,15 +322,17 @@
 			kahvaltıbuton.TabIndex = 0;
 			kahvaltıbuton.Text = "Kahvaltı";
 			kahvaltıbuton.UseVisualStyleBackColor = false;
+			kahvaltıbuton.Click += kahvaltıbuton_Click;
 			// 
-			// dgvKıyasRapor
+			// btnKıyasla
 			// 
-			dgvKıyasRapor.BackgroundColor = Color.Bisque;
-			dgvKıyasRapor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgvKıyasRapor.Location = new Point(66, 185);
-			dgvKıyasRapor.Name = "dgvKıyasRapor";
-			dgvKıyasRapor.Size = new Size(556, 214);
-			dgvKıyasRapor.TabIndex = 0;
+			btnKıyasla.Location = new Point(268, 109);
+			btnKıyasla.Name = "btnKıyasla";
+			btnKıyasla.Size = new Size(156, 40);
+			btnKıyasla.TabIndex = 1;
+			btnKıyasla.Text = "Kıyasla";
+			btnKıyasla.UseVisualStyleBackColor = true;
+			btnKıyasla.Click += btnKıyasla_Click;
 			// 
 			// RaporSayfası
 			// 
@@ -338,9 +356,9 @@
 			groupBoxOglen.ResumeLayout(false);
 			groupBoxOglen.PerformLayout();
 			tabKıyasRapor.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)dgvKıyasRapor).EndInit();
 			tabyemekcesidRapor.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)dgvyemekcesidirapor).EndInit();
-			((System.ComponentModel.ISupportInitialize)dgvKıyasRapor).EndInit();
 			ResumeLayout(false);
 		}
 
@@ -368,5 +386,6 @@
 		private Button OglenButton;
 		private Button kahvaltıbuton;
 		private DataGridView dgvKıyasRapor;
+		private Button btnKıyasla;
 	}
 }
