@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OgunIslemleri));
 			dateTimePicker1 = new DateTimePicker();
 			comboBox1_ogun = new ComboBox();
 			comboBox3_yiyecek = new ComboBox();
@@ -115,7 +114,7 @@
 			dataGridView1.Name = "dataGridView1";
 			dataGridView1.RowHeadersWidth = 51;
 			dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-			dataGridView1.Size = new Size(750, 235);
+			dataGridView1.Size = new Size(777, 277);
 			dataGridView1.TabIndex = 10;
 			dataGridView1.CellClick += dataGridView1_CellClick;
 			dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
@@ -183,9 +182,9 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+			BackgroundImage = Properties.Resources._64;
 			BackgroundImageLayout = ImageLayout.Stretch;
-			ClientSize = new Size(843, 535);
+			ClientSize = new Size(900, 686);
 			Controls.Add(kullanici_Isım_Lbl);
 			Controls.Add(button4);
 			Controls.Add(guncelle_buton);
