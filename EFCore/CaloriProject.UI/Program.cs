@@ -1,3 +1,4 @@
+using CaloriProject.BLL.Manager.Concrete;
 using CaloriProject.BLL.Models;
 using CaloriProject.DAL.Entities;
 using CaloriProject.UI.Forms;
@@ -8,7 +9,7 @@ namespace CaloriProject.UI
     {
         public static KullaniciModel KullaniciModel { get; set; }
         
-
+        public static YiyecekManager yiyecekStaticManager { get; set; }
         public static Form AnaSayfa { get; set; }
         public static Form ReferansSayfa { get; set; }
         public static Form AktifSayfa { get; set; } //gelen sayfa
