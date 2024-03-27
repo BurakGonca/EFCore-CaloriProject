@@ -60,11 +60,6 @@ namespace CaloriProject.UI.Forms
             YemekGetir();
 
 
-
-
-
-
-
         }
 
 
@@ -138,14 +133,10 @@ namespace CaloriProject.UI.Forms
 
             if (KullaniciOgunYiyecekModelSecilen != null)
             {
-
                 kullaniciOgunYiyecekManager.Remove(KullaniciOgunYiyecekModelSecilen);
-
-                
 
                 MessageBox.Show("Öğün silinmiştir.");
 
-               
                 YemekGetir();
             }
             else
@@ -195,7 +186,7 @@ namespace CaloriProject.UI.Forms
 
         }
 
-        
+
 
         public object YemekGetir()
         {
@@ -214,17 +205,17 @@ namespace CaloriProject.UI.Forms
                                     koy.Id
                                 }
                                            into gcs
-                                select new YemekView  { yemekAdi = gcs.Key.YiyecekAdi, toplamKalori = gcs.Key.Kalori, ogunAdi = gcs.Key.OgunAd, tarih = gcs.Key.Tarih , KoyId = gcs.Key.Id }
+                                select new YemekView { yemekAdi = gcs.Key.YiyecekAdi, toplamKalori = gcs.Key.Kalori, ogunAdi = gcs.Key.OgunAd, tarih = gcs.Key.Tarih, KoyId = gcs.Key.Id }
                                     ).ToList();
-            
+
 
             dataGridView1.DataSource = yemekListesi;
 
             dataGridView1.Columns["KoyId"].Visible = false;
 
             return dataGridView1.DataSource;
-            
-            
+
+
         }
 
 
