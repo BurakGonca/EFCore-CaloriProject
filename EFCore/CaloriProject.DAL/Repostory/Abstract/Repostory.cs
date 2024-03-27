@@ -74,10 +74,12 @@ namespace CaloriProject.DAL.Repostory.Abstract
 
         public void Remove(T entity)
         {
-            //gerçekten silecek (tablodan silecek)
+			//gerçekten silecek (tablodan silecek)
+			_db.Entry(entity).State = EntityState.Deleted;
+			entities.Remove(entity);
 
-            
-            entities.Remove(entity);
+			
+
             _db.SaveChanges();
 
         }
@@ -105,8 +107,9 @@ namespace CaloriProject.DAL.Repostory.Abstract
 
             if (entity.Status != Status.Deleted)
                 entity.Status = Status.Updated;
-
-            entities.Update(entity);
+			_db.Entry(entity).State = EntityState.Modified;
+			entities.Update(entity);
+            _db.Entry(entity).State = EntityState.Detached;
 
             _db.SaveChanges();
         }

@@ -203,6 +203,16 @@ namespace CaloriProject.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _64 {
+            get {
+                object obj = ResourceManager.GetObject("64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _7 {
             get {
                 object obj = ResourceManager.GetObject("7", resourceCulture);
@@ -293,6 +303,16 @@ namespace CaloriProject.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pexels_karolina_grabowska_40220901 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-karolina-grabowska-40220901", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pexels_ksenia_chernaya_3952050 {
             get {
                 object obj = ResourceManager.GetObject("pexels-ksenia-chernaya-3952050", resourceCulture);
@@ -326,6 +346,26 @@ namespace CaloriProject.UI.Properties {
         internal static System.Drawing.Bitmap pexels_total_shape_2383009 {
             get {
                 object obj = ResourceManager.GetObject("pexels-total-shape-2383009", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_total_shape_23830091 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-total-shape-23830091", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pexels_vanessa_loring_5966431 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-vanessa-loring-5966431", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -376,6 +416,16 @@ namespace CaloriProject.UI.Properties {
         internal static System.Drawing.Bitmap thought_catalog_fnztlIb52gU_unsplash {
             get {
                 object obj = ResourceManager.GetObject("thought-catalog-fnztlIb52gU-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thought_catalog_fnztlIb52gU_unsplash1 {
+            get {
+                object obj = ResourceManager.GetObject("thought-catalog-fnztlIb52gU-unsplash1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -44,13 +44,14 @@
 			Label = new Label();
 			dateTimePicker1 = new DateTimePicker();
 			tabKıyasRapor = new TabPage();
+			btnKıyasla = new Button();
 			dgvKıyasRapor = new DataGridView();
 			tabyemekcesidRapor = new TabPage();
 			dgvyemekcesidirapor = new DataGridView();
 			aksamyemegibuton = new Button();
 			OglenButton = new Button();
 			kahvaltıbuton = new Button();
-			btnKıyasla = new Button();
+			btnhesapla = new Button();
 			Raporlar.SuspendLayout();
 			tabgünSonu.SuspendLayout();
 			groupBox1.SuspendLayout();
@@ -90,6 +91,7 @@
 			// 
 			tabgünSonu.BackgroundImage = Properties.Resources._42;
 			tabgünSonu.BackgroundImageLayout = ImageLayout.Stretch;
+			tabgünSonu.Controls.Add(btnhesapla);
 			tabgünSonu.Controls.Add(groupBox1);
 			tabgünSonu.Controls.Add(groupboxaksam);
 			tabgünSonu.Controls.Add(groupBoxOglen);
@@ -217,6 +219,7 @@
 			lblToplamCalory.Size = new Size(46, 30);
 			lblToplamCalory.TabIndex = 2;
 			lblToplamCalory.Text = "0.0";
+			lblToplamCalory.Click += lblToplamCalory_Click;
 			// 
 			// Label
 			// 
@@ -253,6 +256,16 @@
 			tabKıyasRapor.Text = "Kıyas Raporu";
 			tabKıyasRapor.UseVisualStyleBackColor = true;
 			tabKıyasRapor.Click += tabKıyasRapor_Click;
+			// 
+			// btnKıyasla
+			// 
+			btnKıyasla.Location = new Point(268, 109);
+			btnKıyasla.Name = "btnKıyasla";
+			btnKıyasla.Size = new Size(156, 40);
+			btnKıyasla.TabIndex = 1;
+			btnKıyasla.Text = "Kıyasla";
+			btnKıyasla.UseVisualStyleBackColor = true;
+			btnKıyasla.Click += btnKıyasla_Click;
 			// 
 			// dgvKıyasRapor
 			// 
@@ -324,15 +337,17 @@
 			kahvaltıbuton.UseVisualStyleBackColor = false;
 			kahvaltıbuton.Click += kahvaltıbuton_Click;
 			// 
-			// btnKıyasla
+			// btnhesapla
 			// 
-			btnKıyasla.Location = new Point(268, 109);
-			btnKıyasla.Name = "btnKıyasla";
-			btnKıyasla.Size = new Size(156, 40);
-			btnKıyasla.TabIndex = 1;
-			btnKıyasla.Text = "Kıyasla";
-			btnKıyasla.UseVisualStyleBackColor = true;
-			btnKıyasla.Click += btnKıyasla_Click;
+			btnhesapla.BackColor = Color.BlanchedAlmond;
+			btnhesapla.ForeColor = Color.Black;
+			btnhesapla.Location = new Point(301, 282);
+			btnhesapla.Name = "btnhesapla";
+			btnhesapla.Size = new Size(161, 34);
+			btnhesapla.TabIndex = 18;
+			btnhesapla.Text = "Hesapla";
+			btnhesapla.UseVisualStyleBackColor = false;
+			btnhesapla.Click += btnhesapla_Click;
 			// 
 			// RaporSayfası
 			// 
@@ -387,5 +402,6 @@
 		private Button kahvaltıbuton;
 		private DataGridView dgvKıyasRapor;
 		private Button btnKıyasla;
+		private Button btnhesapla;
 	}
 }
