@@ -176,6 +176,7 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Name = "Giris";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -1,4 +1,5 @@
-﻿using CaloriProject.BLL.Models;
+﻿using CaloriProject.BLL.Manager.Concrete;
+using CaloriProject.BLL.Models;
 using CaloriProject.DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace CaloriProject.UI.Forms
         private AyarlarSayfasi ayarlarSayfasi;
         private RaporSayfası raporSayfası;
 
-        private KullaniciModel kullaniciModel; 
+        private KullaniciModel kullaniciModel;
 
 
 
@@ -30,7 +31,7 @@ namespace CaloriProject.UI.Forms
 
 
             kullaniciGiris = kullanici;
-            kullaniciModel= kullaniciModel2;
+            kullaniciModel = kullaniciModel2;
             ogunGir = new OgunIslemleri(this, kullaniciModel);
 
             yiyecekEkle = new YiyecekEkle(this);
@@ -71,10 +72,20 @@ namespace CaloriProject.UI.Forms
 
         private void cikisYap_buton_Click(object sender, EventArgs e) //kullanici cikis islemi
         {
-            Program.KullaniciModel = null;
-            MessageBox.Show("Cikis yapilmistir.");
-            kullaniciGiris.Show();
-            this.Hide();
+            DialogResult dialog = MessageBox.Show("Çıkış yapmak istediğinizden emin misiniz?", "Çıkış", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Program.KullaniciModel = null;
+                MessageBox.Show("Cikis yapilmistir.");
+                kullaniciGiris.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Çıkış işlemi iptal edilmiştir.");
+            }
+
+
 
 
         }
@@ -104,7 +115,7 @@ namespace CaloriProject.UI.Forms
             boy_label.Text = yeniKullanici.Boy.ToString();
             kilo_label.Text = yeniKullanici.Kilo.ToString();
             vki_label.Text = (yeniKullanici.Kilo / Math.Pow(yeniKullanici.Boy / 100, 2)).ToString();
-
+            kullanici_label.Text = yeniKullanici.Ad + " " + yeniKullanici.Soyad;
 
         }
 

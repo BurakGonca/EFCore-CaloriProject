@@ -108,15 +108,12 @@ namespace CaloriProject.UI.Forms
 			{
 
 
-
 				kullaniciOgunYiyecekManager.Add(kullaniciOgunYiyecekModel);
 
 				MessageBox.Show("Öğün Başarıyla Eklenmiştir!");
 
 
 				YemekGetir();
-
-
 
 
 			}
@@ -140,7 +137,6 @@ namespace CaloriProject.UI.Forms
 			{
 
 				kullaniciOgunYiyecekManager.Remove(KullaniciOgunYiyecekModelSecilen);
-
 
 
 				MessageBox.Show("Öğün silinmiştir.");
