@@ -14,6 +14,7 @@ using CaloriProject.DAL.Enums;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 using CaloriProject.BLL.Manager.Concrete;
+using Azure.Core;
 
 namespace CaloriProject.UI.Forms
 {
@@ -76,30 +77,41 @@ namespace CaloriProject.UI.Forms
 
 
 
-            //dogumtarihi icin 18 yas siniri ilave ediyorum.
+            //dogumtarihi icin 18-45 yas siniri
             int yas = (DateTime.Now.Year - DogumTarihi_dateTimePicker.Value.Year);
-            if (yas <= 18)
+            if (yas < 18 || yas>45)
             {
-                MessageBox.Show("Üzgünüz, programımız yalnizca 18 yas ve üstü icindir.");
+                MessageBox.Show("Üzgünüz, programımız yalnizca 18 yas ve 45 yas araligi icindir");
                 return;
             }
             kullaniciModel.DogumTarihi = DogumTarihi_dateTimePicker.Value;
-
 
             if (!AlanKontrol(kilo_textBox.Text))
             {
                 MessageBox.Show("Lütfen kilonuzu giriniz.");
                 return;
             }
-            kullaniciModel.Kilo = double.Parse(kilo_textBox.Text.Trim());
-
+            double kilo= double.Parse(kilo_textBox.Text.Trim());
+            if (kilo<=40 || kilo>=120)
+            {
+                MessageBox.Show("Kilonuz 40-120 deger araliginin disindadir.");
+                return;
+            }
+            kullaniciModel.Kilo = kilo;
            
             if (!AlanKontrol(boy_textBox.Text))
             {
                 MessageBox.Show("Lütfen boyunuzu giriniz.");
                 return;
             }
-            kullaniciModel.Boy = double.Parse(boy_textBox.Text.Trim());
+            double boy = double.Parse(boy_textBox.Text.Trim());
+            if (boy<150 || boy>210)
+            {
+                MessageBox.Show("Boyunuz 150-210 deger araliginin disindadir.");
+                return;
+
+            }
+            kullaniciModel.Boy = boy;
 
             if (!AlanKontrol(eMail_textBox.Text))
             {

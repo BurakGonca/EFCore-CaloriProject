@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button2 = new Button();
             raporlar_buton = new Button();
             ayarlar_buton = new Button();
@@ -43,6 +44,7 @@
             yiyecekEkle_buton = new Button();
             label5 = new Label();
             kullanici_label = new Label();
+            toolTip1 = new ToolTip(components);
             SuspendLayout();
             // 
             // button2
@@ -257,5 +259,6 @@
 		private Label label2;
 		private Label label5;
         private Label kullanici_label;
+        private ToolTip toolTip1;
     }
 }

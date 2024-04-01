@@ -41,9 +41,6 @@ namespace CaloriProject.UI.Forms
             Program.AnaSayfa = this;
             Program.AktifSayfa = this;
 
-
-
-
             InitializeComponent();
 
         }
@@ -51,9 +48,8 @@ namespace CaloriProject.UI.Forms
 
         private void AnaSayfa_Load(object sender, EventArgs e)
         {
-
-            KullaniciVerileriGuncelle(Program.KullaniciModel);
-
+            KullaniciVerileriGuncelle(kullaniciModel);
+            toolTip1.SetToolTip(vki_label, "• 18,5 kg/m2 ve daha düşük değerler = Zayıf\r\n• 18,5 ve 24,9 kg/m2 arasındaki değerler = Normal ağırlıkta\r\n• 25,0 ve 29,9 kg/m2 arasındaki değerler = Kilolu\r\n• 30,0 ve 34,9 kg/m2 arasındaki değerler = 1. derece obezite\r\n• 35,0 ve 39,9 kg/m2 arasındaki değerler = 2. derece obezite\r\n• 40 kg/m2 ve üzerindeki değerler = 3. derece obezite");
         }
 
 

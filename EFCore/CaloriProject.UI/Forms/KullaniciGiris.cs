@@ -27,13 +27,9 @@ public partial class KullaniciGiris : Form
     public KullaniciGiris(Giris gir, AnaSayfa ana = null)
     {
 
-
         giris = gir;
-
         anaSayfa = ana ?? new AnaSayfa(this, Program.KullaniciModel);
-
         InitializeComponent();
-
 
     }
 
@@ -42,6 +38,8 @@ public partial class KullaniciGiris : Form
     private void KullaniciGiris_Load(object sender, EventArgs e)
     {
         sifre_textBox.UseSystemPasswordChar = true;
+        email_textBox.Text = string.Empty;
+        sifre_textBox.Text = string.Empty;
     }
 
     private void btn_girisYap_Click(object sender, EventArgs e) //kullanici giris butonu
@@ -96,9 +94,6 @@ public partial class KullaniciGiris : Form
             MessageBox.Show("E-mail adresi veya şifre hatalı.");
             return;
         }
-
-
-
 
 
 

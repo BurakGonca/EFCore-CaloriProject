@@ -135,9 +135,9 @@
             // button2
             // 
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(66, 522);
+            button2.Location = new Point(114, 527);
             button2.Name = "button2";
-            button2.Size = new Size(117, 29);
+            button2.Size = new Size(144, 48);
             button2.TabIndex = 3;
             button2.Text = "YENİ ÜYELİK";
             button2.UseVisualStyleBackColor = true;
@@ -146,9 +146,9 @@
             // button1
             // 
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(77, 487);
+            button1.Location = new Point(125, 473);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(121, 48);
             button1.TabIndex = 2;
             button1.Text = "GİRİŞ";
             button1.UseVisualStyleBackColor = true;
