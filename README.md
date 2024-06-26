@@ -25,6 +25,12 @@ PM Console'da add-migration [Migration Adı] komutunu yazıp çalıştırın.
 
 PM Console'da update-database diyerek veritabanını oluşturun.
 
+Keyifli incelemeler.
+
+Video;
+[![Watch the video](https://img.youtube.com/vi/YriHwguXCkk/maxresdefault.jpg)](https://www.youtube.com/watch?v=YriHwguXCkk&t=1s)
+
+
 KULLANICI KARSILAMA EKRANI
 ![1](https://github.com/BurakGonca/EFCore-CaloriProject/assets/154968593/f87f7c68-7e2b-4d72-b74b-eceb89d3988b)
 
